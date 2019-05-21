@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oss文件管理</title>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.2/jquery.js"></script>
+    <script type="text/javascript">
+        var pre = 'https://gaojun-testbucket.oss-cn-shanghai.aliyuncs.com/';
+        $(function () {
+            listfile();
+        });
+
+        //文件列表
+        function listfile() {
+            $.ajax({
+                url: "http://localhost:8080/file/list",
+                type: 'POST',
+                success: function (rtn) {
+                    console.log(rtn.length);
+                    for (var i = 0; i < rtn.length; i++) {
+                        $('div').append('<img src="' + pre + rtn[i].key + '" style="width: 300px;height: 300px; padding: 10px" ondblclick="deletefile(this.src)" onclick="downloadfile(this.src)"></img>')
+                    }
+                }
+            });
+        }
+
+        //文件下载
+        function downloadfile(src) {
+            var fileName = src.split(pre)[1];
+            window.location.href = "http://localhost:8080/file/download?fileName=" + fileName;
+        }
+
+        //文件删除
+        function deletefile(src) {
+            var fileName = src.split(pre)[1];
+            var param = {fileName: fileName};
+            $.ajax({
+                url: "http://localhost:8080/file/delete",
+                data: param,
+                success: function () {
+                    alert('删除成功',fileName);
+                    //删除页面
+                    location.reload();
+                }
+            });
+        }
+
+    </script>
+</head>
+<body>
+单击下载oss上的图片、双击删除oss上的图片<br>
+<div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>oss文件上传</title>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.2/jquery.js"></script>
+    <script>
+        function uploadfile() {
+            $("#fileTypeError").html('');
+            //获得文件名称
+            var fileName = $('#file_upload').val();
+            //截取文件类型,如(.jpg)　　　　　　　　　　　　　　　　
+            var fileType = fileName.substr(fileName.length - 4, fileName.length);
+            if (fileType == '.bmp' || fileType == '.jpg' || fileType == '.jpeg' || fileType == '.gif' || fileType == '.png') {　　　　　//验证文件类型,此处验证也可使用正则
+                $.ajax({
+                    url: 'file/upload',//上传地址
+                    type: 'POST',
+                    cache: false,
+                    data: new FormData($('#uploadForm')[0]),//表单数据
+                    processData: false,
+                    contentType: false,
+                    success: function (rtn) {
+                        if (rtn.status == 'error') {
+                            $("#fileTypeError").html('*上传文件类型错误,支持类型:  .bmp .jpg .jpeg .gif .png');　　//根据后端返回值,回显错误信息
+                        } else {
+                            $('div').append('<img src="' + rtn.name + '" style="width: 300px;height: 300px"></img>')
+                        }
+                    }
+                });
+            } else {
+                $("#fileTypeError").html('*上传文件类型错误,支持类型: .bmp .jpg .jpeg .gif .png');
+            }
+        }
+    </script>
+</head>
+<body>
+<form id="uploadForm" enctype="multipart/form-data">　　<!-- 声明文件上传 -->
+    <input id="file_upload" type="file" name="file"/>　　<!-- 定义change事件,选择文件后触发 -->
+    <br/><span style="color: red" id="fileTypeError"></span>　　　　<!-- 文件类型错误回显,此处通过前后端两次验证文件类型 -->
+    <br/><input type="button" onclick="uploadfile()" value="上传">
+</form>
+<div></div>
+</body>
+</html>
