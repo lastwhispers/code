@@ -1,7 +1,7 @@
 package com.desgin.principle.openclose;
 
 /**
- * Create by eval on 2019/1/22
+ * Create by lastwhisper on 2019/1/22
  */
 public class JavaDiscountCourse extends JavaCourse {
     public JavaDiscountCourse(Integer id, String name, Double price) {

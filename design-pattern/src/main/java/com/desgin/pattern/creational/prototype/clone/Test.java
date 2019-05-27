@@ -3,7 +3,7 @@ package com.desgin.pattern.creational.prototype.clone;
 import com.desgin.pattern.creational.singleton.HungrySingleton;
 
 /**
- * Create by eval on 2019/1/27
+ * Create by lastwhisper on 2019/1/27
  */
 public class Test {
     public static void main(String[] args) throws CloneNotSupportedException {

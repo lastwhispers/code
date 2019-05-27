@@ -3,7 +3,7 @@ package com.desgin.pattern.creational.prototype.clone;
 import java.util.Date;
 
 /**
- * Create by eval on 2019/1/27
+ * Create by lastwhisper on 2019/1/27
  */
 public class Pig implements Cloneable {
     private String name;

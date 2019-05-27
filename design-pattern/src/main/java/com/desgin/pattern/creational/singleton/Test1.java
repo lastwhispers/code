@@ -3,7 +3,8 @@ package com.desgin.pattern.creational.singleton;
 import java.io.*;
 
 /**
- * Create by eval on 2019/1/26
+ * 序列化攻击测试
+ * Create by lastwhisper on 2019/1/26
  */
 public class Test1 {
     public static void main(String[] args) throws Exception {

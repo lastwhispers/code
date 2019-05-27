@@ -1,7 +1,7 @@
 package com.desgin.pattern.creational.singleton;
 
 /**
- * Create by eval on 2019/1/25
+ * Create by lastwhisper on 2019/1/25
  */
 public class LazySingleton {
     private static LazySingleton lazySingleton = null;

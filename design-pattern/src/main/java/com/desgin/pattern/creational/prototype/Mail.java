@@ -1,7 +1,7 @@
 package com.desgin.pattern.creational.prototype;
 
 /**
- * Create by eval on 2019/1/27
+ * Create by lastwhisper on 2019/1/27
  */
 public class Mail implements Cloneable{
     private String name;

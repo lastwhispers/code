@@ -1,10 +1,10 @@
 package com.desgin.pattern.creational.singleton;
 
 /**
- * Create by eval on 2019/1/25
+ * Create by lastwhisper on 2019/1/25
  */
 public class LazyDoubleCheckSingleton {
-    private static LazyDoubleCheckSingleton lazyDoubleCheckSingleton = null;
+    private static volatile LazyDoubleCheckSingleton lazyDoubleCheckSingleton = null;
     private LazyDoubleCheckSingleton(){
 
     }

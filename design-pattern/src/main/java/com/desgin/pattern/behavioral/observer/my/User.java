@@ -4,7 +4,7 @@ package com.desgin.pattern.behavioral.observer.my;
  * 具体观察者
  * 实现了update方法
  *
- * @author eval
+ * @author lastwhisper
  */
 public class User implements Observer {
 

@@ -1,6 +1,6 @@
 package com.desgin.pattern.structural.adapter.classadapter;
 
-public class Test {
+public abstract class Test {
     public static void main(String[] args) {
         Target target = new ConcreteTarget();
         target.request();

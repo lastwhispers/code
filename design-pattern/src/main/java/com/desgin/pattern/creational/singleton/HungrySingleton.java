@@ -3,7 +3,7 @@ package com.desgin.pattern.creational.singleton;
 import java.io.Serializable;
 
 /**
- * Create by eval on 2019/1/26
+ * Create by lastwhisper on 2019/1/26
  */
 public class HungrySingleton implements Serializable,Cloneable {
     private static HungrySingleton hungrySingleton;

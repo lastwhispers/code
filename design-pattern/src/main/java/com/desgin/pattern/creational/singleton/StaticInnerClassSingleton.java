@@ -1,7 +1,7 @@
 package com.desgin.pattern.creational.singleton;
 
 /**
- * Create by eval on 2019/1/26
+ * Create by lastwhisper on 2019/1/26
  */
 public class StaticInnerClassSingleton {
     private StaticInnerClassSingleton() {

@@ -4,7 +4,7 @@ import java.util.Observable;
 
 /**
  * 被观察者对象
- * @author eval
+ * @author lastwhisper
  */
 public class Course extends Observable {
     private String courseName;

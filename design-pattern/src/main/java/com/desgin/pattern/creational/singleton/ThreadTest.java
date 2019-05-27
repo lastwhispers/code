@@ -1,7 +1,7 @@
 package com.desgin.pattern.creational.singleton;
 
 /**
- * Create by eval on 2019/1/27
+ * Create by lastwhisper on 2019/1/27
  */
 public class ThreadTest {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package com.desgin.pattern.creational.factorymethod;
 
 /**
- * Create by eval on 2019/1/23
+ * Create by lastwhisper on 2019/1/23
  */
 public class Test {
     public static void main(String[] args) {

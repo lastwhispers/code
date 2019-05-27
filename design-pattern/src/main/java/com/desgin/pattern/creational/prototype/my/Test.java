@@ -3,7 +3,7 @@ package com.desgin.pattern.creational.prototype.my;
 import java.util.Date;
 
 /**
- * Create by eval on 2019/2/7
+ * Create by lastwhisper on 2019/2/7
  */
 public class Test {
     public static void main(String[] args) {

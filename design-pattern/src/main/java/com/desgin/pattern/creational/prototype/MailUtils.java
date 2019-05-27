@@ -3,7 +3,7 @@ package com.desgin.pattern.creational.prototype;
 import java.text.MessageFormat;
 
 /**
- * Create by eval on 2019/1/27
+ * Create by lastwhisper on 2019/1/27
  */
 public class MailUtils {
     public static void sendMail(Mail mail){

@@ -5,7 +5,7 @@ import java.util.Observer;
 
 /**
  * 观察者类
- * @author eval
+ * @author lastwhisper
  */
 public class Teacher implements Observer {
     private String teacherName;

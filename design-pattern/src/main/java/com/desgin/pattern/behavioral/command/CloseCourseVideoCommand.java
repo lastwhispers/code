@@ -2,7 +2,7 @@ package com.desgin.pattern.behavioral.command;
 
 /**
  * 具体命令类
- * @author eval
+ * @author lastwhisper
  */
 public class CloseCourseVideoCommand implements Command {
 

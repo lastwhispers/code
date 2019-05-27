@@ -1,7 +1,7 @@
 package com.desgin.pattern.behavioral.state;
 
 /**
- * Create by eval on 2019/2/11
+ * Create by lastwhisper on 2019/2/11
  */
 public class SpeedState extends CourseVideoState  {
     @Override

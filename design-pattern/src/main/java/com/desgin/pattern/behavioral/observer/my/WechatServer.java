@@ -7,7 +7,7 @@ import java.util.List;
  * 具体被观察者，也就是微信公众号服务
  * 实现了Observerable接口，对Observerable接口的三个方法进行了具体实现
  *
- * @author eval
+ * @author lastwhisper
  */
 public class WechatServer implements Observerable {
 

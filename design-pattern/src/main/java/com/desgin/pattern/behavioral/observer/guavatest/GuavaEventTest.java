@@ -3,7 +3,7 @@ package com.desgin.pattern.behavioral.observer.guavatest;
 import com.google.common.eventbus.EventBus;
 
 /**
- * Create by eval on 2019/2/11
+ * Create by lastwhisper on 2019/2/11
  */
 public class GuavaEventTest {
     public static void main(String[] args) {

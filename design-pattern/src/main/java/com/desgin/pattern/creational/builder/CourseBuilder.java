@@ -1,7 +1,7 @@
 package com.desgin.pattern.creational.builder;
 
 /**
- * Create by eval on 2019/1/24
+ * Create by lastwhisper on 2019/1/24
  */
 public abstract class CourseBuilder {
 //    private String courseName;

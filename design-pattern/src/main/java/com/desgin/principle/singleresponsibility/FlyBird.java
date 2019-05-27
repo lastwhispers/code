@@ -1,7 +1,7 @@
 package com.desgin.principle.singleresponsibility;
 
 /**
- * Create by eval on 2019/1/22
+ * Create by lastwhisper on 2019/1/22
  */
 public class FlyBird {
     public void mainMoveMode(String birdName) {
