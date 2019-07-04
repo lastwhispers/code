@@ -1,7 +1,7 @@
-> 设计模式源码地址：https://github.com/ggb2312/JavaNotes/tree/master/design-pattern  （设计模式相关代码与笔记）
-> 设计模式类图地址：https://github.com/ggb2312/JavaNotes/tree/master/design-pattern/uml
-> 设计模式markdown笔记地址：https://github.com/ggb2312/JavaNotes/tree/master/design-pattern/notes
-> 简书地址：https://www.jianshu.com/nb/36824480
+> 设计模式源码地址：https://github.com/ggb2312/JavaNotes/tree/master/design-pattern  （设计模式相关代码与笔记）   
+> 设计模式类图地址：https://github.com/ggb2312/JavaNotes/tree/master/design-pattern/uml    
+> 设计模式markdown笔记地址：https://github.com/ggb2312/JavaNotes/tree/master/design-pattern/notes    
+> 简书地址：https://www.jianshu.com/nb/36824480    
 
 
 # 1. 前导
