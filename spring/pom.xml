@@ -5,32 +5,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.lastwhisper</groupId>
-    <artifactId>spring-annotation</artifactId>
+    <artifactId>spring</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>propertyvalue</module>
-        <module>lifecycle</module>
-        <module>componentregister</module>
-        <module>autowired</module>
-        <module>profile</module>
-        <module>aop</module>
+        <module>xml</module>
+        <module>xmlannotation</module>
     </modules>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.1.5.RELEASE</version>
+            <version>4.3.12.RELEASE</version>
         </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 </project>
