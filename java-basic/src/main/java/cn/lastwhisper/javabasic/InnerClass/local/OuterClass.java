@@ -6,6 +6,7 @@ package cn.lastwhisper.javabasic.InnerClass.local;
  */
 public class OuterClass {
 
+    private static int a = 1;
     private String name;
 
     public OuterClass(String name) {

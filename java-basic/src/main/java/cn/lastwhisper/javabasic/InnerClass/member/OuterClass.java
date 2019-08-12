@@ -1,14 +1,10 @@
 package cn.lastwhisper.javabasic.InnerClass.member;
 
-
-abstract class MyClass1 { }
-abstract class MyClass2 { }
-
 /**
  * 成员内部类实例
  * @author lastwhisper
  */
-public class OuterClass extends MyClass1 {
+public class OuterClass {
     private String name;
 
     public OuterClass(String name) {
@@ -16,7 +12,7 @@ public class OuterClass extends MyClass1 {
     }
 
     // 成员内部类，类比对象的成员变量
-    class InnerClass extends MyClass2 {
+    private class InnerClass{
         int innerPrice;
 
         public InnerClass(int innerPrice) {

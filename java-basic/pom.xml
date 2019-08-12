@@ -11,6 +11,9 @@
     <modules>
         <module>concurrent</module>
         <module>jvm</module>
+        <module>jdk5</module>
+        <module>design-pattern</module>
+        <module>jdk7</module>
     </modules>
 
     <dependencies>
