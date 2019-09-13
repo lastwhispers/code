@@ -17,11 +17,11 @@ public class Main {
         FilterChain filterChain = new FilterChain();
         filterChain.addFilter(new HTMLFilter())
                 .addFilter(new SesitiveFilter());
-        // 过滤链2
-        FilterChain filterChain2 = new FilterChain();
-        filterChain2.addFilter(new FaceFilter());
-        // 过滤链1+过滤链2
-        filterChain.addFilter(filterChain2);
+        //// 过滤链2
+        //FilterChain filterChain2 = new FilterChain();
+        //filterChain2.addFilter(new FaceFilter());
+        //// 过滤链1+过滤链2
+        //filterChain.addFilter(filterChain2);
         // 处理
         filterChain.doFilter(request, response, filterChain);
 

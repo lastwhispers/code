@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="provider-stub-app"/>
+
+    <!-- 使用zookeeper广播注册中心暴露服务地址 -->
+    <dubbo:registry address="zookeeper://localhost:2181"/>
+
+    <!-- 用dubbo协议在20880端口暴露服务 -->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <!-- 和本地bean一样实现服务 -->
+    <bean id="stubService" class="cn.lastwhisper.dubbo.stub.StubServiceImpl"/>
+
+    <!-- 声明需要暴露的服务接口 -->
+    <!--本地存根-->
+<!--    <dubbo:service-->
+<!--            stub="cn.lastwhisper.dubbo.MyStub"-->
+<!--            interface="cn.lastwhisper.dubbo.DemoService"-->
+<!--            ref="stubService"/>-->
+    <!--本地伪装-->
+<!--    <dubbo:service-->
+<!--            mock="cn.lastwhisper.dubbo.MyMock"-->
+<!--            interface="cn.lastwhisper.dubbo.DemoService"-->
+<!--            ref="stubService"/>-->
+    <!--同时使用-->
+    <dubbo:service
+            stub="cn.lastwhisper.dubbo.MyStub"
+            mock="cn.lastwhisper.dubbo.MyMock"
+            interface="cn.lastwhisper.dubbo.DemoService"
+            ref="stubService"/>
+
+</beans>

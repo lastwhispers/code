@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.lastwhisper</groupId>
-    <artifactId>basicjava</artifactId>
+    <artifactId>java-basic</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
@@ -13,7 +13,7 @@
         <module>jvm</module>
         <module>jdk5</module>
         <module>design-pattern</module>
-        <module>jdk7</module>
+        <module>interview</module>
     </modules>
 
     <dependencies>

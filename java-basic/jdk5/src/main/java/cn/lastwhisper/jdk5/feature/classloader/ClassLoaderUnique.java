@@ -37,10 +37,10 @@ public class ClassLoaderUnique {
             }
         };
 
-        Object obj = classLoader.loadClass("cn.lastwhisper.javabasic.ClassLoader.ClassLoaderUnique").newInstance();
+        Object obj = classLoader.loadClass("cn.lastwhisper.cn.lastwhisper.javabasic.ClassLoader.ClassLoaderUnique").newInstance();
 
         System.out.println(obj.getClass());
-        // obj由自定义的类加载器加载、cn.lastwhisper.javabasic.ClassLoader.ClassLoaderTest由系统类加载器加载的。
+        // obj由自定义的类加载器加载、cn.lastwhisper.cn.lastwhisper.javabasic.ClassLoader.ClassLoaderTest由系统类加载器加载的。
         System.out.println(obj instanceof ClassLoaderUnique);
 
     }

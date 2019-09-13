@@ -10,7 +10,7 @@ public class ClassLoaderStructure {
         Object obj = new Object();
         System.out.println("Object的类加载器:"+obj.getClass().getClassLoader());
 
-        Class<?> clazz = Class.forName("cn.lastwhisper.javabasic.ClassLoader.other.Hello");
+        Class<?> clazz = Class.forName("cn.lastwhisper.cn.lastwhisper.javabasic.ClassLoader.other.Hello");
         System.out.println("ext下的类加载器:"+clazz.getClassLoader());
 
         ClassLoaderStructure test01 = new ClassLoaderStructure();

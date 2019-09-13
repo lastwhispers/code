@@ -8,19 +8,18 @@ import java.lang.reflect.Method;
  */
 public class MonitorAdvice implements Advice {
 
-    private static long startTime;
-    private static long endTime;
+    private long startTime;
+    private long endTime;
 
     public void beforeMethod(Method method) {
-        startTime = System.currentTimeMillis();
-        System.out.println(method.getDeclaringClass()+"."+method.getName()+"函数执行开始.");
+        startTime = System.nanoTime();
+        System.out.println(method.getDeclaringClass() + "." + method.getName() + "函数执行开始.");
     }
 
     public void afterMethod(Method method) {
-        endTime = System.currentTimeMillis();
-        System.out.println(method.getDeclaringClass()+"."+method.getName()+"函数执行结束. 耗时："+(endTime-startTime));
+        endTime = System.nanoTime();
+        System.out.println(method.getDeclaringClass() + "." + method.getName() + "函数执行结束. 耗时：" + (endTime - startTime));
     }
-
 
 
 }

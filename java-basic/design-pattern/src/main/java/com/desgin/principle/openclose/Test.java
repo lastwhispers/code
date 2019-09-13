@@ -5,6 +5,7 @@ package com.desgin.principle.openclose;
  */
 public class Test {
     public static void main(String[] args) {
+        // 对扩展开放，对修改关闭
 //        ICourse javaCourse = new JavaCourse(96,"javaee",348d);
 //        System.out.println("课程ID:"+javaCourse.getId()+"  课程名称:"+javaCourse.getName()+"  课程价格:"+javaCourse.getPrice());
 

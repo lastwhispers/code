@@ -1,6 +1,6 @@
 package com.desgin.pattern.behavioral.strategy;
 
-public class ManJianPromotionStrategy extends Test implements PromotionStrategy{
+public class ManJianPromotionStrategy implements PromotionStrategy{
 
     @Override
     public void doPromotion() {

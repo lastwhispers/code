@@ -29,7 +29,7 @@ import org.springframework.context.annotation.Scope;
  * 4）BeanPostProcessor：bean的后置处理器，在bean初始化前后进行处理
  *      postProcessBeforeInitialization：在对象任何初始化（initMethod、afterPropertiesSet）之前调用
  *      postProcessAfterInitialization：在对象初始化之后调用
- *    BeanPOstProcessor原理：
+ *    BeanPostProcessor原理：
  *      AbstractAutowireCapableBeanFactory.doCreateBean{
  *           populateBean(beanName, mbd, instanceWrapper); // 给对象中的字段赋值
  *           initializeBean{

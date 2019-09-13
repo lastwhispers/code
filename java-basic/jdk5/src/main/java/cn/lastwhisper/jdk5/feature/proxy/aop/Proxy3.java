@@ -12,6 +12,8 @@ import java.util.Collection;
  */
 public class Proxy3 {
     public static void main(String[] args) throws Exception {
+        // 查看生成的代理类
+        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
         // 原类
         Collection<String> list = new ArrayList<String>();
         // 代理类

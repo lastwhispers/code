@@ -10,11 +10,11 @@ import java.util.Collection;
 public class Generic1 {
     public static void main(String[] args) throws Exception {
         // 1.泛型问题引入
-        //ArrayList collection = new ArrayList();
-        //collection.add(1);
-        //collection.add(1L);
-        //collection.add("abc");
-        //int i = (Integer) collection.get(1);//编译要强制类型转换且运行时出错！
+        //ArrayList collections = new ArrayList();
+        //collections.add(1);
+        //collections.add(1L);
+        //collections.add("abc");
+        //int i = (Integer) collections.get(1);//编译要强制类型转换且运行时出错！
 
         // 2.泛型是给编译器看的
         ArrayList<String> collection2 = new ArrayList<String>();

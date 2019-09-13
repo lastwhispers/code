@@ -1,25 +1,71 @@
 package cn.lastwhisper.jdk5.feature;
 
 import cn.lastwhisper.jdk5.feature.reflect.ReflectPoint;
+import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
- * hashcode相关
+ * hashcode导致内存泄漏
  * hashcode比较对象是否相等
  * @author lastwhisper
  */
 public class HashCode {
-    // hashcode导致内存泄漏
-    // 要想造成内存泄漏，你的工具类对象本身要持有指向传入对象的引用才行！但是当你的业务方法调用工具类的静态方法时，
-    // 会生产一个称为方法栈帧的东西（每次方法调用，JVM都会生成一个方法栈帧），当方法调用结束返回的时候，
-    // 当前方法栈帧就已经被弹出了并且被释放掉了。 整个过程结束时，工具类对象本身并不会持有传入对象的引用。
-    // 各种内存泄漏 https://www.cnblogs.com/panxuejun/p/5883044.html
-    //Java中由substring方法引发的内存泄漏
-    // threadloca内存泄漏 https://www.jianshu.com/p/a1cd61fa22da
+    /**
+     *
+     * 内存泄漏memory leak ：是指程序在申请内存后，无法释放已申请的内存空间，
+     *    一次内存泄漏似乎不会有大的影响，但内存泄漏堆积后的后果就是内存溢出。
+     * 各种内存泄漏 https://www.cnblogs.com/panxuejun/p/5883044.html
+     */
+    static class Person {
+        private Integer id;
+        private String name;
 
-    public static void main(String[] args) {
+        public Person(Integer id, String name) {
+            this.id = id;
+            this.name = name;
+        }
+
+        // 重写了对象的equals规则，一定要重写hashcode规则
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) return true;
+            if (obj == null || obj.getClass() != getClass()) return false;
+            Person person = (Person) obj;
+            return id == person.id;
+        }
+
+        //@Override
+        //public int hashCode() {
+        //    return Objects.hash(id);
+        //}
+    }
+
+    /**
+     * 重写对象的equals方法，不重写hashcode方法导致的问题
+     */
+    @Test
+    public void testOverrideEquals() {
+        Person p1 = new Person(1, "张三");
+        Person p2 = new Person(1, "李四");
+        System.out.println(p1.equals(p2));//true
+
+        Map<Person, String> map = new HashMap<>();
+        map.put(p1, "张三");
+        System.out.println(map.get(p2));
+
+    }
+
+    /**
+     * 重写对象的equals、hashcode方法
+     * 不要修改对象的属性，因为修改对象的属性，会导致hashcode发生变化
+     * 从而无法使用remove真的移除集合中的对象，对象被集合强引用，导致内存泄漏
+     */
+    @Test
+    public void testHashCodeToOOM() {
         Set<ReflectPoint> set = new HashSet();
         ReflectPoint pt1 = new ReflectPoint(1, 1);
         ReflectPoint pt2 = new ReflectPoint(2, 2);
@@ -27,8 +73,8 @@ public class HashCode {
 
         set.add(pt1);
         set.add(pt2);
-        set.add(pt3);
-        set.add(pt1);
+        set.add(pt3);//重写hashcode发现重复
+        set.add(pt1);//
 
         // 对象重写hashcode方法，添加到集合中后不要修改对象的属性值
         pt1.setX(2);
@@ -37,7 +83,8 @@ public class HashCode {
         // 2. 重写hashcode size=2。
         // 3. 在2的基础上修改对象的属性值，再移除对象，size=2，内存泄漏。
         System.out.println(set.size());
-
     }
 
 }
+
+
