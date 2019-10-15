@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 配置创建容器时要扫描的包-->
+    <context:component-scan base-package="com.itheima"></context:component-scan>
+
+    <!-- 配置视图解析器-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <!-- 开启springmvc注解支持-->
+    <mvc:annotation-driven enable-matrix-variables="true"/>
+
+    <!-- 资源映射 -->
+    <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
+
+    <!-- 基于实现Controller接口配置控制器的方式
+    <bean id="simpleControllerHandlerAdapter " class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"> </bean>
+    <bean name="/demohello2" class="com.itheima.controller.ControllerDemo2"> </bean>-->
+
+    <!-- 基于实现HttpRequestHandle接口的配置控制器方式
+    <bean name="/demohello3" class="com.itheima.controller.ControllerDemo3"></bean>
+    <bean id=" httpRequestHandlerAdapter " class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"> </bean>
+-->
+</beans>

@@ -1,0 +1,83 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
+
+
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+    <!-- 加载配置文件 -->
+    <context:property-placeholder
+            location="classpath:cn.lastwhisper.db.properties"/>
+
+    <!-- 注解开发 -->
+    <context:component-scan base-package="cn.lastwhisper.*"/>
+    <!-- 数据源，使用Druid -->
+    <bean id="masterDataSource"
+          class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="${master.jdbc.url}"/>
+        <property name="driverClassName" value="${master.jdbc.driver}"/>
+        <property name="username" value="${master.jdbc.username}"/>
+        <property name="password" value="${master.jdbc.password}"/>
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="maxActive" value="20"/>
+        <property name="initialSize" value="20"/>
+        <property name="minIdle" value="20"/>
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="60000"/>
+        <!-- 配置监控统计拦截的filters,和防sql注入 -->
+        <property name="filters" value="stat,wall"/>
+    </bean>
+
+
+    <bean id="slaveDataSource"
+          class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="${slave.jdbc.url}"/>
+        <property name="driverClassName" value="${slave.jdbc.driver}"/>
+        <property name="username" value="${slave.jdbc.username}"/>
+        <property name="password" value="${slave.jdbc.password}"/>
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="maxActive" value="20"/>
+        <property name="initialSize" value="20"/>
+        <property name="minIdle" value="20"/>
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="60000"/>
+        <!-- 配置监控统计拦截的filters,和防sql注入 -->
+        <property name="filters" value="stat,wall"/>
+    </bean>
+
+    <bean id="dataSource" class="cn.lastwhisper.cn.lastwhisper.db.DynamicDataSource">
+        <!--所有数据源-->
+        <property name="targetDataSources">
+            <map key-type="java.lang.String">
+                <entry key="master" value-ref="masterDataSource"/>
+                <entry key="slave" value-ref="slaveDataSource"/>
+            </map>
+        </property>
+
+        <!--默认数据源-->
+        <property name="defaultTargetDataSource" ref="masterDataSource">
+
+        </property>
+    </bean>
+
+    <!-- sqlSessinFactory -->
+    <bean id="sqlSessionFactory"
+          class="org.mybatis.spring.SqlSessionFactoryBean" >
+        <!-- 加载mybatis的配置文件 -->
+        <property name="configLocation"
+                  value="classpath:sqlMapConfig.xml"/>
+        <!-- 数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 配置mapper扫描，并创建mapper.java的实例对象 -->
+    <bean class="org.mybatis.spring.cn.lastwhisper.mapper.MapperScannerConfigurer">
+        <property name="basePackage"
+                  value="cn.lastwhisper.cn.lastwhisper.mapper"/>
+        <property name="sqlSessionFactoryBeanName"
+                  value="sqlSessionFactory"/>
+    </bean>
+
+</beans>
