@@ -14,7 +14,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <org.springframework.version>4.0.3.RELEASE</org.springframework.version>
+        <org.springframework.version>5.2.0.RELEASE</org.springframework.version>
         <mysql.connector>5.1.24</mysql.connector>
     </properties>
 
