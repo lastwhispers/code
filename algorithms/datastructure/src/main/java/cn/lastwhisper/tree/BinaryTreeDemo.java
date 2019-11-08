@@ -1,28 +1,38 @@
 package cn.lastwhisper.tree;
 
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * 二叉树的遍历：先序、中序、后序
  * 二叉树的查找：查找指定节点
  * @author cn.lastwhisper
  */
 public class BinaryTreeDemo {
-    public static void main(String[] args) {
-        // 创建节点
-        HeroNode root = new HeroNode(1, "宋江");
-        HeroNode heroNode2 = new HeroNode(2, "吴用");
-        HeroNode heroNode3 = new HeroNode(3, "卢俊义");
-        HeroNode heroNode4 = new HeroNode(4, "林冲");
-        HeroNode heroNode5 = new HeroNode(5, "关胜");
-        HeroNode heroNode6 = new HeroNode(6, "花荣");
+    // 创建节点
+    static HeroNode root = new HeroNode(1, "宋江");
+    static HeroNode heroNode2 = new HeroNode(2, "吴用");
+    static HeroNode heroNode3 = new HeroNode(3, "卢俊义");
+    static HeroNode heroNode4 = new HeroNode(4, "林冲");
+    static HeroNode heroNode5 = new HeroNode(5, "关胜");
+    static HeroNode heroNode6 = new HeroNode(6, "花荣");
+    // 手动创建二叉树
+    static BinaryTree binaryTree = new BinaryTree();
 
-        // 手动创建二叉树
-        BinaryTree binaryTree = new BinaryTree();
+    static {
         root.setLeft(heroNode2);
         root.setRight(heroNode3);
         heroNode3.setRight(heroNode4);
         heroNode3.setLeft(heroNode5);
         heroNode4.setRight(heroNode6);
         binaryTree.setRoot(root);
+    }
+
+    public static void main(String[] args) {
+
         // 先序遍历
         System.out.println("===============先序遍历================");
         binaryTree.preOrder(root); // 1,2,3,5,4
@@ -46,6 +56,18 @@ public class BinaryTreeDemo {
         System.out.println(binaryTree.height());
         System.out.println("===============二叉树的节点数================");
         System.out.println(binaryTree.size());
+    }
+
+    // 测试二叉树的层级遍历
+    @Test
+    public void testLayerTransverse() {
+        ArrayList<ArrayList<String>> arrayLists = binaryTree.layerTransverse();
+        for (ArrayList<String> arrayList : arrayLists) {
+            for (String s : arrayList) {
+                System.out.print(s + "\t");
+            }
+            System.out.println();
+        }
     }
 }
 
@@ -197,6 +219,26 @@ class BinaryTree {
             System.out.println(node);
         }
     }
+
+    public ArrayList<ArrayList<String>> layerTransverse() {
+        ArrayList<ArrayList<String>> tree = new ArrayList<ArrayList<String>>();
+        if (this.root == null) return tree;
+        Queue<HeroNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            ArrayList<String> list = new ArrayList<String>();
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                HeroNode node = queue.poll();
+                list.add(node.getName());
+                if (node.getLeft() != null) queue.add(node.getLeft());
+                if (node.getRight() != null) queue.add(node.getRight());
+            }
+            tree.add(list);
+        }
+        return tree;
+    }
+
 }
 
 // 树的节点

@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.数组中的第K个最大元素_215_Medium;
+package cn.lastwhisper.leetcode.array.其他.数组中的第K个最大元素_215_Medium;
 
 class Solution2 {
     /**

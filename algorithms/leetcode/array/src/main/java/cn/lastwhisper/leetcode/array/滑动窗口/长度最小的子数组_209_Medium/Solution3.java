@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.长度最小的子数组_209_Medium;
+package cn.lastwhisper.leetcode.array.滑动窗口.长度最小的子数组_209_Medium;
 
 /**
  * @author lastwhisper

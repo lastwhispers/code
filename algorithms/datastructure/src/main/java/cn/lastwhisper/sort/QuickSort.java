@@ -78,11 +78,11 @@ public class QuickSort {
         while (l < r) {
             // 在pivot左边找比pivot大的值的下标l
             while (arr[l] < pivot) { //找到arr[1]=98 >pivot=0
-                l = l + 1;
+                l  ++;
             }
             // 在pivot右边找比pivot小的值的下标r
             while (arr[r] > pivot) { //找到arr[4]=-567 < pivot=0
-                r = r - 1;
+                r--;
             }
             // 如果l>=r说明pivot左右两边的值，已经满足：
             // 小于或等于pivot的放左边，大于或等于pivot的放右边 ——递归结束条件
@@ -95,12 +95,12 @@ public class QuickSort {
             arr[r] = temp;
             // 如果交换完后，发现arr[l] == pivot，r--，前移 退出循环
             if (arr[l] == pivot) {
-                r = r - 1;
+                r --;
             }
 
             // 如果交换完后，发现arr[r] == pivot，l++，后移 退出循环
             if (arr[r] == pivot) {
-                l = l + 1;
+                l ++;
             }
         }
 

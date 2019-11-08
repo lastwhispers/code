@@ -1,4 +1,4 @@
-package cn.lastwhisper.concurrent.basic;
+package cn.lastwhisper.concurrent.basic.threadlocal;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

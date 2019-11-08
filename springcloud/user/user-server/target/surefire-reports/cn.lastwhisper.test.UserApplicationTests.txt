@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: cn.lastwhisper.test.UserApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.365 s <<< FAILURE! - in cn.lastwhisper.test.UserApplicationTests
+initializationError(cn.lastwhisper.test.UserApplicationTests)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
+

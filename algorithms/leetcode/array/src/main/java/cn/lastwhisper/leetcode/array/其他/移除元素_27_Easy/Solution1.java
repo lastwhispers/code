@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.移除元素_27_Easy;
+package cn.lastwhisper.leetcode.array.其他.移除元素_27_Easy;
 
 import java.util.Arrays;
 

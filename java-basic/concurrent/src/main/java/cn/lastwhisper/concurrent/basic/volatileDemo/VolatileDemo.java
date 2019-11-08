@@ -1,11 +1,11 @@
-package cn.lastwhisper.concurrent.basic;
+package cn.lastwhisper.concurrent.basic.volatileDemo;
 
 /**
  * @author lastwhisper
  */
 public class VolatileDemo implements Runnable {
 
-    private  boolean[] flag = {false};
+    private volatile boolean[] flag = {false};
 
     @Override
     public void run() {
@@ -22,7 +22,7 @@ public class VolatileDemo implements Runnable {
         return flag[0];
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         VolatileDemo runnable = new VolatileDemo();
         new Thread(runnable).start();
         while (true) {
@@ -30,6 +30,7 @@ public class VolatileDemo implements Runnable {
                 System.out.println("-----------------");
                 break;
             }
+            //Thread.sleep(10);
         }
     }
 }

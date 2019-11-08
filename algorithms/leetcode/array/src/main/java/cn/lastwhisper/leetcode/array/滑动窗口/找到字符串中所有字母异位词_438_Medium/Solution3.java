@@ -3,7 +3,7 @@ package cn.lastwhisper.leetcode.array.滑动窗口.找到字符串中所有字�
 import java.util.ArrayList;
 import java.util.List;
 
-class Solution2 {
+class Solution3 {
 
     public List<Integer> findAnagrams(String s, String p) {
         int sl = s.length();
@@ -43,7 +43,7 @@ class Solution2 {
     public static void main(String[] args) {
         //new Solution2().findAnagrams("cbaebabacd", "abc").forEach(System.out::print);
         //System.out.println();
-        new Solution2().findAnagrams("abab", "ab").forEach(System.out::print);
+        new Solution3().findAnagrams("abab", "ab").forEach(System.out::print);
         System.out.println();
         //new Solution2().findAnagrams("", "a").forEach(System.out::print);//错误数据
     }

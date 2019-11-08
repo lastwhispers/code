@@ -1,10 +1,10 @@
-package cn.lastwhisper.LRU缓存机制146;
+package cn.lastwhisper.leetcode.other.LRU缓存机制146;
 
 import java.util.HashMap;
 import java.util.Iterator;
 
 /**
- * 146. LRU缓存机制
+ * 146. LRU缓存机制146
  * https://leetcode-cn.com/problems/lru-cache/
  *
  * 需要满足O(1)级别的查找、添加、删除

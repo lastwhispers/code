@@ -3,7 +3,12 @@ package cn.lastwhisper.leetcode.array.滑动窗口.找到字符串中所有字�
 import java.util.ArrayList;
 import java.util.List;
 
-class Solution4 {
+class Solution2 {
+    /**
+     * https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/
+     * 核心思想：滑动窗口
+     * 时间复杂度：O(n)
+     */
     public List<Integer> findAnagrams(String s, String p) {
         if (s == null || s.length() == 0) return new ArrayList<>();
         List<Integer> res = new ArrayList<>();

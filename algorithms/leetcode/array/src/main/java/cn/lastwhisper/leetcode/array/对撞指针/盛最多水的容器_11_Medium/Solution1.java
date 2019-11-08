@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.盛最多水的容器_11_Medium;
+package cn.lastwhisper.leetcode.array.对撞指针.盛最多水的容器_11_Medium;
 
 /**
  * @author lastwhisper

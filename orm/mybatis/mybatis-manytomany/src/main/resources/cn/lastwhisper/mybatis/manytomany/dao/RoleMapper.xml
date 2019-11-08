@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lastwhisper.mybatis.manytomany.dao.RoleMapper">
+
+    <!--定义 role 表的 ResultMap-->
+    <resultMap id="roleMap" type="role">
+        <id property="roleId" column="rid"></id>
+        <result property="roleName" column="role_name"></result>
+        <result property="roleDesc" column="role_desc"></result>
+        <collection property="users" ofType="user">
+            <id column="id" property="id"></id>
+            <result column="username" property="username"></result>
+            <result column="address" property="address"></result>
+            <result column="sex" property="sex"></result>
+            <result column="birthday" property="birthday"></result>
+        </collection>
+    </resultMap>
+
+    <!--查询所有角色下关联的用户。-->
+    <select id="findAll" resultMap="roleMap">
+        SELECT
+            r.*,
+            u.id uid,
+            u.username username,
+            u.birthday birthday,
+            u.sex sex,
+            u.address address
+        FROM
+            ROLE r
+            INNER JOIN USER_ROLE ur ON ( r.id = ur.rid )
+            INNER JOIN USER u ON ( ur.uid = u.id );
+    </select>
+</mapper>

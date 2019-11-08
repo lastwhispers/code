@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lastwhisper.mybatis.cache.dao.UserMapper">
+    <!-- 开启二级缓存的支持 -->
+    <cache></cache>
+    <!--
+        Mapper.xml不声明<cache></cache>时useCache="true"使用一级缓存
+        声明<cache></cache>且useCache="true"时使用二级缓存
+    -->
+
+    <!-- 根据 id 查询 -->
+    <select id="findByUserId" resultType="User" parameterType="int" useCache="true">
+        select * from user where id = #{uid}
+    </select>
+
+    <update id="updateUser" parameterType="User">
+        UPDATE USER
+            SET username = #{username},
+            address = #{address}
+        WHERE
+            id = #{id};
+    </update>
+
+</mapper>

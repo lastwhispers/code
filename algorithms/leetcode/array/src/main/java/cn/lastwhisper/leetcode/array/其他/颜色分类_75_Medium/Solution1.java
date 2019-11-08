@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.颜色分类_75_Medium;
+package cn.lastwhisper.leetcode.array.其他.颜色分类_75_Medium;
 
 import java.util.Arrays;
 

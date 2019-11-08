@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 配置 properties 文件的位置 -->
+    <properties resource="jdbcConfig.properties"/>
+
+    <!--使用typeAliases配置别名，它只能配置domain中类的别名 -->
+    <typeAliases>
+        <package name="cn.lastwhisper.mybatis.annotation.crud.domain"/>
+    </typeAliases>
+
+    <!-- 配置 mybatis 的环境 -->
+    <environments default="mysql">
+        <!-- 配置 mysql 的环境 -->
+        <environment id="mysql">
+            <!-- 配置事务的类型 -->
+            <transactionManager type="JDBC"/>
+            <!-- 配置连接数据库的信息：用的是数据源(连接池) -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 告知 mybatis 映射配置的位置 -->
+    <mappers>
+        <mapper class="cn.lastwhisper.mybatis.annotation.crud.dao.UserMapper"/>
+    </mappers>
+
+</configuration>

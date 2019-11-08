@@ -8,7 +8,7 @@ public class DataSourceContextHolder {
     }
 
     public static String getDBType() {
-        return (String) CONTEXT_HOLDER.get();
+        return CONTEXT_HOLDER.get();
     }
 
     public static void clearDBType() {

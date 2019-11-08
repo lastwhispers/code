@@ -1,9 +1,12 @@
-package cn.lastwhisper.hashtable.两个数组的交集;
+package cn.lastwhisper.leetcode.hashtable.两个数组的交集_349_esay;
 
 import java.util.HashSet;
 import java.util.Set;
 
 class Solution1 {
+    /**
+     *
+     */
     public int[] intersection(int[] nums1, int[] nums2) {
         Set<Integer> recorde = new HashSet();
         for (int i = 0; i < nums1.length; i++) {

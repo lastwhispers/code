@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.合并两个有序数组_88_Easy;
+package cn.lastwhisper.leetcode.array.其他.合并两个有序数组_88_Easy;
 
 import java.util.Arrays;
 

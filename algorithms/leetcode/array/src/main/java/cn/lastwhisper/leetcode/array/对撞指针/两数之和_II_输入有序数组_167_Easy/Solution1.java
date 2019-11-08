@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.两数之和_II_输入有序数组_167_Easy;
+package cn.lastwhisper.leetcode.array.对撞指针.两数之和_II_输入有序数组_167_Easy;
 
 /**
  * https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/

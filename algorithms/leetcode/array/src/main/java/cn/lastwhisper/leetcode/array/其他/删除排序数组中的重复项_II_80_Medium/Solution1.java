@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.删除排序数组中的重复项_II_80_Medium;
+package cn.lastwhisper.leetcode.array.其他.删除排序数组中的重复项_II_80_Medium;
 
 public class Solution1 {
     public int removeDuplicates(int[] nums) {

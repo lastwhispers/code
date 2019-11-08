@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.反转字符串中的元音字母_345_Easy;
+package cn.lastwhisper.leetcode.array.对撞指针.反转字符串中的元音字母_345_Easy;
 
 class Solution1 {
     /**

@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.反转字符串_344_Easy;
+package cn.lastwhisper.leetcode.array.对撞指针.反转字符串_344_Easy;
 
 /**
  * @author lastwhisper

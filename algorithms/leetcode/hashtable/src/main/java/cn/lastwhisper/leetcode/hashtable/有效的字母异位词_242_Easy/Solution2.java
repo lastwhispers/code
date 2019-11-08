@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.有效的字母异位词_242_Easy;
+package cn.lastwhisper.leetcode.hashtable.有效的字母异位词_242_Easy;
 
 class Solution2 {
     /**

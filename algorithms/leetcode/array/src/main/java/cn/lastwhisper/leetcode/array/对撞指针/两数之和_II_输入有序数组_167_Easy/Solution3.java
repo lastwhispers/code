@@ -1,4 +1,6 @@
-package cn.lastwhisper.leetcode.array.两数之和_II_输入有序数组_167_Easy;
+package cn.lastwhisper.leetcode.array.对撞指针.两数之和_II_输入有序数组_167_Easy;
+
+import java.util.Arrays;
 
 /**
  * @author lastwhisper
@@ -6,7 +8,7 @@ package cn.lastwhisper.leetcode.array.两数之和_II_输入有序数组_167_Eas
 public class Solution3 {
     /**
      * https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/
-     * 对撞指针
+     * 对撞指针（前提数组有序）
      * 时间复杂度：O(n)
      * 空间复杂度：O(1)
      */
@@ -30,8 +32,7 @@ public class Solution3 {
     }
 
     public static void main(String[] args) {
-        int[] arr = {0, 0, 3, 4};
-        int[] index = new Solution3().twoSum(arr, 0);
-        System.out.printf("[%s,%s]", index[0], index[1]);
+        System.out.println(Arrays.toString(new Solution3().twoSum(new int[]{0, 0, 3, 4}, 0)));
+        System.out.println(Arrays.toString(new Solution3().twoSum(new int[]{1, 7, 17, 2, 6, 3, 14}, 20)));
     }
 }

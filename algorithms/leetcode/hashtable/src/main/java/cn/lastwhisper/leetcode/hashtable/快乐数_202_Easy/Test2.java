@@ -1,6 +1,6 @@
 package cn.lastwhisper.leetcode.hashtable.快乐数_202_Easy;
 
-class Solution3 {
+class Test2 {
     public boolean isHappy(int n) {
         int slow = n, fast = bitSquareSum(n,"fast");
         while (slow != fast) {
@@ -25,7 +25,6 @@ class Solution3 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution3().isHappy(18));
-        //System.out.println(new Solution3().bitSquareSum(4328));
+        System.out.println(new Test2().isHappy(18));
     }
 }

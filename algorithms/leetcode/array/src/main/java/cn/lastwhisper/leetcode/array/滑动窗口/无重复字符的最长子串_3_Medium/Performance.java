@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.无重复字符的最长子串_3_Medium;
+package cn.lastwhisper.leetcode.array.滑动窗口.无重复字符的最长子串_3_Medium;
 
 import java.lang.reflect.Method;
 import java.lang.Class;
@@ -38,12 +38,12 @@ public class Performance {
             s.append((char)(Math.random()*95 + 32));
 
         System.out.println("Test: 10,000,000 length of completely random string:");
-        testPerformance("cn.lastwhisper.leetcode.array.无重复字符的最长子串_3_Medium.Solution1", "lengthOfLongestSubstring", s.toString());
-        testPerformance("cn.lastwhisper.leetcode.array.无重复字符的最长子串_3_Medium.Solution2", "lengthOfLongestSubstring", s.toString());
-        testPerformance("cn.lastwhisper.leetcode.array.无重复字符的最长子串_3_Medium.Solution3", "lengthOfLongestSubstring", s.toString());
-        testPerformance("cn.lastwhisper.leetcode.array.无重复字符的最长子串_3_Medium.Solution4", "lengthOfLongestSubstring", s.toString());
-        testPerformance("cn.lastwhisper.leetcode.array.无重复字符的最长子串_3_Medium.Solution5", "lengthOfLongestSubstring", s.toString());
-        testPerformance("cn.lastwhisper.leetcode.array.无重复字符的最长子串_3_Medium.Solution6", "lengthOfLongestSubstring", s.toString());
+        testPerformance("cn.lastwhisper.leetcode.array.滑动窗口.无重复字符的最长子串_3_Medium.Solution1", "lengthOfLongestSubstring", s.toString());
+        testPerformance("cn.lastwhisper.leetcode.array.滑动窗口.无重复字符的最长子串_3_Medium.Solution2", "lengthOfLongestSubstring", s.toString());
+        testPerformance("cn.lastwhisper.leetcode.array.滑动窗口.无重复字符的最长子串_3_Medium.Solution3", "lengthOfLongestSubstring", s.toString());
+        testPerformance("cn.lastwhisper.leetcode.array.滑动窗口.无重复字符的最长子串_3_Medium.Solution4", "lengthOfLongestSubstring", s.toString());
+        testPerformance("cn.lastwhisper.leetcode.array.滑动窗口.无重复字符的最长子串_3_Medium.Solution5", "lengthOfLongestSubstring", s.toString());
+        testPerformance("cn.lastwhisper.leetcode.array.滑动窗口.无重复字符的最长子串_3_Medium.Solution6", "lengthOfLongestSubstring", s.toString());
 
     }
 }

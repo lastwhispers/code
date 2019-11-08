@@ -1,21 +1,32 @@
 package cn.lastwhisper.linkedlist;
 
+import org.junit.Test;
+
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Stack;
 
 /**
+ * 单链表的功能实现：增删改查
+ *  有序插入、有序合并、删除重复节点
  * @author cn.lastwhisper
  */
 public class SingleLinkedListDemo {
-    public static void main(String[] args) {
-        SingleLinkedList singleLinkedList = new SingleLinkedList();
-        HeroNode hero1 = new HeroNode(1, "宋江", "及时雨");
-        HeroNode hero2 = new HeroNode(2, "卢俊义", "玉麒麟");
-        HeroNode hero3 = new HeroNode(3, "吴用", "智多星");
-        HeroNode hero4 = new HeroNode(4, "林冲", "豹子头");
+    static SingleLinkedList singleLinkedList = new SingleLinkedList();
+    static HeroNode hero1 = new HeroNode(1, "宋江", "及时雨");
+    static HeroNode hero2 = new HeroNode(2, "卢俊义", "玉麒麟");
+    static HeroNode hero3 = new HeroNode(3, "吴用", "智多星");
+    static HeroNode hero4 = new HeroNode(4, "林冲", "豹子头");
+
+    static {
         singleLinkedList.add(hero1);
         singleLinkedList.add(hero2);
         singleLinkedList.add(hero3);
         singleLinkedList.add(hero4);
+    }
+
+    public static void main(String[] args) {
+
         System.out.println("===============查看链表所有结点================");
         singleLinkedList.list();
         System.out.println("===============删除链表某结点==================");
@@ -82,6 +93,14 @@ public class SingleLinkedListDemo {
         singleLinkedList2.list();
     }
 
+    // 测试删除重复节点
+    @Test
+    public void testDeleteDuplicate() {
+        HeroNode hero5 = new HeroNode(5, "宋江", "豹子头");
+        singleLinkedList.add(hero5);
+        singleLinkedList.deleteDuplicate();
+        singleLinkedList.list();
+    }
 
 }
 
@@ -94,7 +113,7 @@ class SingleLinkedList {
 
     /**
      * 添加结点
-     *  找到单链表lastNode，lastNode.next=newnode
+     *  找到单链表lastNode，lastNode.next=newNode
      */
     public void add(HeroNode heroNode) {
         HeroNode tempNode = head;
@@ -193,6 +212,26 @@ class SingleLinkedList {
             System.out.printf("%d\t%s\t%s\t\n", currNode.no, currNode.name, currNode.nickName);
             currNode = currNode.next;
         }
+    }
+
+
+    /**
+     * 删除链表中重复的元素
+     */
+    public void deleteDuplicate() {
+        Set<String> set = new HashSet<>();
+        HeroNode currNode = head.next;
+        HeroNode preNode = null;
+        while (currNode != null) {
+            if (set.contains(currNode.name)) {
+                preNode.next = currNode.next;
+            } else {
+                set.add(currNode.name);
+                preNode = currNode;
+            }
+            currNode = currNode.next;
+        }
+
     }
 
     /**
@@ -409,12 +448,4 @@ class HeroNode {
         this.nickName = nickName;
     }
 
-    @Override
-    public String toString() {
-        return "HeroNode{" +
-                "no=" + no +
-                ", name='" + name + '\'' +
-                ", nickName='" + nickName + '\'' +
-                '}';
-    }
 }

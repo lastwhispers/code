@@ -1,4 +1,4 @@
-package cn.lastwhisper.concurrent.basic;
+package cn.lastwhisper.concurrent.basic.threadlocal;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;

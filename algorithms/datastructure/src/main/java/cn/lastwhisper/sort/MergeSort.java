@@ -44,7 +44,6 @@ public class MergeSort {
 
     /**
      * 治
-     *
      * @param arr 排序的原始数组 arr[left...mid] arr[mid+1...right]
      * @param left 左边有序序列的初始索引
      * @param mid  中间索引
@@ -62,14 +61,13 @@ public class MergeSort {
             if (arr[i] < arr[j]) {
                 // 左小于右，将左数组第i个元素copy到temp数组的第t个位置
                 temp[t] = arr[i];
-                t += 1;
                 i += 1;
             } else {
                 // 右小于或等于左，将右数组第j个元素copy到temp数组的第t个位置
                 temp[t] = arr[j];
-                t += 1;
                 j += 1;
             }
+            t += 1;
         }
 
         // 2）、把有剩余数据的一边的数据依次填充到temp

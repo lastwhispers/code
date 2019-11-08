@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.移动零_283_Easy;
+package cn.lastwhisper.leetcode.array.其他.移动零_283_Easy;
 
 import java.util.ArrayList;
 import java.util.Arrays;

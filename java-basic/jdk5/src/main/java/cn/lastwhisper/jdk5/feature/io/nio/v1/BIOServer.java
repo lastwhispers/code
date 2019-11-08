@@ -1,7 +1,6 @@
-package cn.lastwhisper.jdk5.feature.io.v1;
+package cn.lastwhisper.jdk5.feature.io.nio.v1;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -17,10 +16,10 @@ public class BIOServer {
             serverSocket.bind(new InetSocketAddress(8080));
            while (true){
                System.out.println("wait conn");
-               // Server阻塞 等待连接
+               // 等待连接阻塞
                Socket socket = serverSocket.accept();
                System.out.println("conn success");
-               // 阻塞
+               // 等待数据阻塞
                socket.getInputStream().read(bytes);
 
                System.out.println("data success");

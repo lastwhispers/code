@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lastwhisper.mybatis.dynamicsql.dao.UserMapper">
+    <sql id="defaultSql">
+         select * from user
+    </sql>
+
+    <select id="findByUser" resultType="user" parameterType="user">
+        <include refid="defaultSql"></include>
+        <where>
+            <if test="username!=null and username != '' ">
+                and username like #{username}
+            </if>
+            <if test="address != null">
+                and address like #{address}
+            </if>
+        </where>
+    </select>
+    <!--
+        SQL 语句：
+            select 字段 from user where id in (?)
+        <foreach>标签用于遍历集合，它的属性：
+            collection:代表要遍历的集合元素，注意编写时不要写#{}
+            open:代表语句的开始部分
+            close:代表结束部分
+            item:代表遍历集合的每个元素，生成的变量名
+            separator:代表分隔符
+    -->
+    <!-- 查询所有用户在 id 的集合之中 -->
+    <select id="findInIds" resultType="user" parameterType="queryvo">
+        <!-- select * from user where id in (1,2,3,4,5); -->
+        <include refid="defaultSql"></include>
+        <where>
+            <if test="ids != null and ids.size() > 0">
+                <foreach collection="ids" open="id in ( " close=")" item="uid"
+                         separator=",">
+                    #{uid}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lastwhisper.mybatis.onetomany.dao.UserMapper">
+
+    <resultMap id="userMap" type="user">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="address" property="address"/>
+        <result column="sex" property="sex"/>
+        <result column="birthday" property="birthday"/>
+        <!--
+            collection 是用于建立一对多中集合属性的对应关系
+            property “多”的字段名
+            select 是用于指定查询账户的唯一标识（账户的 dao 全限定类名加上方法名称）
+            ofType 用于指定集合元素的数据类型
+        -->
+        <collection property="accounts" ofType="account"
+                    select="cn.lastwhisper.mybatis.onetomany.dao.UserMapper.findByUid"
+                    column="id"/>
+    </resultMap>
+
+    <!--查询所有用户信息及用户关联的账户信息。-->
+    <select id="findAll" resultMap="userMap">
+        select * from user
+    </select>
+
+    <!-- 根据用户 id 查询账户信息 -->
+    <select id="findByUid" resultType="account" parameterType="int">
+        select * from account where uid = #{uid}
+    </select>
+
+
+</mapper>

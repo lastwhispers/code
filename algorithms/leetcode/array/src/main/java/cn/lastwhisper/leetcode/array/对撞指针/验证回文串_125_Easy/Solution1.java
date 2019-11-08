@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.验证回文串_125_Easy;
+package cn.lastwhisper.leetcode.array.对撞指针.验证回文串_125_Easy;
 
 
 class Solution1 {

@@ -11,6 +11,7 @@ public class ShiftOperator {
         int c = -4 >> 2;// -1
         int d = 4 >>> 2;// 1
         int e = -5 >>> 1;// 2147483645
-        System.out.println(-5 >>> 1);
+        System.out.println(15 >> 1);//7
+        System.out.println(14 >> 1);//7
     }
 }

@@ -1,4 +1,4 @@
-package cn.lastwhisper.jdk5.feature.io.v3;
+package cn.lastwhisper.jdk5.feature.io.nio.v3;
 
 import java.io.IOException;
 import java.io.OutputStream;

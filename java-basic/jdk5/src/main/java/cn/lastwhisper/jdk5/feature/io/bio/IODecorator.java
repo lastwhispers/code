@@ -1,4 +1,4 @@
-package cn.lastwhisper.jdk5.feature.io.nio;
+package cn.lastwhisper.jdk5.feature.io.bio;
 
 import java.io.*;
 

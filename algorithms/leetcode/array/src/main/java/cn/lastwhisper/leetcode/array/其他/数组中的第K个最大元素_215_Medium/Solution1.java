@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.数组中的第K个最大元素_215_Medium;
+package cn.lastwhisper.leetcode.array.其他.数组中的第K个最大元素_215_Medium;
 
 class Solution1 {
     /**
@@ -19,11 +19,17 @@ class Solution1 {
             while (left < right && nums[right] > pivot) {
                 right--;
             }
-            if (left < right) swap(nums, left, right);
+            if (left < right) {
+                swap(nums, left, right);
+            }
         }
-        if (left == k) return pivot;
-        else if (left > k) return partition(nums, leftBound, left - 1, k);
-        else return partition(nums, left + 1, rightBound, k);
+        if (left == k) {
+            return pivot;
+        } else if (left > k) {
+            return partition(nums, leftBound, left - 1, k);
+        } else {
+            return partition(nums, left + 1, rightBound, k);
+        }
     }
 
     public void swap(int[] arr, int i, int j) {

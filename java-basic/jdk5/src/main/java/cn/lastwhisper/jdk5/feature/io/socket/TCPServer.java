@@ -1,4 +1,4 @@
-package cn.lastwhisper.jdk5.feature.socket;
+package cn.lastwhisper.jdk5.feature.io.socket;
 
 import java.io.IOException;
 import java.net.ServerSocket;

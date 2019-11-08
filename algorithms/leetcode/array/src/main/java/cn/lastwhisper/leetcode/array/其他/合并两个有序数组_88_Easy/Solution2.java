@@ -1,11 +1,11 @@
-package cn.lastwhisper.leetcode.array.合并两个有序数组_88_Easy;
+package cn.lastwhisper.leetcode.array.其他.合并两个有序数组_88_Easy;
 
 import java.util.Arrays;
 
 class Solution2 {
     /**
      * https://leetcode-cn.com/problems/merge-sorted-array/
-     * 合并两个有序数组
+     * 核心思想：从后向前合并，不需要额外的空间
      *
      */
     public void merge(int[] nums1, int m, int[] nums2, int n) {

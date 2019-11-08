@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.删除排序数组中的重复项_26_Easy;
+package cn.lastwhisper.leetcode.array.其他.删除排序数组中的重复项_26_Easy;
 
 
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.无重复字符的最长子串_3_Medium;
+package cn.lastwhisper.leetcode.array.滑动窗口.无重复字符的最长子串_3_Medium;
 
 // 3. Longest Substring Without Repeating Characters
 // https://leetcode.com/problems/longest-substring-without-repeating-characters/description/

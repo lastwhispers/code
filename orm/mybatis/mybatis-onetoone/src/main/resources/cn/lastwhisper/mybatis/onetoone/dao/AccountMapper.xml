@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lastwhisper.mybatis.onetoone.dao.AccountMapper">
+
+    <!-- 建立对应关系 -->
+    <resultMap id="accountMap" type="account">
+        <id column="aid" property="id"/>
+        <result column="uid" property="uid"/>
+        <result column="money" property="money"/>
+        <!-- 它是用于指定从表方的引用实体属性的 -->
+        <association property="user" javaType="user">
+            <id column="id" property="id"/>
+            <result column="username" property="username"/>
+            <result column="birthday" property="birthday"/>
+            <result column="sex" property="sex"/>
+            <result column="address" property="address"/>
+        </association>
+    </resultMap>
+
+    <!--查询所有账户信息，关联查询下单用户信息-->
+
+    <!-- 基于继承实现一对一（多对一） -->
+    <select id="findAll" resultType="accountuser">
+        select a.*,u.username,u.address from account a,user u where a.uid =u.id;
+    </select>
+
+    <!--基于关联实现一对一（多对一）-->
+    <!--使用as，展现resultMap的功能-->
+    <select id="findAll2" resultMap="accountMap">
+        select a.id as aid,a.uid,a.money,u.*
+            from account a,user u where a.uid =u.id;
+    </select>
+
+</mapper>

@@ -1,4 +1,4 @@
-package cn.lastwhisper.LRU缓存机制146;
+package cn.lastwhisper.leetcode.other.LRU缓存机制146;
 
 import java.util.HashMap;
 import java.util.Iterator;

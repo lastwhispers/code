@@ -1,4 +1,4 @@
-package cn.lastwhisper.jdk5.feature.io.v2;
+package cn.lastwhisper.jdk5.feature.io.nio.v2;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

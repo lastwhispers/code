@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.无重复字符的最长子串_3_Medium;
+package cn.lastwhisper.leetcode.array.滑动窗口.无重复字符的最长子串_3_Medium;
 
 class Solution2 {
     /**

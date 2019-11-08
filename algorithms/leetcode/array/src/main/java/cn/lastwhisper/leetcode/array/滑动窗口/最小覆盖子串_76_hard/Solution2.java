@@ -1,6 +1,6 @@
 package cn.lastwhisper.leetcode.array.滑动窗口.最小覆盖子串_76_hard;
 
-class Solution1 {
+class Solution2 {
     /**
      * https://leetcode-cn.com/problems/minimum-window-substring/
      * 核心思想：滑动窗口
@@ -9,12 +9,13 @@ class Solution1 {
     public String minWindow(String s, String t) {
         if (s.length() < t.length()) return "";//"a", "aa"
         if (s.equals(t)) return s;//"a", "a"
+        char[] ss = s.toCharArray();
         //  用于判断s子串是否包含t
         int[] map = new int[128];
         String target = "";//"abc", "ac"；"a", "b"
         int l = 0, r = 0;
-        while (l <= s.length() && r <= s.length()) {
-            if (!isSub(s.substring(l, r), t, map)) {
+        while (l <= ss.length && r <= ss.length) {
+            if (!isSub(ss, l, r, t, map)) {
                 // 不断增加 r 指针扩大窗口 [l, r]，直到窗口中的字符串符合要求
                 r++;
             } else {
@@ -34,11 +35,11 @@ class Solution1 {
     /**
      * sub是否包含t
      */
-    public boolean isSub(String sub, String t, int[] map) {
-        if (sub.length() < t.length()) return false;//过滤肯定不包含
+    public boolean isSub(char[] sub, int start, int end, String t, int[] map) {
+        if (sub.length < t.length()) return false;//过滤肯定不包含
         boolean flag = true;
-        for (int i = 0; i < sub.length(); i++) {
-            map[sub.charAt(i)] += 1;
+        for (int i = start; i < end; i++) {
+            map[sub[i]] += 1;
         }
         // 检验t在sub是否完全出现过
         for (int i = 0; i < t.length(); i++) {
@@ -57,25 +58,25 @@ class Solution1 {
             }
         }
         // 清空
-        for (int i = 0; i < sub.length(); i++) {
-            map[sub.charAt(i)] = 0;
+        for (int i = start; i < end; i++) {
+            map[sub[i]] = 0;
         }
         return flag;
     }
 
     public static void main(String[] args) {
-        System.out.println("target:" + new Solution1().minWindow("ADOBECODEBANC", "ABC"));
-        System.out.println("target:" + new Solution1().minWindow("a", "a"));
-        System.out.println("target:" + new Solution1().minWindow("a", "aa"));
-        System.out.println("target:" + new Solution1().minWindow("a", "b"));
-        System.out.println("target:" + new Solution1().minWindow("abc", "ac"));
-        System.out.println("target:" + new Solution1().minWindow("bbaa", "aba"));
-        System.out.println("target:" + new Solution1().minWindow("abbc", "abc"));
+        System.out.println("target:" + new Solution2().minWindow("ADOBECODEBANC", "ABC"));
+        System.out.println("target:" + new Solution2().minWindow("a", "a"));
+        System.out.println("target:" + new Solution2().minWindow("a", "aa"));
+        System.out.println("target:" + new Solution2().minWindow("a", "b"));
+        System.out.println("target:" + new Solution2().minWindow("abc", "ac"));
+        System.out.println("target:" + new Solution2().minWindow("bbaa", "aba"));
+        System.out.println("target:" + new Solution2().minWindow("abbc", "abc"));
         //int[] arr = new int[128];
-        //System.out.println(new Solution1().isSub("ADCB", "ABC", arr));
-        //System.out.println(new Solution1().isSub("ADQCB", "ABC", arr));
-        //System.out.println(new Solution1().isSub("ADeB", "ABC", arr));
-        //System.out.println(new Solution1().isSub("abbc", "abc", arr));
-        //System.out.println(new Solution1().isSub("bbaa", "aba", arr));
+        //System.out.println(new Solution2().isSub("ADCB", "ABC", arr));
+        //System.out.println(new Solution2().isSub("ADQCB", "ABC", arr));
+        //System.out.println(new Solution2().isSub("ADeB", "ABC", arr));
+        //System.out.println(new Solution2().isSub("abbc", "abc", arr));
+        //System.out.println(new Solution2().isSub("bbaa", "aba", arr));
     }
 }

@@ -1,11 +1,11 @@
 package cn.lastwhisper.interview.dp.整数的分解;
 
-public class Test
+public class Solution
 {
 	public static void main(String[] args)
 	{
-		int[] test = {3,4,5,6,7};
-		for (int num : test) {
+		int[] nums = {3,4,5,6,7};
+		for (int num : nums) {
 			System.out.println(num + "\t(" + decompose(num)+ ") 种");
 		}
 	}
