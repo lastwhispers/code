@@ -3,6 +3,7 @@ package cn.lastwhisper.jdk5.feature.collection;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -33,8 +34,11 @@ public class ArraysAsList {
     public void testIntArrAsList(){
         int[] intArr = {1,2,3};
         String[] stringArr = {"1","2","3"};
-        System.out.println(intArr.getClass());
-        System.out.println(stringArr.getClass());
+        System.out.println(intArr.getClass()); //class [I
+        System.out.println(stringArr.getClass()); //class [Ljava.lang.String
+        List<int[]> intList = Arrays.asList(intArr);
+        List<String> stringList = Arrays.asList(stringArr);
+
     }
 
 

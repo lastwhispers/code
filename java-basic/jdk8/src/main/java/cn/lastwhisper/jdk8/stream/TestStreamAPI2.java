@@ -71,7 +71,7 @@ public class TestStreamAPI2 {
     public void test4() {
         employees.parallelStream()
                 .filter((e) -> e.getSalary() >= 5000)
-                .skip(2) //跳过两个
+                //.skip(2) //跳过两个
                 .forEach(System.out::println);
     }
 

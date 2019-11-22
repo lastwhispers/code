@@ -8,7 +8,7 @@
 接收接口入参，from转dto做不同级别的参数校验。
 参数校验级别分为：
     (1)from入参json串不为空
-    (2)from转dto时
+    (2)from转dto时OrderDTO
 4、为什么需要enum？
 将一些表中的状态，比如订单（支付、未支付、等待支付）状态进行枚举表示，统一管理
 
@@ -16,7 +16,7 @@ https://www.cnblogs.com/qixuejia/p/4390086.html
 
 
 一、项目：领域模型、vo、dto、po、domain、form、enums、utils
-二、测试
+二、spring测试：继承
 三、日志：log4j、sfl4j、logback等日志区别，以及作用
 四、valid、json转换的使用
 五、常量，枚举的使用场景
