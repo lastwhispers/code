@@ -15,6 +15,7 @@ import java.util.UUID;
 public class RedisDelayingQueue<T> {
 
     private Type TaskType = new TypeReference<TaskItem<T>>() {
+
     }.getType();
 
     private Jedis jedis;

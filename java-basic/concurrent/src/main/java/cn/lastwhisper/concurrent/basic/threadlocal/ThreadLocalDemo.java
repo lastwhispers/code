@@ -24,7 +24,6 @@ public class ThreadLocalDemo {
         public void run() {
             try {
                 //Date t = sdf.parse("2015-03-28 19:15:" + i % 60);
-
                 if(tl.get()==null){
                     tl.set(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
                 }

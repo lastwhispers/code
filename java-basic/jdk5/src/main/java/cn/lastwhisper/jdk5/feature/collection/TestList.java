@@ -1,11 +1,9 @@
 package cn.lastwhisper.jdk5.feature.collection;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author lastwhisper
@@ -99,6 +97,23 @@ public class TestList {
             System.out.println(data);
         }
         System.out.println("size=" + linkedList.size());
+    }
+
+    /**
+     * 测试集合的并交差集操作
+     */
+    @Test
+    public void testUnion() {
+        List<String> list1 = new ArrayList<>();
+        list1.add("1");
+        list1.add("2");
+        List<String> list2 = new ArrayList<>();
+        list2.add("1");
+        list2.add("3");
+        list1.retainAll(list2)  ;
+        Objects.requireNonNull(list1);
+        //Assert.assertNotNull(list1);
+        list1.forEach(System.out::println);
     }
 
 }

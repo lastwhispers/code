@@ -70,7 +70,7 @@ public class TestStreamAPI2 {
     @Test
     public void test4() {
         employees.parallelStream()
-                .filter((e) -> e.getSalary() >= 5000)
+                .filter(e -> e.getSalary() >= 5000)//false过滤
                 //.skip(2) //跳过两个
                 .forEach(System.out::println);
     }
