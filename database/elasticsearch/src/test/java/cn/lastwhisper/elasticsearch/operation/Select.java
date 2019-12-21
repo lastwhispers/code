@@ -216,4 +216,10 @@ public class Select {
      * QueryBuilders.rangeQuery("price").gte(10000).lte(20000);
      */
 
+    /**
+     * 分页查询
+     * searchSourceBuilder.size(30);
+     * searchSourceBuilder.from(60);
+     */
+
 }

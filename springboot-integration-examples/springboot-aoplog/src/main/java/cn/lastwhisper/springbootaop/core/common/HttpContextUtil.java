@@ -4,6 +4,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Objects;
 
 /**
  * @desc
@@ -12,16 +13,17 @@ import javax.servlet.http.HttpServletRequest;
  * @email gaojun56@163.com
  */
 public class HttpContextUtil {
+    /**
+     * 获取当前线程的Request对象
+     * @return javax.servlet.http.HttpServletRequest
+     */
     public static HttpServletRequest getRequest() {
-        return  ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
+        return  ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder.getRequestAttributes()))
                 .getRequest();
     }
 
     /**
      * 获取IP地址的方法
-     *
-     * @param request 传一个request对象下来
-     * @return
      */
     public static String getIpAddress() {
         HttpServletRequest request = getRequest();

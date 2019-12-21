@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                          http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+    <!--连接工厂-->
+    <rabbit:connection-factory id="connectionFactory"
+							   host="127.0.0.1"  port="5672"
+							   username="guest"  password="guest"
+                               publisher-confirms="true"/>
+    <rabbit:template id="rabbitTemplate" connection-factory="connectionFactory"/>
+</beans>

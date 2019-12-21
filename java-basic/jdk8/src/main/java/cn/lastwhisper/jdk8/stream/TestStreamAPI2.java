@@ -116,10 +116,12 @@ public class TestStreamAPI2 {
      */
     @Test
     public void test7() {
-        List<String> list = Arrays.asList("ccc", "bbb", "aaa");
+        // string日期天然有序
+        List<String> list = Arrays.asList("20191210", "20191211", "20191212");
         list.stream()
                 .sorted()
                 .forEach(System.out::println);
+
 
         employees.stream()
                 .sorted((e1, e2) -> {

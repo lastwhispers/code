@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: order
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: test
+  #    stream:
+  #      bindings:
+  #        myMessage:
+  #          group: order
+  #          content-type: application/json
+  # zipkin地址
+  zipkin:
+    base-url: http://localhost:9411/
+    sender:
+      type: web
+  # sleuth抽样百分比
+  sleuth:
+    sampler:
+      probability: 1
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:8761/eureka/
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+    getProductInfoList:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+management:
+  server:
+    servlet:
+      context-path: /
+# 设置日志级别
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug

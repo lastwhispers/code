@@ -11,7 +11,7 @@
     <groupId>cn.lastwhisper</groupId>
     <artifactId>springbootaop</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springbootaop</name>
+    <name>springboot-aop</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -40,6 +40,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
             <optional>true</optional>
         </dependency>
         <!--mybatis-plus的springboot支持-->
@@ -48,11 +49,18 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.1.1</version>
         </dependency>
+
         <!--mysql驱动-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.47</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.62</version>
         </dependency>
     </dependencies>
 

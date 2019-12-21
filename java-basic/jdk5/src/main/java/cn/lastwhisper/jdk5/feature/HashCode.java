@@ -3,10 +3,7 @@ package cn.lastwhisper.jdk5.feature;
 import cn.lastwhisper.jdk5.feature.reflect.ReflectPoint;
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * hashcode导致内存泄漏
@@ -30,14 +27,14 @@ public class HashCode {
         }
 
         // 重写了对象的equals规则，一定要重写hashcode规则
-        @Override
-        public boolean equals(Object obj) {
-            if (this == obj) return true;
-            if (obj == null || obj.getClass() != getClass()) return false;
-            Person person = (Person) obj;
-            return id == person.id;
-        }
-
+        //@Override
+        //public boolean equals(Object obj) {
+        //    if (this == obj) return true;
+        //    if (obj == null || obj.getClass() != getClass()) return false;
+        //    Person person = (Person) obj;
+        //    return id == person.id;
+        //}
+        //
         //@Override
         //public int hashCode() {
         //    return Objects.hash(id);
@@ -45,12 +42,13 @@ public class HashCode {
     }
 
     /**
-     * 重写对象的equals方法，不重写hashcode方法导致的问题
+     * 思考一个问题，不重写hashcode和equals，这两个对象相同吗？
+     * //重写对象的equals方法，不重写hashcode方法导致的问题
      */
     @Test
     public void testOverrideEquals() {
         Person p1 = new Person(1, "张三");
-        Person p2 = new Person(1, "李四");
+        Person p2 = new Person(1, "张三");
         System.out.println(p1.equals(p2));//true
 
         Map<Person, String> map = new HashMap<>();

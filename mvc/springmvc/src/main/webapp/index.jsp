@@ -22,12 +22,12 @@
 
             $("#testAjaxParam").click(function () {
                 $.ajax({
-                    type:"POST",
-                    url:"testParam3",
-                    data:'{"id":"1","username":"泰斯特","age":22}',
-                    dataType:"text",
-                    contentType:"application/json",//发生数据的格式
-                    success:function (data) {
+                    type: "POST",
+                    url: "testParam3",
+                    data: '{"id":"1","username":"泰斯特","age":22}',
+                    dataType: "text",
+                    contentType: "application/json",//发生数据的格式
+                    success: function (data) {
                         alert(data);
                     }
                 });
@@ -48,5 +48,9 @@
 <a id="testAjaxParam" href="#">RequestBody分析</a>
 <br/>
 <a href="testParam4/aaa/23">PathVariable分析</a>
+<hr/>
+<h2>文件下载分析</h2>
+<a href="download">文件下载分析</a>
+<br/>
 </body>
 </html>

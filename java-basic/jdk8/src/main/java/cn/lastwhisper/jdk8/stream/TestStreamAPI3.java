@@ -165,6 +165,21 @@ public class TestStreamAPI3 {
         }
     }
 
+    // 根据状态进行分组求和
+    @Test
+    public void test11() {
+
+        // 根据状态分组
+        Map<Status, DoubleSummaryStatistics> statusSumSalaryMap = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getStatus,
+                        Collectors.summarizingDouble(Employee::getSalary)));
+        for (Map.Entry<Status, DoubleSummaryStatistics> entry : statusSumSalaryMap.entrySet()) {
+            System.out.println("----------------根据状态分组-----------------");
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue().getSum());
+        }
+    }
+
     // 多级分组
     @Test
     public void test7() {

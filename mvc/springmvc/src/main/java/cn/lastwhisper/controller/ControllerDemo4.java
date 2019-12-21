@@ -21,7 +21,7 @@ public class ControllerDemo4 {
     public void sayHello(HttpServletResponse response) throws Exception {
         System.out.println("接收到了请求");
         response.setContentType("text/html;charset=UTF-8");
-        response.getWriter().write(" {\"id\":\"1\",\"username\":\"泰斯特\",\"age\":18}");
+        response.getWriter().write("{\"id\":\"1\",\"username\":\"泰斯特\",\"age\":18}");
     }
 
 }

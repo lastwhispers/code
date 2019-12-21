@@ -8,9 +8,9 @@ import java.util.List;
  */
 public class FilterChain implements Filter {
 
-    List<Filter> filters = new ArrayList<Filter>();
+    private List<Filter> filters = new ArrayList<Filter>();
 
-    int index = 0;
+    private int index = 0;
 
     public FilterChain addFilter(Filter f) {
         filters.add(f);

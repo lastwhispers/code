@@ -9,19 +9,19 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- 配置创建容器时要扫描的包-->
-    <context:component-scan base-package="cn.lastwhisper"></context:component-scan>
+    <context:component-scan base-package="cn.lastwhisper"/>
 
     <!-- 配置视图解析器-->
         <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-            <property name="prefix" value="/WEB-INF/pages/"></property>
-            <property name="suffix" value=".jsp"></property>
-        </bean>
+    <property name="prefix" value="/WEB-INF/pages/"/>
+    <property name="suffix" value=".jsp"/>
+</bean>
 
     <!-- 开启springmvc注解支持-->
     <mvc:annotation-driven enable-matrix-variables="true"/>
 
     <!-- 资源映射 -->
-    <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
+    <mvc:resources mapping="/js/**" location="/js/"/>
 
     <!-- 基于实现Controller接口配置控制器的方式-->
     <!--    <bean id="simpleControllerHandlerAdapter"-->
