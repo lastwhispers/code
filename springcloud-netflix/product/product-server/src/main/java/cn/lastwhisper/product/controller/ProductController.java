@@ -1,5 +1,6 @@
 package cn.lastwhisper.product.controller;
 
+import cn.lastwhisper.order.client.OrderClient;
 import cn.lastwhisper.product.domain.ProductCategory;
 import cn.lastwhisper.product.domain.ProductInfo;
 import cn.lastwhisper.product.dto.CartDTO;
@@ -34,6 +35,9 @@ public class ProductController {
 
     @Autowired
     private CategoryService categoryService;
+
+    @Autowired
+    private OrderClient orderClient;
 
     /**
      * 1. 查询所有在架的商品列表
@@ -94,4 +98,16 @@ public class ProductController {
     public void decreaseStock(@RequestBody List<CartDTO> cartDTOList) {
         productService.decreaseStock(cartDTOList);
     }
+
+    @PostMapping("/productThread3")
+    public void productThread3() {
+        try {
+            Thread.sleep(100);
+            orderClient.orderThread3();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }

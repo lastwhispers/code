@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.hashtable.两个数组的交集_II_350_esay;
+package cn.lastwhisper.leetcode.hashtable.两个数组的交集_II_350_Esay;
 
 import java.util.ArrayList;
 import java.util.HashMap;

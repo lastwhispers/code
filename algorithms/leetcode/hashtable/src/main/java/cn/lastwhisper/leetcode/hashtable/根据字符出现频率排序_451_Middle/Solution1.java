@@ -35,7 +35,7 @@ class Solution1 {
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {
             Integer freq = entry.getValue();
             if (buckets[freq] == null) {
-                buckets[freq] = new ArrayList<Character>();
+                buckets[freq] = new ArrayList<>();
             }
             buckets[freq].add(entry.getKey());
         }

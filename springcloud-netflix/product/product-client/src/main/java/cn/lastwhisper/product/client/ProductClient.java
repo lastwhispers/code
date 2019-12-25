@@ -25,4 +25,11 @@ public interface ProductClient {
 
     @PostMapping("/product/decreaseStock")
     void decreaseStock(@RequestBody List<DecreaseStockInput> cartDTOList);
+
+    /**
+     * 一个睡3s的方法
+     */
+    @PostMapping("/product/productThread3")
+    void productThread3();
+
 }

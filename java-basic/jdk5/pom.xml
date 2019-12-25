@@ -9,7 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.lastwhisper</groupId>
     <artifactId>jdk5</artifactId>
 
     <properties>
@@ -88,6 +87,21 @@
             <version>1.12.1</version>
         </dependency>
 
+        <!--java代码生成-->
+        <dependency>
+            <groupId>com.squareup</groupId>
+            <artifactId>javapoet</artifactId>
+            <version>1.11.1</version>
+        </dependency>
+        <!--spi服务注册-->
+        <!-- https://mvnrepository.com/artifact/com.google.auto.service/auto-service -->
+<!--        <dependency>-->
+<!--            <groupId>com.google.auto.service</groupId>-->
+<!--            <artifactId>auto-service</artifactId>-->
+<!--            <version>1.0-rc6</version>-->
+<!--        </dependency>-->
+
+
     </dependencies>
     <build>
         <finalName>demos</finalName>
@@ -95,6 +109,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>

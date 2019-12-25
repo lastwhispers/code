@@ -68,6 +68,13 @@
             <groupId>cn.lastwhisper</groupId>
         </dependency>
 
+        <dependency>
+            <groupId>cn.lastwhisper</groupId>
+            <artifactId>order-client</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
 
     <build>

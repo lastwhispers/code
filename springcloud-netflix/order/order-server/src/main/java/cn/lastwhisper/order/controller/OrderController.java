@@ -8,6 +8,7 @@ import cn.lastwhisper.order.form.OrderForm;
 import cn.lastwhisper.order.service.OrderService;
 import cn.lastwhisper.order.utils.ResultVOUtil;
 import cn.lastwhisper.order.vo.ResultVO;
+import cn.lastwhisper.product.client.ProductClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
@@ -31,6 +32,9 @@ import java.util.Objects;
 @RequestMapping("/order")
 @Slf4j
 public class OrderController {
+
+    @Autowired
+    private ProductClient productClient;
 
     @Autowired
     private OrderService orderService;
@@ -71,6 +75,16 @@ public class OrderController {
     @PostMapping("/finish")
     public ResultVO<OrderDTO> finish(@RequestParam("orderId") String orderId) {
         return ResultVOUtil.success(orderService.finish(orderId));
+    }
+
+
+    @PostMapping("/orderThread3")
+    public void orderThread3() {
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }

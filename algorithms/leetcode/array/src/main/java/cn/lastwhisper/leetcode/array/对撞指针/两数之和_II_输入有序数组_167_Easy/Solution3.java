@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Solution3 {
     /**
      * https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/
-     * 对撞指针（前提数组有序）
+     * 对撞指针（也叫双索引，前提数组有序）
      * 时间复杂度：O(n)
      * 空间复杂度：O(1)
      */

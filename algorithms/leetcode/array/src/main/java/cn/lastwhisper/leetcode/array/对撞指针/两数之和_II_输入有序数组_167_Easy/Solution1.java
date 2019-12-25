@@ -7,7 +7,7 @@ package cn.lastwhisper.leetcode.array.对撞指针.两数之和_II_输入有序�
 public class Solution1 {
     /**
      * https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/
-     * 暴力解法
+     * 暴力解法，找出所有组合进行对比
      * 时间复杂度：O(n^2)
      * 空间复杂度：O(1)
      */

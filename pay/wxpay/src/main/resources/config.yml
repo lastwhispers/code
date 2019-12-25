@@ -1,0 +1,12 @@
+# 这是你的 EchoSite 购买域名的服务器标志
+server_addr: easy.echosite.cn:4443
+trust_host_root_certs: false
+echosite_id: 17799998888
+echosite_token: $2y$10$bY081mt/2KAFJLJXrsSNHe3f.6SM.SGfXgu1gG7aJvmPMPN9BTqrS
+# 以下是你需要开启的通道，只能开启属于你的域名通道
+# 以下分别是 http 和 https 以及 tcp 协议的示例
+tunnels:
+  name1:
+    subdomain: "qingcheng"
+    proto:
+      http: 127.0.0.1:9102
