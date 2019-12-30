@@ -5,8 +5,11 @@ import java.util.*;
 class Solution1 {
     /**
      * https://leetcode-cn.com/problems/3sum/
-     * 核心思想：排序+双索引+hash表
+     * -------------------------------------------------------------------
+     * 思路：排序+双索引+hash表
+     * -------------------------------------------------------------------
      * 时间复杂度：
+     * 空间复杂度：
      */
     public List<List<Integer>> threeSum(int[] nums) {
         if (nums == null) throw new IllegalArgumentException("非法参数");

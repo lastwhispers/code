@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.hashtable.两数之和_1_Easy;
+package cn.lastwhisper.leetcode.hashtable.两数之和_1_简单;
 
 import java.util.Arrays;
 
