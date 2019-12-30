@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                          http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+    <!--连接工厂-->
+    <rabbit:connection-factory id="connectionFactory"
+                               host="127.0.0.1" port="5672"
+                               username="guest" password="guest"
+                               publisher-confirms="true"/>
+    <rabbit:template id="rabbitTemplate" connection-factory="connectionFactory"/>
+
+    <!--自动创建交换器和队列-->
+    <!--rabbitAdmin 封装管理操作-->
+    <rabbit:admin connection-factory="connectionFactory"/>
+    <!--创建队列-->
+    <rabbit:queue name="queue.test1"/>
+    <!--创建队列-->
+    <rabbit:queue name="queue.test2"/>
+    <!--创建分发交换器 -->
+    <rabbit:fanout-exchange name="exchange.fanout_test">
+        <rabbit:bindings>
+            <rabbit:binding queue="queue.test1"/>
+            <rabbit:binding queue="queue.test2"/>
+        </rabbit:bindings>
+    </rabbit:fanout-exchange>
+</beans>
