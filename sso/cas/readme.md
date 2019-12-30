@@ -1,4 +1,0 @@
-1、cas原生使用
-Client1登录之后，Client2不用登录
-2、cas整和Spring Security
-Client3可以和Client1、Client2项目进行单点登录
