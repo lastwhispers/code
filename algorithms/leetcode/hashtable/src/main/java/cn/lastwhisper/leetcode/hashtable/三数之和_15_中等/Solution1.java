@@ -28,11 +28,11 @@ class Solution1 {
                 continue; // 对i去重
             }
             for (int j = i + 1; j < nums.length - 1; j++) {
-                if (j > 1 && nums[j] == nums[j - 1]) {
+                if (j > i + 1 && nums[j] == nums[j - 1]) {
                     continue; // 对j去重
                 }
                 for (int k = j + 1; k < nums.length; k++) {
-                    if (k > 2 && nums[k] == nums[k - 1]) {
+                    if (k > j + 1 && nums[k] == nums[k - 1]) {
                         continue; // 对k去重
                     }
                     if (nums[i] + nums[j] + nums[k] == 0) {
