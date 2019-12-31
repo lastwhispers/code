@@ -4,16 +4,19 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class Solution2 {
+class Solution3 {
     /**
      * 题目地址：https://leetcode-cn.com/problems/3sum/
      * -------------------------------------------------------------------
      *
      * -------------------------------------------------------------------
-     * 优化思路：三三组合改进，排序+双索引，并对特殊情况进行剔除
+     * 优化思路：根据排序后的数据规律，剔除掉不必要的循环
      * -------------------------------------------------------------------
      * 时间复杂度：O(n^2)
      * 空间复杂度：O(n^2)
+     * -------------------------------------------------------------------
+     * 执行用时 :33 ms, 在所有 java 提交中击败了92.67%的用户
+     * 内存消耗 :48.1 MB, 在所有 java 提交中击败了92.84%的用户
      */
     public List<List<Integer>> threeSum(int[] nums) {
         // 存储结果
@@ -21,12 +24,22 @@ class Solution2 {
         if (nums == null || nums.length < 3) return resultList;
         // 数组排序
         Arrays.sort(nums);
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] > 0) {
-                break; //此时说明数组后面都是正值，三个数相加不可能为0
-            }
+        for (int i = 0; i < nums.length - 2; i++) { // i < nums.length - 2
+
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue; // 对i去重
+            }
+
+            // 最小值比0大，不管nums[i]再怎么递增都没戏
+            int min1 = nums[i] + nums[i + 1] + nums[i + 2];
+            if (min1 > 0) {
+                break;
+            }
+
+            // 最大值比0小，当前nums[i]肯定没戏了，找下一个nums[i]试试
+            int max1 = nums[i] + nums[nums.length - 2] + nums[nums.length - 1];
+            if (max1 < 0) {
+                continue;
             }
 
             int l = i + 1, r = nums.length - 1;
@@ -56,7 +69,7 @@ class Solution2 {
         //    list.forEach(System.out::print);
         //});
 
-        new Solution2().threeSum(new int[]{0,0,0,0}).forEach((list) -> {
+        new Solution3().threeSum(new int[]{0, 0, 0, 0}).forEach((list) -> {
             System.out.println();
             list.forEach(System.out::print);
         });
