@@ -65,7 +65,7 @@ class Solution1 {
         return max;
     }
 
-    /*
+    /**
      * 判断一个点是否在一条直线上
      */
     //private boolean isExist(int x1, int y1, int x2, int y2, int x, int y) {
@@ -96,6 +96,9 @@ class Solution1 {
     //}
 
 
+    /**
+     * 求a、b最大公约数
+     */
     private int gcd(int a, int b) {
         while (b != 0) {
             int temp = a % b;

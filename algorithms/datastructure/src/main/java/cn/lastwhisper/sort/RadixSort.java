@@ -27,7 +27,7 @@ public class RadixSort {
     }
 
     /**
-     * 基数排序
+     * 基数排序，桶排序的扩展
      *
      * @param arr
      * @return void

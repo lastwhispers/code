@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.array.滑动窗口.找到字符串中所有字母异位词_438_Medium;
+package cn.lastwhisper.leetcode.array.滑动窗口.找到字符串中所有字母异位词_438_中等;
 
 import java.util.ArrayList;
 import java.util.List;

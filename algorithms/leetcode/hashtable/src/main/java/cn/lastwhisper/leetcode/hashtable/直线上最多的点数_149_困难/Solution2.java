@@ -10,7 +10,7 @@ class Solution2 {
      * 思考：虽然已经保证ij一定构成一条直线，但是ij会重复出现。
      * -------------------------------------------------------------------
      * 思路：基于思路1，使用Hash表记录暴力解法中已经出现的直线。
-     *  利用斜截式求得直线的k、b，将k、b拼接放入Hash表
+     *  利用"斜截式"求得直线的k、b，将k、b拼接放入Hash表
      * -------------------------------------------------------------------
      * 时间复杂度：O(n^3)
      * 空间复杂度：O(1)
@@ -53,6 +53,8 @@ class Solution2 {
                     continue;
                 }
 
+                hash.add(key);
+
                 // 前两层循环构成直线
                 int record = 2;
                 for (int k = 0; k < points.length; k++) {
@@ -67,22 +69,20 @@ class Solution2 {
                 if (record > max) {
                     max = record;
                 }
-
-                hash.add(key);
             }
         }
         // 加上直线本身的两个点
         return max;
     }
 
-    /*
+    /**
      * 一个点是否在一条直线上
      */
     private boolean isExist(long x1, long y1, long x2, long y2, long x, long y) {
         return (y2 - y1) * (x - x2) == (y - y2) * (x2 - x1);
     }
 
-    /*
+    /**
      * 点斜式常数b
      */
     private double getB(int x1, int y1, int x2, int y2) {
@@ -92,7 +92,7 @@ class Solution2 {
         return (double) (x2 - x1) * (-y1) / (y2 - y1) + x1;
     }
 
-    /*
+    /**
      * 点斜式斜率k
      */
     private double getK(int x1, int y1, int x2, int y2) {
