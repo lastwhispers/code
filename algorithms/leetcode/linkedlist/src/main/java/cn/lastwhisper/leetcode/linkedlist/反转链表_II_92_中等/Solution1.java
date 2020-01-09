@@ -2,6 +2,7 @@ package cn.lastwhisper.leetcode.linkedlist.反转链表_II_92_中等;
 
 import cn.lastwhisper.leetcode.linkedlist.ListNode;
 
+
 import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.createListNode;
 import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.printListNode;
 
@@ -20,10 +21,18 @@ class Solution1 {
      * 空间复杂度：
      */
     public ListNode reverseBetween(ListNode head, int m, int n) {
-        // 参数校验
-        if (head==null){
-            return null;
+        if (head == null || head.next == null)
+            return head;
+
+        ListNode startNode = head;
+        for (int i = 0; i < m - 1 - 1; i++) {
+            startNode = startNode.next;
         }
+
+        ListNode mHead = startNode.next;
+
+        ListNode prev = mHead;
+
 
 
         return null;

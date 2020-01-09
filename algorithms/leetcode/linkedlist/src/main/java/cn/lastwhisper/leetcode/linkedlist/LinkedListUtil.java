@@ -8,7 +8,7 @@ package cn.lastwhisper.leetcode.linkedlist;
  */
 public class LinkedListUtil {
 
-    public static ListNode createListNode(int[] arr) {
+    public static ListNode createListNode(int... arr) {
         if (arr == null) {
             return null;
         }
@@ -21,6 +21,20 @@ public class LinkedListUtil {
         }
         return head;
     }
+
+    //public static ListNode createListNode(int[] arr) {
+    //    if (arr == null) {
+    //        return null;
+    //    }
+    //    ListNode head = new ListNode(arr[0]);
+    //    ListNode current = head;
+    //
+    //    for (int i = 1; i < arr.length; i++) {
+    //        current.next = new ListNode(arr[i]);
+    //        current = current.next;
+    //    }
+    //    return head;
+    //}
 
     public static void printListNode(ListNode head) {
         StringBuilder sb = new StringBuilder();
@@ -35,6 +49,6 @@ public class LinkedListUtil {
     }
 
     public static void main(String[] args) {
-        printListNode(createListNode(new int[]{1, 2, 3, 4, 5, 6, 7}));
+        printListNode(createListNode(1, 2, 3, 4, 5, 6, 7));
     }
 }
