@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.linkedlist.反转链表_206_简单;
+package cn.lastwhisper.leetcode.linkedlist.其他.反转链表_206_简单;
 
 import cn.lastwhisper.leetcode.linkedlist.LinkedListUtil;
 import cn.lastwhisper.leetcode.linkedlist.ListNode;

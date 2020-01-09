@@ -29,7 +29,7 @@
 | 4-8 二分搜索树底层实现的顺序性 Contain Duplicate III         | ~~*220~~        | [无]                    |
 | **第五章 在链表中穿针引线**                                  |            |                         |
 | 5-1 链表，在节点间穿针引线 Reverse Linked List               | ~~*206~~      | 92                      |
-| 5-2 测试你的链表程序                                         | 206        | 83 86 328 2 445         |
+| 5-2 测试你的链表程序                                         | ~~206~~        | ~~83~~ 86 328 2 445         |
 | 5-3 设立链表的虚拟头结点 Remove Linked List Elements         | 203        | 82 21                   |
 | 5-4 复杂的穿针引线 Swap Nodes in Pairs                       | 24         | 25 147 148              |
 | 5-5 不仅仅是穿针引线 Delete Node in a Linked List            | 237        | [无]                    |
