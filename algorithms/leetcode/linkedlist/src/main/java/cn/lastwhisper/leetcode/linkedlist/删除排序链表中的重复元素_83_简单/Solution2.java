@@ -1,14 +1,11 @@
-package cn.lastwhisper.leetcode.linkedlist.其他.删除排序链表中的重复元素_83_简单;
+package cn.lastwhisper.leetcode.linkedlist.删除排序链表中的重复元素_83_简单;
 
 import cn.lastwhisper.leetcode.linkedlist.ListNode;
-
-import java.util.HashSet;
-import java.util.Set;
 
 import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.createListNode;
 import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.printListNode;
 
-class Solution1 {
+class Solution2 {
     /**
      * 题目地址：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/
      * -------------------------------------------------------------------
@@ -16,34 +13,28 @@ class Solution1 {
      * 数据特征：
      *     输入：链表、**升序**、所有整数
      * -------------------------------------------------------------------
-     * 思路：遍历链表并使用Hash表判断是否重复，对重复结点使用链表删除法
-     *  prev指针移动规则：
-     *    出现重复时，删除重复结点，不后移
-     *    不重复时，向后移一位即可(current永远是prev的后一位)
-     *  current指针移动规则：
-     *     每步都要后移一位
+     * 思路：链表数据升序，这个条件很重要，可以使用两个指针，current指向当前结点、next指向下一个结点
+     *  判断当前结点和下一个结点是否相同，相同删除，不相同同时后移
      * -------------------------------------------------------------------
      * 时间复杂度：O(n)
-     * 空间复杂度：O(n)
+     * 空间复杂度：O(1)
      * -------------------------------------------------------------------
      */
     public ListNode deleteDuplicates(ListNode head) {
         if (head == null || head.next == null)
             return head;
 
-        Set<Integer> set = new HashSet<>();
-        ListNode prev = null;
         ListNode current = head;
-        while (current != null) {
-            if (set.contains(current.val)) {
-                // 出现重复值时删除current结点，current结点没有指向即为删除
-                prev.next = current.next;
+        ListNode next = head.next;
+        while (next != null) {
+            if (next.val == current.val) {
+                // 出现重复删除结点，并后移next结点
+                current.next = next.next;
             } else {
-                set.add(current.val);
-                // 无重复，prev指针后移
-                prev = current;
+                // 无重复同时后移
+                current = next;
             }
-            current = current.next;
+            next = next.next;
         }
         return head;
     }
@@ -51,7 +42,8 @@ class Solution1 {
     public static void main(String[] args) {
         int[] arr = {1, 1, 1};
         //int[] arr = {1, 1, 2, 4};
+        //int[] arr = {1, 2, 3, 3, 4};
 
-        printListNode(new Solution1().deleteDuplicates(createListNode(arr)));
+        printListNode(new Solution2().deleteDuplicates(createListNode(arr)));
     }
 }

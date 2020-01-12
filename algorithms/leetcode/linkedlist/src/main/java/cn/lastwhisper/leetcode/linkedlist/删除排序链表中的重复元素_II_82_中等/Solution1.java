@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.linkedlist.虚拟头结点.删除排序链表中的重复元素_II_82_中等;
+package cn.lastwhisper.leetcode.linkedlist.删除排序链表中的重复元素_II_82_中等;
 
 import cn.lastwhisper.leetcode.linkedlist.ListNode;
 

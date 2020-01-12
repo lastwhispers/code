@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.linkedlist.其他.奇偶链表_328_中等;
+package cn.lastwhisper.leetcode.linkedlist.奇偶链表_328_中等;
 
 import cn.lastwhisper.leetcode.linkedlist.ListNode;
 

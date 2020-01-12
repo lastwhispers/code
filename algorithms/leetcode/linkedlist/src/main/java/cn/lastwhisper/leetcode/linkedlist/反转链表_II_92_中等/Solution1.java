@@ -1,4 +1,4 @@
-package cn.lastwhisper.leetcode.linkedlist.其他.反转链表_II_92_中等;
+package cn.lastwhisper.leetcode.linkedlist.反转链表_II_92_中等;
 
 import cn.lastwhisper.leetcode.linkedlist.ListNode;
 
@@ -32,11 +32,11 @@ class Solution1 {
             startNode = startNode.next;
         }
         // 保存反转前的头结点
-        ListNode oldHead = startNode.next;
+        ListNode mHead = startNode.next;
 
         // 反转需要的中间结点
         ListNode prev = null;
-        ListNode current = oldHead;
+        ListNode current = mHead;
         ListNode next;
 
         for (int i = m; i < n+1; i++) {
@@ -52,7 +52,7 @@ class Solution1 {
         // 反转前的前一个结点指向，反转后的头结点
         startNode.next = prev;
         // 反转前的头结点指向，反转后的endNode
-        oldHead.next = current;
+        mHead.next = current;
 
         return vNode.next;
     }
