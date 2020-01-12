@@ -28,13 +28,13 @@
 | 4-7 查找表和滑动窗口 Contain Duplicate II                    | ~~219~~       |                         |
 | 4-8 二分搜索树底层实现的顺序性 Contain Duplicate III         | ~~*220~~        | [无]                    |
 | **第五章 在链表中穿针引线**                                  |            |                         |
-| 5-1 链表，在节点间穿针引线 Reverse Linked List               | ~~*206~~      | ~~*92~~                      |
-| 5-2 测试你的链表程序                                         | ~~206~~        | ~~83~~ 86 328 2 445         |
-| 5-3 设立链表的虚拟头结点 Remove Linked List Elements         | ~~203~~    | 82 21(递归)               |
+| 5-1 链表，在节点间穿针引线 Reverse Linked List               | ~~206~~      | ~~*92~~                      |
+| 5-2 测试你的链表程序                                         | ~~206~~        | ~~83~~ 86 ~~*328~~ 2 445    |
+| 5-3 设立链表的虚拟头结点 Remove Linked List Elements         | ~~203~~    | ~~82~~ ~~*21(递归)~~     |
 | 5-4 复杂的穿针引线 Swap Nodes in Pairs                       | 24         | 25 147 148              |
 | 5-5 不仅仅是穿针引线 Delete Node in a Linked List            | 237        | [无]                    |
 | 5-6 链表与双指针 Remove Nth Node Form End of List            | 19         | 61 143 234              |
-| 额外刷题            | 160 |               |
+| 额外刷题            | ~~160~~ |               |
 | **第六章 栈、队列、优先队列**                                |            |                         |
 | 6-1 栈的基础应用 Valid Parentheses                           | 20         | 150 71                  |
 | 6-2 栈和递归的紧密关系 Binary Tree Preorder, Inorder and Postorder Traversal | 144 94 145 | [无]                    |
