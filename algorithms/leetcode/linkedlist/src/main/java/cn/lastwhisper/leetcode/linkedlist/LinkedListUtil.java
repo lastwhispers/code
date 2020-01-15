@@ -92,7 +92,7 @@ public class LinkedListUtil {
         ListNode intersectListNode = new ListNode(listA[skipA]);
         ListNode currentIntersect = intersectListNode;
 
-        for (int i = skipA +1; i < listA.length; i++) {
+        for (int i = skipA + 1; i < listA.length; i++) {
             currentIntersect.next = new ListNode(listA[i]);
             currentIntersect = currentIntersect.next;
         }
@@ -106,10 +106,81 @@ public class LinkedListUtil {
         return listNodes;
     }
 
+    private static ListNode createListNode(String arr) {
+        if (arr == null) {
+            return null;
+        }
+        ListNode head = new ListNode(arr.charAt(0) - '0');
+        ListNode current = head;
+
+        for (int i = 1; i < arr.length(); i++) {
+            current.next = new ListNode(arr.charAt(i) - '0');
+            current = current.next;
+        }
+        return head;
+    }
+
+    /**
+     * 反序创建链表
+     */
+    private static ListNode createReverseListNode(String arr) {
+        if (arr == null) {
+            return null;
+        }
+
+        ListNode head = new ListNode(arr.charAt(arr.length() - 1) - '0');
+        ListNode current = head;
+
+        for (int i = arr.length() - 2; i >= 0; i--) {
+            current.next = new ListNode(arr.charAt(i) - '0');
+            current = current.next;
+        }
+        return head;
+    }
+
+    /**
+     * 两个字符串整数相加
+     */
+    public String add(String a, String b) {
+        StringBuilder sb = new StringBuilder();
+        // 进位
+        int carry = 0;
+        int aIndex = a.length() - 1, bIndex = b.length() - 1;
+
+        while (aIndex >= 0 || bIndex >= 0) {
+            int x, y, sum;
+            x = aIndex >= 0 ? a.charAt(aIndex) - '0' : 0;
+            y = bIndex >= 0 ? b.charAt(bIndex) - '0' : 0;
+
+            sum = carry + x + y;
+            carry = sum / 10;
+            sb.append(sum % 10);
+
+            aIndex--;
+            bIndex--;
+        }
+
+        if (carry > 0) {
+            sb.append(carry);
+        }
+        return sb.toString();
+    }
+
+    /**
+     * 打印单链表
+     */
+    public static void printListNode(String msg, ListNode head) {
+        System.out.println(msg + appendVal(head));
+    }
+
     /**
      * 打印单链表
      */
     public static void printListNode(ListNode head) {
+        System.out.println(appendVal(head));
+    }
+
+    private static String appendVal(ListNode head) {
         StringBuilder sb = new StringBuilder();
         ListNode current = head;
         while (current != null) {
@@ -118,7 +189,25 @@ public class LinkedListUtil {
             current = current.next;
         }
         sb.append("NULL");
-        System.out.println(sb.toString());
+        return sb.toString();
+    }
+
+    /**
+     * 反转链表
+     */
+    public static ListNode reverseListNode(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
+        ListNode next = null;
+
+        while (current != null) {
+            next = current.next;
+
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return current;
     }
 
     public static void main(String[] args) {

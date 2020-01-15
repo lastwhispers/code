@@ -50,6 +50,6 @@ public class Solution1 {
 
     public static void main(String[] args) {
         LinkedListUtil.printListNode(new Solution1().reverseList(
-                LinkedListUtil.createListNode(new int[]{1, 2, 3, 4, 5, 6})));
+                LinkedListUtil.createListNode(1, 2, 3, 4, 5, 6)));
     }
 }
