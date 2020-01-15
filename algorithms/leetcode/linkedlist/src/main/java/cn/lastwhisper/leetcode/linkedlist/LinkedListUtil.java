@@ -207,7 +207,69 @@ public class LinkedListUtil {
             prev = current;
             current = next;
         }
-        return current;
+        return prev;
+    }
+
+    /**
+     * 交替合并两个链表，返回新的链表
+     */
+    public static ListNode alterNoteMerge(ListNode l1, ListNode l2) {
+
+        return null;
+    }
+
+    /**
+     * 交替合并两个链表，到第一个链表
+     * https://leetcode-cn.com/problems/reorder-list
+     */
+    public static void alterNoteMergeOne(ListNode firstHead, ListNode secondHead) {
+        ListNode firstNext;
+        ListNode secondNext;
+
+        while (secondHead != null) {
+            // 1.记录两个链表的next结点
+            firstNext = firstHead.next;
+            secondNext = secondHead.next;
+            // 2.将链表1的当前节点指向链表2的当前结点，链表2的当前结点指向链表1的下一个结点
+            // 左链表：1->2->3 右链表：5->4
+            // 合并后的链表1：1->5->2
+            firstHead.next = secondHead;
+            secondHead.next = firstNext;
+            // 3.将之前保存的next更新为当前结点，继续循环
+            firstHead = firstNext;
+            secondHead = secondNext;
+            // 防止奇数结点链表成环 https://leetcode-cn.com/problems/reorder-list/
+            if (secondHead == null) {
+                firstHead.next = null;
+            }
+        }
+    }
+
+    /**
+     * 找到链表中间的前一个结点
+     */
+    public static ListNode middleBeforeNode(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast.next != null && fast.next.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+
+    /**
+     * 找到链表中间的一个结点
+     *  https://leetcode-cn.com/problems/middle-of-the-linked-list/
+     */
+    public static ListNode middleNode(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
     }
 
     public static void main(String[] args) {

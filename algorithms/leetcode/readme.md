@@ -33,7 +33,7 @@
 | 5-3 设立链表的虚拟头结点 Remove Linked List Elements         | ~~203~~    | ~~82~~ ~~*21(递归)~~     |
 | 5-4 复杂的穿针引线 Swap Nodes in Pairs                       | 24         | 25 147 148              |
 | 5-5 不仅仅是穿针引线 Delete Node in a Linked List            | ~~237~~  | [无]                    |
-| 5-6 链表与双指针 Remove Nth Node Form End of List            | 19         | 61 143 ~~234~~          |
+| 5-6 链表与双指针 Remove Nth Node Form End of List            | ~~19~~     | 61 143 ~~234~~          |
 | 额外刷题            | ~~*160~~ |               |
 | **第六章 栈、队列、优先队列**                                |            |                         |
 | 6-1 栈的基础应用 Valid Parentheses                           | 20         | 150 71                  |

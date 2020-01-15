@@ -30,7 +30,6 @@ class Solution1 {
         ListNode current = head;
 
         while (current != null) {
-
             if (current.val == val) {
                 prev.next = current.next;
             } else {
