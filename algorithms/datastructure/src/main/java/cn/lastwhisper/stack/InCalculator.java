@@ -53,11 +53,11 @@ public class InCalculator {
                 keepNum += ch - 48;
                 // ch是否是最后一个字符
                 if (index == expression.length() - 1) {
-                    numStack.push(Integer.valueOf(keepNum));
+                    numStack.push(Integer.parseInt(keepNum));
                 } else {
                     // 如果后一位是运算符，则将当前keepNum入栈
                     if (operStack.isOper(expression.substring(index + 1, index + 2).charAt(0))) {
-                        numStack.push(Integer.valueOf(keepNum));
+                        numStack.push(Integer.parseInt(keepNum));
                         // 每次清空多位数
                         keepNum = "";
                     }
@@ -104,8 +104,7 @@ class CalcArrayStack {
         if (n > 0 && n == (arr.length / 4)) {
             resize(arr.length / 2);
         }
-        int data = arr[--n];
-        return data;
+        return arr[--n];
     }
 
     /**

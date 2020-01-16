@@ -52,8 +52,7 @@ class ArrayStack {
         if (n > 0 && n == (arr.length / 4)) {
             resize(n / 2);
         }
-        int data = arr[--n];
-        return data;
+        return arr[--n];
     }
     // 查看栈顶元素
     public int peek(){
@@ -69,9 +68,7 @@ class ArrayStack {
     // resize
     public void resize(int maxSize) {
         int[] newArr = new int[maxSize];
-        for (int i = 0; i < size(); i++) {
-            newArr[i] = arr[i];
-        }
+        if (size() >= 0) System.arraycopy(arr, 0, newArr, 0, size());
         this.arr = newArr;
     }
 }

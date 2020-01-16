@@ -17,29 +17,22 @@ class Solution1 {
      * 空间复杂度：
      */
     public ListNode swapPairs(ListNode head) {
-        ListNode lastTail = head;
-        ListNode rHead = head.next;
 
-        ListNode current = head;
-        ListNode next  ;
-        ListNode afterNext  ;
+        ListNode dummyHead = new ListNode(0);
+        dummyHead.next = head;
 
-        while (current != null) {
-            // 后移
-            next = current.next;
-            afterNext = current.next.next;
-
-            // 反转
-            next.next = current;
-            if(afterNext!=null){
-                lastTail.next = afterNext.next;
-            }
-            lastTail = afterNext;
-
-            current = afterNext;
+        ListNode p = dummyHead;
+        while(p.next != null && p.next.next != null ){
+            ListNode node1 = p.next;
+            ListNode node2 = node1.next;
+            ListNode next = node2.next;
+            node2.next = node1;
+            node1.next = next;
+            p.next = node2;
+            p = node1;
         }
 
-        return rHead;
+        return dummyHead.next;
     }
 
     public static void main(String[] args) {
