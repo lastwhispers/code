@@ -37,9 +37,9 @@
 | 额外刷题            | ~~*160~~ | ~~876~~ |
 | **第六章 栈、队列、优先队列**                                |            |                         |
 | 6-1 栈的基础应用 Valid Parentheses                           | ~~20~~     | ~~150 71~~              |
-| 6-2 栈和递归的紧密关系 Binary Tree Preorder, Inorder and Postorder Traversal | ~~*144 94 145~~ | [无]                    |
+| 6-2 栈和递归的紧密关系 Binary Tree Preorder, Inorder and Postorder Traversal | ~~144 94 145~~ | [无]                    |
 | 6-3 运用栈模拟递归                                           | ~~*144 94 145~~ | 341                     |
-| 6-4 队列的典型应用 Binary Tree Level Order Traversal         | 102        | 107 103 199 346         |
+| 6-4 队列的典型应用 Binary Tree Level Order Traversal         | ~~102~~    | 107 103 199 346     |
 | 6-5 BFS和图的最短路径 Perfect Squares                        | 279        | 127 126 286             |
 | 6-6 优先队列                                                 | [无]       | [无]                    |
 | 6-7 优先队列相关的算法问题 Top K Frequent Elements           | 347        | 23                      |

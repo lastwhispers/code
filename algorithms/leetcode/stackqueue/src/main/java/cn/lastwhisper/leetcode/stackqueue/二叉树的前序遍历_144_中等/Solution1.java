@@ -26,7 +26,7 @@ class Solution1 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = TreeUtils.createTree();
+        TreeNode root = TreeUtils.createTraversalTree();
 
         new Solution1().preorderTraversal(root).forEach(node -> {
             System.out.print(node + ",");

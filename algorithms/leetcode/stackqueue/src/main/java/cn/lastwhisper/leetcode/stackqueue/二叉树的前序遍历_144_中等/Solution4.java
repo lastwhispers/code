@@ -36,7 +36,7 @@ class Solution4 {
     }
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.createTree();
+        TreeNode tree = TreeUtils.createTraversalTree();
 
         new Solution4().preorderTraversal(tree).forEach(node -> {
             System.out.print(node + ",");
