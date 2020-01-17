@@ -15,7 +15,38 @@ public class GetProductInfoCommand extends HystrixCommand<ProductInfo> {
 
     private static final HystrixCommandKey GETTER_KEY = HystrixCommandKey.Factory.asKey("GetProductInfoCommand");
     private Long productId;
+    /*
+     * @HystrixCommand(
+            fallbackMethod = "fallback",
+            commandProperties = {
+                    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000"),//超时降级
+                    @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),//同意使用断路器来熔断请求
+                    //timeInMilliseconds/numBuckets内,最小请求数
+                    @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),
+                    //断路器打开后的休眠时间窗口,休眠结束后,断路器进入"半打开"状态
 
+                    @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"),
+                    //断路器打开的错误比条件(在timeInMilliseconds内,请求超过requestVolumeThreshold前提下,错误比超60,开启断路器)
+                    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60")
+            },
+            threadPoolProperties = {
+                    // 线程池参数
+                    @HystrixProperty(name = "coreSize", value = "20"),
+                    @HystrixProperty(name = "maxQueueSize", value = "10"),
+                    @HystrixProperty(name = "keepAliveTimeMinutes", value = "1000"),
+                    @HystrixProperty(name = "queueSizeRejectionThreshold", value = "8"),
+                    //滚动时间窗口长度,被分成多个numBuckets,该参数需要被numBuckets整除
+                    @HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "1500"),
+                    @HystrixProperty(name = "metrics.rollingStats.numBuckets", value = "12")
+            })
+     *
+     */
+
+    /**
+     * 首先线程池10-20不代表并发能力10-20，如果一个接口的tp99为50ms，1个线程1s可以处理20请求，
+     *  10个线程就可以处理200请求每秒。10个实例就是tps为2000。
+     * 所以具体配置如何取决于接口性能和设置的超时时间等因素。
+     */
     public GetProductInfoCommand(Long productId) {
         /*
          * ThreadPoolKey==GroupKey 某服务
@@ -25,8 +56,8 @@ public class GetProductInfoCommand extends HystrixCommand<ProductInfo> {
                 .andCommandKey(GETTER_KEY)
                 .andThreadPoolKey(HystrixThreadPoolKey.Factory.asKey("GetProductInfoPool"))
                 .andThreadPoolPropertiesDefaults(HystrixThreadPoolProperties.Setter()
-                        .withCoreSize(10) //核心线程数
-                        .withMaxQueueSize(8) //最大等待队列
+                                .withCoreSize(10) //核心线程数
+                                .withMaxQueueSize(8) //最大等待队列
                         //.withQueueSizeRejectionThreshold(15)//等待队列大小，
                 )
                 // 如果withMaxQueueSize<withQueueSizeRejectionThreshold，那么取的是withMaxQueueSize，反之，取得是withQueueSizeRejectionThreshold

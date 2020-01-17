@@ -24,10 +24,6 @@ public class UDPClient {
 
             System.out.println(new String(receivePacket.getData(), 0, receivePacket.getLength()));
 
-        } catch (SocketException e) {
-            e.printStackTrace();
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -21,6 +21,30 @@ import java.util.Collections;
 @RequestMapping("/order")
 public class HystrixController {
 
+
+    //@HystrixCommand(
+    //        fallbackMethod = "fallback",
+    //        commandProperties = {
+    //                @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000"),//超时降级
+    //                @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),//同意使用断路器来熔断请求
+    //                //timeInMilliseconds/numBuckets内,最小请求数
+    //                @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),
+    //                //断路器打开后的休眠时间窗口,休眠结束后,断路器进入"半打开"状态
+    //                @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"),
+    //                //断路器打开的错误比条件(在timeInMilliseconds内,请求超过requestVolumeThreshold前提下,错误比超60,开启断路器)
+    //                @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60")
+    //        },
+    //        threadPoolProperties = {
+    //                // 线程池参数
+    //                @HystrixProperty(name = "coreSize", value = "20"),
+    //                @HystrixProperty(name = "maxQueueSize", value = "10"),
+    //                @HystrixProperty(name = "keepAliveTimeMinutes", value = "1000"),
+    //                @HystrixProperty(name = "queueSizeRejectionThreshold", value = "8"),
+    //                //滚动时间窗口长度,被分成多个numBuckets,该参数需要被numBuckets整除
+    //                @HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "1500"),
+    //                @HystrixProperty(name = "metrics.rollingStats.numBuckets", value = "12")
+    //        })
+
     @GetMapping("/getProductInfoList")
     //@HystrixCommand(fallbackMethod = "fallback")
     //@HystrixCommand(commandProperties = {

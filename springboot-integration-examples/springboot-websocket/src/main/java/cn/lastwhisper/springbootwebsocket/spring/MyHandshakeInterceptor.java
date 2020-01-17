@@ -17,10 +17,6 @@ public class MyHandshakeInterceptor implements HandshakeInterceptor {
     /**
      * @author lastwhisper
      * @desc 握手之前，若返回false，则不建立链接
-     * @param request
-     * @param response
-     * @param wsHandler
-     * @param attributes
      * @return boolean
      */
     @Override
