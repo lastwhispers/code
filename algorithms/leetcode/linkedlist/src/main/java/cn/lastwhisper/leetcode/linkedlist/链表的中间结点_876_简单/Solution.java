@@ -1,6 +1,6 @@
-package cn.lastwhisper.leetcode.linkedlist.链表的中间结点_876_简单;
+package cn.lastwhisper.leetcode.linkedlist.链表的中间节点_876_简单;
 
-import cn.lastwhisper.leetcode.linkedlist.ListNode;
+import cn.lastwhisper.leetcode.common.linkedlist.ListNode;
 
 class Solution {
     /**

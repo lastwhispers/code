@@ -1,16 +1,16 @@
 package cn.lastwhisper.leetcode.linkedlist.删除链表中的节点_237_简单;
 
-import cn.lastwhisper.leetcode.linkedlist.ListNode;
+import cn.lastwhisper.leetcode.common.linkedlist.ListNode;
 
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.printListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.printListNode;
 
 class Solution1 {
     /**
      * 题目地址：https://leetcode-cn.com/problems/delete-node-in-a-linked-list/
      * -------------------------------------------------------------------
-     * 思考：删除结点的两种思路
+     * 思考：删除节点的两种思路
      * -------------------------------------------------------------------
-     * 思路：将下一个结点值给当前结点，删除下一个结点
+     * 思路：将下一个节点值给当前节点，删除下一个节点
      * -------------------------------------------------------------------
      * 时间复杂度：O(1)
      * 空间复杂度：O(1)

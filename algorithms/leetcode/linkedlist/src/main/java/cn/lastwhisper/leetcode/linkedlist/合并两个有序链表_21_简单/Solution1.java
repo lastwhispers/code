@@ -1,9 +1,9 @@
 package cn.lastwhisper.leetcode.linkedlist.合并两个有序链表_21_简单;
 
-import cn.lastwhisper.leetcode.linkedlist.ListNode;
+import cn.lastwhisper.leetcode.common.linkedlist.ListNode;
 
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.createListNode;
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.printListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.createListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.printListNode;
 
 class Solution1 {
     /**
@@ -11,15 +11,15 @@ class Solution1 {
      * -------------------------------------------------------------------
      * 思考：
      * -------------------------------------------------------------------
-     * 思路：设置一个虚拟头结点vNode，边遍历两个链表边比较结点大小，
-     * vNode指向小的那个结点，遍历完后，返回vNode.next
+     * 思路：设置一个虚拟头节点vNode，边遍历两个链表边比较节点大小，
+     * vNode指向小的那个节点，遍历完后，返回vNode.next
      * -------------------------------------------------------------------
-     * 时间复杂度：O(n+m)，每次迭代都会添加一个链表结点，循环次数为两个链表总长度
+     * 时间复杂度：O(n+m)，每次迭代都会添加一个链表节点，循环次数为两个链表总长度
      * 空间复杂度：O(1)
      */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
-        // 虚拟头结点，这个点不能动
+        // 虚拟头节点，这个点不能动
         ListNode vNode = new ListNode(-1);
 
         // currentv负责穿针引线，l1、l2负责遍历

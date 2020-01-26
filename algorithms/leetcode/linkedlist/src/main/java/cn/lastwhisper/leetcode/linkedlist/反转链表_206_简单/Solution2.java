@@ -1,7 +1,7 @@
 package cn.lastwhisper.leetcode.linkedlist.反转链表_206_简单;
 
-import cn.lastwhisper.leetcode.linkedlist.LinkedListUtil;
-import cn.lastwhisper.leetcode.linkedlist.ListNode;
+import cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil;
+import cn.lastwhisper.leetcode.common.linkedlist.ListNode;
 
 /**
  * Definition for singly-linked list.
@@ -33,7 +33,7 @@ public class Solution2 {
         //与head关联
         ListNode rhead = reverseList(head.next);
 
-        // 每次反转链表末尾的两个结点
+        // 每次反转链表末尾的两个节点
         // head->next此刻指向head后面的链表的尾节点
         // head->next->next = head把head节点放在了尾部
         head.next.next = head;

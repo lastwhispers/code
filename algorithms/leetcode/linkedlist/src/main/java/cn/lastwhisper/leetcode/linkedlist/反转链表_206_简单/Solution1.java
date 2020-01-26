@@ -1,7 +1,7 @@
 package cn.lastwhisper.leetcode.linkedlist.反转链表_206_简单;
 
-import cn.lastwhisper.leetcode.linkedlist.LinkedListUtil;
-import cn.lastwhisper.leetcode.linkedlist.ListNode;
+import cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil;
+import cn.lastwhisper.leetcode.common.linkedlist.ListNode;
 
 /**
  * Definition for singly-linked list.
@@ -20,9 +20,9 @@ public class Solution1 {
      * -------------------------------------------------------------------
      * 思路：iteratively
      *  需要三个指针prev、current、next帮助反转
-     *      prev指向前一个结点
-     *      current指向当前正在反转的结点
-     *      next指向下一个待反转的结点
+     *      prev指向前一个节点
+     *      current指向当前正在反转的节点
+     *      next指向下一个待反转的节点
      * -------------------------------------------------------------------
      * 时间复杂度：O(n)
      * 空间复杂度：O(1)

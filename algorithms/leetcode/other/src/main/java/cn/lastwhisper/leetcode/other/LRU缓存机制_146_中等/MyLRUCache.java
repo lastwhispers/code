@@ -29,10 +29,10 @@ public class MyLRUCache {
     }
 
     /**
-     *  1、添加结点到链表头
-     *  2、删除某结点
-     *  3、获取尾结点
-     *  每一步操作都要维护相关结点prev、next指针的关系
+     *  1、添加节点到链表头
+     *  2、删除某节点
+     *  3、获取尾节点
+     *  每一步操作都要维护相关节点prev、next指针的关系
      */
     class DoubleLinkedList implements Iterable<Node> {
         private Node head, tail;

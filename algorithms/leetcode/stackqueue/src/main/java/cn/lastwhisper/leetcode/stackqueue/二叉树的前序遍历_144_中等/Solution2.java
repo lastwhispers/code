@@ -1,9 +1,10 @@
 package cn.lastwhisper.leetcode.stackqueue.二叉树的前序遍历_144_中等;
 
-import cn.lastwhisper.leetcode.stackqueue.TreeNode;
-import cn.lastwhisper.leetcode.stackqueue.TreeUtils;
+import cn.lastwhisper.leetcode.common.tree.TreeNode;
+import cn.lastwhisper.leetcode.common.tree.TreeUtils;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -13,7 +14,7 @@ class Solution2 {
      * -------------------------------------------------------------------
      * 思考：
      * -------------------------------------------------------------------
-     * 思路：遍历
+     * 思路：前序遍历-迭代
      * -------------------------------------------------------------------
      * 时间复杂度：O(n)
      * 空间复杂度：O(n)
@@ -23,21 +24,20 @@ class Solution2 {
         if (root == null) {
             return result;
         }
-
-        Stack<TreeNode> stack = new Stack<>();
+        LinkedList<TreeNode> stack = new LinkedList<>();
         stack.push(root);
-        while (!stack.empty()) {
-            TreeNode treeNode = stack.pop();
-            result.add(treeNode.val);
-            if (treeNode.right != null) stack.push(treeNode.right);
-            if (treeNode.left != null) stack.push(treeNode.left);
+        // 根-左-右
+        while (!stack.isEmpty()) {
+            root = stack.pop();
+            result.add(root.val);
+            if (root.right != null) stack.push(root.right);
+            if (root.left != null) stack.push(root.left);
         }
-
         return result;
     }
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.createTraversalTree();
+        TreeNode tree = TreeUtils.createTree();
 
         new Solution2().preorderTraversal(tree).forEach(node -> {
             System.out.print(node + ",");

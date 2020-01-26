@@ -1,23 +1,23 @@
 package cn.lastwhisper.leetcode.linkedlist.删除链表的倒数第N个节点_19_中等;
 
-import cn.lastwhisper.leetcode.linkedlist.ListNode;
+import cn.lastwhisper.leetcode.common.linkedlist.ListNode;
 
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.createListNode;
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.printListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.createListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.printListNode;
 
 class Solution1 {
     /**
      * 题目地址：https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
      * -------------------------------------------------------------------
-     * 思考：特殊结点，头结点、尾结点
+     * 思考：特殊节点，头节点、尾节点
      * -------------------------------------------------------------------
-     * 思路：虚拟头结点+快慢指针
+     * 思路：虚拟头节点+快慢指针
      * -------------------------------------------------------------------
      * 时间复杂度：O(n)
      * 空间复杂度：O(1)
      */
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        // 虚拟头结点解决删除头结点问题
+        // 虚拟头节点解决删除头节点问题
         ListNode dummyNode = new ListNode(0);
         dummyNode.next = head;
 

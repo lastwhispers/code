@@ -24,31 +24,31 @@
 | 4-3 set和map不同底层实现的区别                               | ~~349 350~~    | ~~136 242 202 290 205 451~~ |
 | 4-4 使用查找表的经典问题 Two Sum                             | ~~1~~          | ~~15 18 16~~                |
 | 4-5 灵活选择键值 4Sum II                                     | ~~454~~        | ~~49~~                      |
-| 4-6 灵活选择键值 Number of Boomerangs                        | ~~447~~        | ~~*149~~ 719                 |
+| 4-6 灵活选择键值 Number of Boomerangs                        | ~~447~~        | ~~*149~~ **719**             |
 | 4-7 查找表和滑动窗口 Contain Duplicate II                    | ~~219~~       |                         |
 | 4-8 二分搜索树底层实现的顺序性 Contain Duplicate III         | ~~*220~~        | [无]                    |
 | **第五章 在链表中穿针引线**                                  |            |                         |
 | 5-1 链表，在节点间穿针引线 Reverse Linked List               | ~~206~~      | ~~*92~~                      |
 | 5-2 测试你的链表程序                                         | ~~206~~        | ~~83~~ ~~86~~ ~~328~~ ~~2 445~~ |
-| 5-3 设立链表的虚拟头结点 Remove Linked List Elements         | ~~203~~    | ~~82~~ ~~*21(递归)~~     |
-| 5-4 复杂的穿针引线 Swap Nodes in Pairs                       | ~~*24~~    | 25 147 148              |
+| 5-3 设立链表的虚拟头节点 Remove Linked List Elements         | ~~203~~    | ~~82~~ ~~*21(递归)~~     |
+| 5-4 复杂的穿针引线 Swap Nodes in Pairs                       | ~~*24~~    | **25 147 148**          |
 | 5-5 不仅仅是穿针引线 Delete Node in a Linked List            | ~~237~~  | [无]                    |
-| 5-6 链表与双指针 Remove Nth Node Form End of List            | ~~19~~     | 61 ~~143 234~~        |
-| 额外刷题            | ~~*160~~ | ~~876~~ |
+| 5-6 链表与双指针 Remove Nth Node Form End of List            | ~~19~~     | **61** ~~143 234~~    |
+| 额外刷题            | **160** | ~~876~~ |
 | **第六章 栈、队列、优先队列**                                |            |                         |
 | 6-1 栈的基础应用 Valid Parentheses                           | ~~20~~     | ~~150 71~~              |
 | 6-2 栈和递归的紧密关系 Binary Tree Preorder, Inorder and Postorder Traversal | ~~144 94 145~~ | [无]                    |
-| 6-3 运用栈模拟递归                                           | ~~*144 94 145~~ | 341                     |
-| 6-4 队列的典型应用 Binary Tree Level Order Traversal         | ~~102~~    | ~~107 103 199 346~~ |
-| 6-5 BFS和图的最短路径 Perfect Squares                        | 279        | 127 126 286             |
+| 6-3 运用栈模拟递归                                           | ~~*144 94 145~~  | **341**                |
+| 6-4 队列的典型应用 Binary Tree Level Order Traversal         | ~~102~~    | ~~107 103 199~~ **346** |
+| 6-5 BFS和图的最短路径 Perfect Squares                        | ~~*279~~   | **127 126** **286**    |
 | 6-6 优先队列                                                 | [无]       | [无]                    |
-| 6-7 优先队列相关的算法问题 Top K Frequent Elements           | 347        | 23                      |
+| 6-7 优先队列相关的算法问题 Top K Frequent Elements           | ~~347~~    | ~~23~~                  |
 | **第七章 二叉树和递归**                                      |            |                         |
-| 7-1 二叉树天然的递归结构                                     | 104        | 111                     |
-| 7-2 一个简单的二叉树问题引发的血案 Invert Binary Tree        | 226        | 100 101 222 110         |
-| 7-3 注意递归的终止条件 Path Sum                              | 112        | 111 404                 |
-| 7-4 定义递归问题 Binary Tree Path                            | 257        | 113 129 222             |
-| 7-5 稍复杂的递归逻辑 Path Sum III                            | 437        | [无]                    |
+| 7-1 二叉树天然的递归结构                                     | ~~*104(重点看)~~ | ~~*111(重点看)~~      |
+| 7-2 一个简单的二叉树问题引发的血案 Invert Binary Tree        | ~~*226~~   | ~~100 101 222 *110~~ |
+| 7-3 注意递归的终止条件 Path Sum                              | ~~112~~    | ~~404~~             |
+| 7-4 定义递归问题 Binary Tree Path                            | ~~257~~    | ~~113 129 222~~         |
+| 7-5 稍复杂的递归逻辑 Path Sum III                            | ~~437~~    | [无]                    |
 | 7-6 二分搜索树中的问题 Lowest Common Ancestor of a Binary Search Tree | 783 235    | 98 450 108 230 236 530  |
 | **第八章 递归和回溯法**                                      |            |                         |
 | 8-1 树形问题 Letter Combinations of a Phone Number           | 17         | [无]                    |

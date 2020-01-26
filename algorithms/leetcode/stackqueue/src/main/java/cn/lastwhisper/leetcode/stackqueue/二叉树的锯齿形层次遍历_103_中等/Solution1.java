@@ -1,14 +1,14 @@
 package cn.lastwhisper.leetcode.stackqueue.二叉树的锯齿形层次遍历_103_中等;
 
-import cn.lastwhisper.leetcode.stackqueue.TreeNode;
+import cn.lastwhisper.leetcode.common.tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import static cn.lastwhisper.leetcode.stackqueue.TreeUtils.create102Tree;
-import static cn.lastwhisper.leetcode.stackqueue.TreeUtils.printLists;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtils.printLists;
 
 class Solution1 {
     /**
@@ -16,7 +16,7 @@ class Solution1 {
      * -------------------------------------------------------------------
      * 思考：
      * -------------------------------------------------------------------
-     * 思路：
+     * 思路：BFS
      * -------------------------------------------------------------------
      * 时间复杂度：
      * 空间复杂度：
@@ -31,12 +31,11 @@ class Solution1 {
         while (!queue.isEmpty()) {
             // 遍历每层的数据
             int size = queue.size();
-            // 又当栈又当队列
             LinkedList<Integer> list = new LinkedList<>();
             for (int i = 0; i < size; i++) {
                 root = queue.poll();
-                // result.size()=1,2,3,4,5代表层次
-                // 根据层次来判断顺序；奇数下层正序，偶数下层逆序
+                // result.size()=0,1,2,3代表层次
+                // 根据层次来判断顺序；奇数倒序，偶数正序
                 if ((result.size() & 1) == 1) {
                     list.push(root.val);
                 } else {
@@ -56,8 +55,7 @@ class Solution1 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = create102Tree();
-        //TreeNode root = create103Tree();
+        TreeNode root = createTree(3,9,20,null,null,15,7);
         List<List<Integer>> lists = new Solution1().zigzagLevelOrder(root);
         printLists(lists);
     }

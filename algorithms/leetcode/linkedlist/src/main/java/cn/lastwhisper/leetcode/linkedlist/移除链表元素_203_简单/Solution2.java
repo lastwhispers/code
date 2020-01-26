@@ -1,15 +1,15 @@
 package cn.lastwhisper.leetcode.linkedlist.移除链表元素_203_简单;
 
-import cn.lastwhisper.leetcode.linkedlist.ListNode;
+import cn.lastwhisper.leetcode.common.linkedlist.ListNode;
 
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.createListNode;
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.printListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.createListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.printListNode;
 
 class Solution2 {
     /**
      * 题目地址：https://leetcode-cn.com/problems/remove-linked-list-elements/
      * -------------------------------------------------------------------
-     * 思考：不设置虚拟头结点
+     * 思考：不设置虚拟头节点
      * -------------------------------------------------------------------
      * 思路：
      * -------------------------------------------------------------------
@@ -19,9 +19,9 @@ class Solution2 {
     public ListNode removeElements(ListNode head, int val) {
         if (head == null)
             return null;
-        // 前结点
+        // 前节点
         ListNode prev = null;
-        // 当前结点
+        // 当前节点
         ListNode current = head;
         while (current != null) {
             if (current.val == val) {

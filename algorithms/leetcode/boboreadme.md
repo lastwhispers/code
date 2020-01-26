@@ -89,7 +89,7 @@
 | **第五章：在链表中穿针引线** | [章节C++源码](https://github.com/liuyubobobo/Play-with-Algorithm-Interview/tree/master/05-About-Linked-List/Course%20Code%20(C%2B%2B)/) | [章节Java源码](05-About-Linked-List/Course%20Code%20(Java)/) |
 | 5-1 链表，在节点间穿针引线 Reverse Linked List | [C++源码](https://github.com/liuyubobobo/Play-with-Algorithm-Interview/tree/master/05-About-Linked-List/Course%20Code%20(C%2B%2B)/01-Reverse-Linked-List/) | [Java源码](05-About-Linked-List/Course%20Code%20(Java)/01-Reverse-Linked-List/src/) |
 | 5-2 测试你的链表程序 | [C++源码](https://github.com/liuyubobobo/Play-with-Algorithm-Interview/tree/master/05-About-Linked-List/Course%20Code%20(C%2B%2B)/02-Test-Your-Linked-List/) | [Java源码](05-About-Linked-List/Course%20Code%20(Java)/02-Test-Your-Linked-List/src/) |
-| 5-3 设立链表的虚拟头结点 Remove Linked List Elements | [C++源码](https://github.com/liuyubobobo/Play-with-Algorithm-Interview/tree/master/05-About-Linked-List/Course%20Code%20(C%2B%2B)/03-Remove-Linked-List-Elements/) | [Java源码](05-About-Linked-List/Course%20Code%20(Java)/03-Remove-Linked-List-Elements/src/) |
+| 5-3 设立链表的虚拟头节点 Remove Linked List Elements | [C++源码](https://github.com/liuyubobobo/Play-with-Algorithm-Interview/tree/master/05-About-Linked-List/Course%20Code%20(C%2B%2B)/03-Remove-Linked-List-Elements/) | [Java源码](05-About-Linked-List/Course%20Code%20(Java)/03-Remove-Linked-List-Elements/src/) |
 | 5-4 复杂的穿针引线 Swap Nodes in Pairs | [C++源码](https://github.com/liuyubobobo/Play-with-Algorithm-Interview/tree/master/05-About-Linked-List/Course%20Code%20(C%2B%2B)/04-Swap-Nodes-in-Pairs/) | [Java源码](05-About-Linked-List/Course%20Code%20(Java)/04-Swap-Nodes-in-Pairs/src/) |
 | 5-5 不仅仅是穿针引线 Delete Node in a Linked List | [C++源码](https://github.com/liuyubobobo/Play-with-Algorithm-Interview/tree/master/05-About-Linked-List/Course%20Code%20(C%2B%2B)/05-Delete-Node-in-a-Linked-List/) | [Java源码](05-About-Linked-List/Course%20Code%20(Java)/05-Delete-Node-in-a-Linked-List/src/) |
 | 5-6 链表与双指针 Remove Nth Node From End of List | [C++源码](https://github.com/liuyubobobo/Play-with-Algorithm-Interview/tree/master/05-About-Linked-List/Course%20Code%20(C%2B%2B)/06-Remove-Nth-Node-From-End-of-List/) | [Java源码](05-About-Linked-List/Course%20Code%20(Java)/06-Remove-Nth-Node-From-End-of-List/src/) |
@@ -187,7 +187,7 @@
 | **第五章 在链表中穿针引线** | | |
 | 5-1 链表，在节点间穿针引线 Reverse Linked List | 206 | 92 |
 | 5-2 测试你的链表程序 | 206 | 83 86 328 2 445 |
-| 5-3 设立链表的虚拟头结点 Remove Linked List Elements | 203 | 82 21 |
+| 5-3 设立链表的虚拟头节点 Remove Linked List Elements | 203 | 82 21 |
 | 5-4 复杂的穿针引线 Swap Nodes in Pairs | 24 | 25 147 148 |
 | 5-5 不仅仅是穿针引线 Delete Node in a Linked List | 237 | [无] |
 | 5-6 链表与双指针 Remove Nth Node Form End of List | 19 | 61 143 234 |

@@ -47,7 +47,7 @@ public class KurskalAlgorithm {
         }
     }
 
-    // 打印结点
+    // 打印节点
     public void print() {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {

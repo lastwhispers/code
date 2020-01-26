@@ -1,9 +1,9 @@
 package cn.lastwhisper.leetcode.linkedlist.删除排序链表中的重复元素_83_简单;
 
-import cn.lastwhisper.leetcode.linkedlist.ListNode;
+import cn.lastwhisper.leetcode.common.linkedlist.ListNode;
 
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.createListNode;
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.printListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.createListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.printListNode;
 
 class Solution3 {
     /**

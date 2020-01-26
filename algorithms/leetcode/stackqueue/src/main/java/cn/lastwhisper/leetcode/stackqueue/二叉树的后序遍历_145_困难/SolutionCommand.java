@@ -1,11 +1,14 @@
 package cn.lastwhisper.leetcode.stackqueue.二叉树的后序遍历_145_困难;
 
-import cn.lastwhisper.leetcode.stackqueue.TreeNode;
-import cn.lastwhisper.leetcode.stackqueue.TreeUtils;
+import cn.lastwhisper.leetcode.common.tree.TreeNode;
+import cn.lastwhisper.leetcode.common.tree.TreeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+
+import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtils.printList;
 
 class SolutionCommand {
     static class Command {
@@ -56,11 +59,6 @@ class SolutionCommand {
     }
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.createTraversalTree();
-
-        new SolutionCommand().postorderTraversal(tree).forEach(node -> {
-            System.out.print(node + ",");
-        });
+        printList(new SolutionCommand().postorderTraversal(createTree(1, null, 2, 3)));
     }
 }
-

@@ -1,10 +1,10 @@
 package cn.lastwhisper.leetcode.linkedlist.环形链表_141_简单;
 
-import cn.lastwhisper.leetcode.linkedlist.ListNode;
+import cn.lastwhisper.leetcode.common.linkedlist.ListNode;
 
 import java.util.HashSet;
 
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.createLoopListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.createLoopListNode;
 
 public class Solution2 {
     /**

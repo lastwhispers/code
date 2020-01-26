@@ -1,9 +1,9 @@
 package cn.lastwhisper.leetcode.linkedlist.删除排序链表中的重复元素_II_82_中等;
 
-import cn.lastwhisper.leetcode.linkedlist.ListNode;
+import cn.lastwhisper.leetcode.common.linkedlist.ListNode;
 
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.createListNode;
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.printListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.createListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.printListNode;
 
 class Solution1 {
     /**
@@ -31,17 +31,17 @@ class Solution1 {
 
         while (next != null) {
             if (current.val == next.val) {
-                // 删除第2个重复结点
+                // 删除第2个重复节点
                 current.next = next.next;
                 next = next.next;
-                // 删除第2+个重复结点
+                // 删除第2+个重复节点
                 while (next != null && current.val == next.val) {
                     current.next = next.next;
                     next = next.next;
                 }
                 // prev!=null说明[m..n]出现重复
                 if (prev != null) {
-                    // 删除第1个重复结点
+                    // 删除第1个重复节点
                     prev.next = current.next;
                 } else {
                     // prev==null说明从[1..m]都是重复的，[m..n]还不好说

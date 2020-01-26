@@ -3,7 +3,7 @@ package cn.lastwhisper.offer.interview_7;
 // 题目：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输
 // 入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,
 // 2, 4, 7, 3, 5, 6, 8}和中序遍历序列{4, 7, 2, 1, 5, 3, 8, 6}，则重建出
-// 二叉树并输出它的头结点。
+// 二叉树并输出它的头节点。
 public class ConstructBinaryTree {
     class TreeNode {
         int val;
@@ -34,33 +34,33 @@ public class ConstructBinaryTree {
      * @param iEnd   中序遍历结束位置
      */
     public TreeNode construct(int[] pre, int[] in, int pStart, int pEnd, int iStart, int iEnd) {
-        // 先序遍历数组中的第一个元素：根结点
+        // 先序遍历数组中的第一个元素：根节点
         TreeNode root = new TreeNode(pre[pStart]);
         // 第一次：pStart=0、pEnd=7;iStart=0、iEnd=7
         // 第二次：pStart=1、pEnd=3;iStart=0、iEnd=2
         // 第三次：pStart=2、pEnd=3;iStart=0、iEnd=1
         // 第四次：pStart=3、pEnd=3;iStart=1、iEnd=1
-        // 先序数组和中序数组中只有一个结点
+        // 先序数组和中序数组中只有一个节点
         if (pStart == pEnd && iStart == iEnd) {
             if (pre[pStart] != in[iStart])
                 //throw new FileNotFoundException("数组不符合规范！");
                 throw new RuntimeException("数组不符合规范！");
             return root;
         }
-        int index = iStart; // 用于记录中序遍历序列中根结点的位置
+        int index = iStart; // 用于记录中序遍历序列中根节点的位置
         //第一次：index=3,中序遍历对应root下标
         //第二次：index=2,中序遍历对应root下标
         //第二次：index=0,中序遍历对应root下标
-        //根据先序遍历数组得到的根结点,找到该根结点对应中序遍历数组的下标
+        //根据先序遍历数组得到的根节点,找到该根节点对应中序遍历数组的下标
         while (root.val != in[index] && index <= iEnd) {
             index++;
         }
         if (index > iEnd)
             throw new RuntimeException("数组不符合规范！");
-        //第一次：leftLength=3,当前root的左子树有三个结点
-        //第二次：leftLength=2,当前root的左子树有两个结点
-        //第三次：leftLength=0,当前root的左子树有没有结点
-        int leftLength = index - iStart;//中序遍历中当前root的左子树结点个数
+        //第一次：leftLength=3,当前root的左子树有三个节点
+        //第二次：leftLength=2,当前root的左子树有两个节点
+        //第三次：leftLength=0,当前root的左子树有没有节点
+        int leftLength = index - iStart;//中序遍历中当前root的左子树节点个数
         //构建左子树
         if (leftLength > 0) {
             // [pStart + 1...pStart + leftLength]是先序遍历左子树的范围
@@ -135,7 +135,7 @@ public class ConstructBinaryTree {
     }
 
     /**
-     * 单个结点
+     * 单个节点
      */
     public void test4() {
         int[] pre = {1};

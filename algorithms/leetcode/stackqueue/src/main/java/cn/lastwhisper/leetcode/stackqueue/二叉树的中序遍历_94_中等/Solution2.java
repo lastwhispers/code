@@ -1,11 +1,11 @@
 package cn.lastwhisper.leetcode.stackqueue.二叉树的中序遍历_94_中等;
 
-import cn.lastwhisper.leetcode.stackqueue.TreeNode;
-import cn.lastwhisper.leetcode.stackqueue.TreeUtils;
+import cn.lastwhisper.leetcode.common.tree.TreeNode;
+import cn.lastwhisper.leetcode.common.tree.TreeUtils;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
 
 class Solution2 {
     /**
@@ -20,9 +20,9 @@ class Solution2 {
      */
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
-        Stack<TreeNode> stack = new Stack<>();
+        LinkedList<TreeNode> stack = new LinkedList<>();
 
-        while (root != null || !stack.empty()) {
+        while (root != null || !stack.isEmpty()) {
             if (root != null) {
                 stack.push(root);
                 root = root.left;
@@ -36,7 +36,7 @@ class Solution2 {
     }
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.createTraversalTree();
+        TreeNode tree = TreeUtils.createTree();
         new Solution2().inorderTraversal(tree).forEach(node -> {
             System.out.print(node + ",");
         });

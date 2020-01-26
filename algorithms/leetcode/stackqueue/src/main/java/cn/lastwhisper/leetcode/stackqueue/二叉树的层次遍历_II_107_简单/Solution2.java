@@ -1,11 +1,11 @@
 package cn.lastwhisper.leetcode.stackqueue.二叉树的层次遍历_II_107_简单;
 
-import cn.lastwhisper.leetcode.stackqueue.TreeNode;
+import cn.lastwhisper.leetcode.common.tree.TreeNode;
 
 import java.util.*;
 
-import static cn.lastwhisper.leetcode.stackqueue.TreeUtils.create102Tree;
-import static cn.lastwhisper.leetcode.stackqueue.TreeUtils.printLists;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtils.printLists;
 
 class Solution2 {
     /**
@@ -46,7 +46,7 @@ class Solution2 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = create102Tree();
+        TreeNode root = createTree(3, 9, 20, null, null, 15, 7);
         List<List<Integer>> lists = new Solution2().levelOrderBottom(root);
         printLists(lists);
     }

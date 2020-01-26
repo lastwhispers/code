@@ -1,7 +1,7 @@
 package cn.lastwhisper.leetcode.stackqueue.二叉树的前序遍历_144_中等;
 
-import cn.lastwhisper.leetcode.stackqueue.TreeNode;
-import cn.lastwhisper.leetcode.stackqueue.TreeUtils;
+import cn.lastwhisper.leetcode.common.tree.TreeNode;
+import cn.lastwhisper.leetcode.common.tree.TreeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ class Solution3 {
      * -------------------------------------------------------------------
      * 思考：
      * -------------------------------------------------------------------
-     * 思路：遍历
+     * 思路：先序遍历DFS
      * -------------------------------------------------------------------
      * 时间复杂度：O(n)
      * 空间复杂度：O(n)
@@ -36,7 +36,7 @@ class Solution3 {
     }
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.createTraversalTree();
+        TreeNode tree = TreeUtils.createTree();
 
         new Solution3().preorderTraversal(tree).forEach(node -> {
             System.out.print(node + ",");

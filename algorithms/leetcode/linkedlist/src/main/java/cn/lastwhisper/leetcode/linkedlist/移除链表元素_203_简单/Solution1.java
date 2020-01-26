@@ -1,9 +1,9 @@
 package cn.lastwhisper.leetcode.linkedlist.移除链表元素_203_简单;
 
-import cn.lastwhisper.leetcode.linkedlist.ListNode;
+import cn.lastwhisper.leetcode.common.linkedlist.ListNode;
 
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.createListNode;
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.printListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.createListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.printListNode;
 
 class Solution1 {
     /**
@@ -11,7 +11,7 @@ class Solution1 {
      * -------------------------------------------------------------------
      * 思考：
      * -------------------------------------------------------------------
-     * 思路：设置虚拟头结点
+     * 思路：设置虚拟头节点
      * -------------------------------------------------------------------
      * 时间复杂度：O(n)
      * 空间复杂度：O(1)
@@ -20,13 +20,13 @@ class Solution1 {
         if (head == null)
             return null;
 
-        //虚拟头结点
+        //虚拟头节点
         ListNode vNode = new ListNode(-1);
         vNode.next = head;
 
-        // 前结点
+        // 前节点
         ListNode prev = vNode;
-        // 当前结点
+        // 当前节点
         ListNode current = head;
 
         while (current != null) {

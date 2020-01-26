@@ -1,13 +1,13 @@
 package cn.lastwhisper.leetcode.stackqueue.二叉树的右视图_199_中等;
 
-import cn.lastwhisper.leetcode.stackqueue.TreeNode;
+import cn.lastwhisper.leetcode.common.tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import static cn.lastwhisper.leetcode.stackqueue.TreeUtils.create199Tree;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
 
 class Solution1 {
     /**
@@ -50,7 +50,7 @@ class Solution1 {
     }
 
     public static void main(String[] args) {
-        TreeNode tree = create199Tree();
+        TreeNode tree = createTree(1, 2, 3, null, 5, null, 4);
         new Solution1().rightSideView(tree).forEach(System.out::println);
     }
 }

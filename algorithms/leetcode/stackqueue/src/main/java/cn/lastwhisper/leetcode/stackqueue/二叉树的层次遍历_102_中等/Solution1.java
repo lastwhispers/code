@@ -1,17 +1,17 @@
 package cn.lastwhisper.leetcode.stackqueue.二叉树的层次遍历_102_中等;
 
-import cn.lastwhisper.leetcode.stackqueue.TreeNode;
+import cn.lastwhisper.leetcode.common.tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import static cn.lastwhisper.leetcode.stackqueue.TreeUtils.create102Tree;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtils.*;
 
 class Solution1 {
     /**
-     * 题目地址：
+     * 题目地址：https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
      * -------------------------------------------------------------------
      * 思考：
      * -------------------------------------------------------------------
@@ -49,15 +49,7 @@ class Solution1 {
     }
 
     public static void main(String[] args) {
-        List<List<Integer>> lists = new Solution1().levelOrder(create102Tree());
-        System.out.println("[");
-        for (List<Integer> list : lists) {
-            System.out.print("\t[");
-            for (Integer i : list) {
-                System.out.print(i + ",");
-            }
-            System.out.print("]\n");
-        }
-        System.out.println("]");
+        List<List<Integer>> lists = new Solution1().levelOrder(createTree(3,9,20,null,null,15,7));
+        printLists(lists);
     }
 }

@@ -1,9 +1,9 @@
 package cn.lastwhisper.leetcode.linkedlist.奇偶链表_328_中等;
 
-import cn.lastwhisper.leetcode.linkedlist.ListNode;
+import cn.lastwhisper.leetcode.common.linkedlist.ListNode;
 
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.createListNode;
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.printListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.createListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.printListNode;
 
 class Solution1 {
     /**
@@ -11,8 +11,8 @@ class Solution1 {
      * -------------------------------------------------------------------
      * 思考：
      * -------------------------------------------------------------------
-     * 思路：建立两个奇偶虚拟头结点，遍历输入链表，将满足条件的结点，
-     *  挂载到奇偶结点上，最后将奇偶链表拼接
+     * 思路：建立两个奇偶虚拟头节点，遍历输入链表，将满足条件的节点，
+     *  挂载到奇偶节点上，最后将奇偶链表拼接
      * -------------------------------------------------------------------
      * 时间复杂度：O(n)
      * 空间复杂度：O(1)
@@ -34,8 +34,8 @@ class Solution1 {
                 currentEven.next = head;
                 currentEven = currentEven.next;
                 /*
-                 * 如果最后一个结点是偶数结点，将当前奇数结点的next置为null，
-                 * 因为奇数结点的next可能指向偶数结点，但是head遍历完了，这个next无法更新，
+                 * 如果最后一个节点是偶数节点，将当前奇数节点的next置为null，
+                 * 因为奇数节点的next可能指向偶数节点，但是head遍历完了，这个next无法更新，
                  * 会出现环形链表
                  */
                 if (head.next == null) {

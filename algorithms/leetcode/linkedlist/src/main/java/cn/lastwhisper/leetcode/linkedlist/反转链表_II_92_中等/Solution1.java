@@ -1,9 +1,9 @@
 package cn.lastwhisper.leetcode.linkedlist.反转链表_II_92_中等;
 
-import cn.lastwhisper.leetcode.linkedlist.ListNode;
+import cn.lastwhisper.leetcode.common.linkedlist.ListNode;
 
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.createListNode;
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.printListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.createListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.printListNode;
 
 class Solution1 {
     /**
@@ -26,15 +26,15 @@ class Solution1 {
         ListNode vNode = new ListNode(-1);
         vNode.next = head;
 
-        // 保存反转前的前一个结点
+        // 保存反转前的前一个节点
         ListNode startNode = vNode;
         for (int i = 0; i < m - 1; i++) {
             startNode = startNode.next;
         }
-        // 保存反转前的头结点
+        // 保存反转前的头节点
         ListNode mHead = startNode.next;
 
-        // 反转需要的中间结点
+        // 反转需要的中间节点
         ListNode prev = null;
         ListNode current = mHead;
         ListNode next;
@@ -49,9 +49,9 @@ class Solution1 {
             current = next;
         }
 
-        // 反转前的前一个结点指向，反转后的头结点
+        // 反转前的前一个节点指向，反转后的头节点
         startNode.next = prev;
-        // 反转前的头结点指向，反转后的endNode
+        // 反转前的头节点指向，反转后的endNode
         mHead.next = current;
 
         return vNode.next;

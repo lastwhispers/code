@@ -1,9 +1,9 @@
 package cn.lastwhisper.leetcode.linkedlist.删除排序链表中的重复元素_83_简单;
 
-import cn.lastwhisper.leetcode.linkedlist.ListNode;
+import cn.lastwhisper.leetcode.common.linkedlist.ListNode;
 
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.createListNode;
-import static cn.lastwhisper.leetcode.linkedlist.LinkedListUtil.printListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.createListNode;
+import static cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil.printListNode;
 
 class Solution2 {
     /**
@@ -13,8 +13,8 @@ class Solution2 {
      * 数据特征：
      *     输入：链表、**升序**、所有整数
      * -------------------------------------------------------------------
-     * 思路：链表数据升序，这个条件很重要，可以使用两个指针，current指向当前结点、next指向下一个结点
-     *  判断当前结点和下一个结点是否相同，相同删除，不相同同时后移
+     * 思路：链表数据升序，这个条件很重要，可以使用两个指针，current指向当前节点、next指向下一个节点
+     *  判断当前节点和下一个节点是否相同，相同删除，不相同同时后移
      * -------------------------------------------------------------------
      * 时间复杂度：O(n)
      * 空间复杂度：O(1)
@@ -28,7 +28,7 @@ class Solution2 {
         ListNode next = head.next;
         while (next != null) {
             if (next.val == current.val) {
-                // 出现重复删除结点，并后移next结点
+                // 出现重复删除节点，并后移next节点
                 current.next = next.next;
             } else {
                 // 无重复同时后移

@@ -1,6 +1,6 @@
 package cn.lastwhisper.leetcode.stackqueue.二叉树的中序遍历_94_中等;
 
-import cn.lastwhisper.leetcode.stackqueue.TreeNode;
+import cn.lastwhisper.leetcode.common.tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
