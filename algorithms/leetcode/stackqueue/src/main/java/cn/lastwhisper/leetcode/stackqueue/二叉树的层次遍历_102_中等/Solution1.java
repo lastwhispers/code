@@ -7,7 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import static cn.lastwhisper.leetcode.common.tree.TreeUtils.*;
+import static cn.lastwhisper.leetcode.common.print.PrintUtils.printLists;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
 
 class Solution1 {
     /**
@@ -49,7 +50,7 @@ class Solution1 {
     }
 
     public static void main(String[] args) {
-        List<List<Integer>> lists = new Solution1().levelOrder(createTree(3,9,20,null,null,15,7));
+        List<List<Integer>> lists = new Solution1().levelOrder(createTree(3, 9, 20, null, null, 15, 7));
         printLists(lists);
     }
 }

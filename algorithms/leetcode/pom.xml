@@ -23,6 +23,8 @@
         <module>greedy</module>
         <module>other</module>
         <module>leetcode-common</module>
+        <module>binarysearch</module>
+        <module>union-find</module>
     </modules>
 
 

@@ -49,16 +49,16 @@
 | 7-3 注意递归的终止条件 Path Sum                              | ~~112~~    | ~~404~~             |
 | 7-4 定义递归问题 Binary Tree Path                            | ~~257~~    | ~~113 129 222~~         |
 | 7-5 稍复杂的递归逻辑 Path Sum III                            | ~~437~~    | [无]                    |
-| 7-6 二分搜索树中的问题 Lowest Common Ancestor of a Binary Search Tree | 783 235    | 98 450 108 230 236 530  |
+| 7-6 二分搜索树中的问题 Lowest Common Ancestor of a Binary Search Tree | ~~783 235~~ | ~~*98~~ **450 108 230 236 530** |
 | **第八章 递归和回溯法**                                      |            |                         |
-| 8-1 树形问题 Letter Combinations of a Phone Number           | 17         | [无]                    |
-| 8-2 什么是回溯                                               | 17         | 93 131                  |
-| 8-3 排列问题 Permutations                                    | 46         | 47                      |
-| 8-4 组合问题 Combinations                                    | 77         | [无]                    |
-| 8-5 回溯法解决组合问题的优化                                 | 77         | 39 40 216 78 90 401     |
-| 8-6 二维平面上的回溯法 Word Search                           | 79         | [无]                    |
-| 8-7 floodfill算法，一类经典问题 Number of Islands            | 200        | 130 417                 |
-| 8-8 回溯法是经典人工智能的基础 N Queens                      | 51         | 52 37                   |
+| 8-1 树形问题 Letter Combinations of a Phone Number           | ~~*17~~    | [无]                    |
+| 8-2 什么是回溯                                               | ~~17~~    | ~~*93~~ 131             |
+| 8-3 排列问题 Permutations                                    | ~~*46~~    | ~~*47~~                 |
+| 8-4 组合问题 Combinations                                    | ~~*77~~    | [无]                    |
+| 8-5 回溯法解决组合问题的优化                                 | ~~*77~~    | ~~39~~ ~~40~~ 216 **78 90** ~~401~~ |
+| 8-6 二维平面上的回溯法 Word Search                           | ~~79~~     | [无]                    |
+| 8-7 floodfill算法，一类经典问题 Number of Islands            | ~~200~~    | 130 417                 |
+| 8-8 回溯法是经典人工智能的基础 N Queens                      | ~~51~~     | ~~52~~ 37               |
 | **第九章 动态规划基础**                                      |            |                         |
 | 9-1 什么是动态规划                                           | [无]       | [无]                    |
 | 9-2 第一个动态规划问题 Climbing Stairs                       | 70         | 120 64                  |

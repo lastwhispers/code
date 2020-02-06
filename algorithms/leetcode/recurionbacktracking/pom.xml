@@ -12,5 +12,11 @@
     <groupId>cn.lastwhisper.leetcode</groupId>
     <artifactId>recurionbacktracking</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>cn.lastwhisper</groupId>
+            <artifactId>leetcode-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

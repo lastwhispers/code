@@ -5,8 +5,8 @@ import cn.lastwhisper.leetcode.common.tree.TreeNode;
 import java.util.LinkedList;
 import java.util.List;
 
+import static cn.lastwhisper.leetcode.common.print.PrintUtils.printList;
 import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
-import static cn.lastwhisper.leetcode.common.tree.TreeUtils.printList;
 
 class Solution2 {
     /**
@@ -40,7 +40,7 @@ class Solution2 {
             }
         }
 
-        while (!outStack.isEmpty()){
+        while (!outStack.isEmpty()) {
             result.add(outStack.poll());
         }
         return result;

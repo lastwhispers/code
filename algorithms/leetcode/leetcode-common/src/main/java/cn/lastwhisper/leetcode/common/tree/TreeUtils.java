@@ -4,6 +4,8 @@ import javafx.util.Pair;
 
 import java.util.*;
 
+import static cn.lastwhisper.leetcode.common.print.PrintUtils.printLists;
+
 /**
  * 树相关工具类
  * @author lastwhisper
@@ -246,55 +248,6 @@ public class TreeUtils {
      */
     public static void printLevelOrder(TreeNode root) {
         printLists(levelOrder(root));
-    }
-
-    /**
-     * 层次打印二维数组
-     */
-    public static void printLists(List<List<Integer>> lists) {
-        System.out.println("[");
-        int counter1 = 1;
-        for (List<Integer> list : lists) {
-            System.out.print("\t[");
-            int counter2 = 1;
-            for (Integer i : list) {
-                if (counter2 != list.size()) {
-                    System.out.print(i + ",");
-                } else {
-                    System.out.print(i);
-                }
-                counter2++;
-            }
-            if (counter1 != list.size()) {
-                System.out.print("],\n");
-            } else {
-                System.out.print("]\n");
-            }
-            counter1++;
-        }
-        System.out.println("]");
-    }
-
-    /**
-     * 打印数组
-     */
-    public static void printList(Collection<?> collection) {
-        try {
-            StringBuilder sb = new StringBuilder();
-            sb.append("[");
-            int counter = 1;
-            for (Object object : collection) {
-                sb.append(object);
-                if (counter != collection.size()) {
-                    sb.append(",");
-                }
-                counter++;
-            }
-            sb.append("]");
-            System.out.println(sb.toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     public static void main(String[] args) {

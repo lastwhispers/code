@@ -5,7 +5,7 @@ import cn.lastwhisper.leetcode.common.tree.TreeNode;
 import java.util.*;
 
 import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
-import static cn.lastwhisper.leetcode.common.tree.TreeUtils.printLists;
+import static cn.lastwhisper.leetcode.common.print.PrintUtils.printLists;
 
 class Solution2 {
     /**

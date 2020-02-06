@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
-import static cn.lastwhisper.leetcode.common.tree.TreeUtils.printLists;
+import static cn.lastwhisper.leetcode.common.print.PrintUtils.printLists;
 
 class Solution2 {
     static class DTO {

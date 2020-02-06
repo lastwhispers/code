@@ -12,6 +12,7 @@
         <module>mybatis</module>
         <module>jpa</module>
         <module>jpa</module>
+        <module>jdbc</module>
     </modules>
 
 

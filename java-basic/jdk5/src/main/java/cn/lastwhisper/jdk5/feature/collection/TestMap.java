@@ -2,10 +2,7 @@ package cn.lastwhisper.jdk5.feature.collection;
 
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * @author lastwhisper
@@ -73,6 +70,31 @@ public class TestMap {
         String a2 = hashMap.put("a", "new");
         System.out.println(a1 + "\t" + a2);
         hashMap.get("a");
+    }
+
+    /**
+     * 测试hashmap去集合重
+     */
+    @Test
+    public void testHashList() {
+        HashSet<List> set = new HashSet<>();
+        List<Integer> list1 = new ArrayList<>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(1);
+        list2.add(2);
+        list2.add(3);
+        List<Integer> list3 = new ArrayList<>();
+        list3.add(1);
+        list3.add(2);
+        list3.add(2);
+
+        set.add(list1);
+        set.add(list2);
+        set.add(list3);
+        System.out.println(set.size());
     }
 
     /**
