@@ -25,6 +25,7 @@
         <module>leetcode-common</module>
         <module>binarysearch</module>
         <module>union-find</module>
+        <module>week</module>
     </modules>
 
 
