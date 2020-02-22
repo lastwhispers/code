@@ -17,10 +17,11 @@ public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
      * @param registry BeanDefinition注册类
      * @return void
      */
+    @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
 
-        boolean blueb = registry.containsBeanDefinition("cn.lastwhisper.cn.lastwhisper.componentregister.bean.Blue");
-        boolean redb = registry.containsBeanDefinition("cn.lastwhisper.cn.lastwhisper.componentregister.bean.Red");
+        boolean blueb = registry.containsBeanDefinition("cn.lastwhisper.componentregister.bean.Blue");
+        boolean redb = registry.containsBeanDefinition("cn.lastwhisper.componentregister.bean.Red");
         // 模拟注册条件
         if (blueb && redb) {
             // bean定义信息

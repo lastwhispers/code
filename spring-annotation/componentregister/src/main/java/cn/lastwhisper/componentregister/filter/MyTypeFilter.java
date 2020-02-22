@@ -23,6 +23,7 @@ public class MyTypeFilter implements TypeFilter {
      * @param metadataReaderFactory 获取其他任何类型
      * @return boolean
      */
+    @Override
     public boolean match(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory) throws IOException {
         // 获取当前正在扫描的类注解的信息
         AnnotationMetadata annotationMetadata = metadataReader.getAnnotationMetadata();

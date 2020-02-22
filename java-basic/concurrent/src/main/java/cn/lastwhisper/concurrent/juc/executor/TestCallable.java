@@ -19,9 +19,7 @@ public class TestCallable {
             Integer result = futureTask.get();// FutureTask可以用于闭锁
             System.out.println(result);
             System.out.println("主线程拿到返回值");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
 

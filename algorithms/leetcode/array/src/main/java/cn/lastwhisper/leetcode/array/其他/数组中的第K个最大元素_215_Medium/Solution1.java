@@ -39,8 +39,11 @@ class Solution1 {
     }
 
     public static void main(String[] args) {
-        int[] arr = {3, 2, 3, 1, 2, 4, 5, 5, 6};
-        int k = 4;
+        int[] arr = {3, 2, 1, 5, 6, 4};
+        int k = 2;
+        //int[] arr = {3, 2, 3, 1, 2, 4, 5, 5, 6};
+        //int k = 4;
+
         int kthLargest = new Solution1().findKthLargest(arr, k);
         System.out.println(kthLargest);
     }

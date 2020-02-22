@@ -26,7 +26,7 @@ public class LRUCache {
         cache = new DoubleList();
     }
 
-   private class DoubleList implements Iterable<Node> {
+    private class DoubleList implements Iterable<Node> {
         private Node head, tail; // 头尾虚节点
         private int size; // 链表元素数
 
@@ -101,19 +101,6 @@ public class LRUCache {
         }
     }
 
-    public static void main(String[] args) {
-        LRUCache lruCache = new LRUCache(3);
-        lruCache.put(1, 1);
-        lruCache.put(2, 2);
-        lruCache.put(3, 3);
-        lruCache.get(2);
-        lruCache.put(4, 4);
-        DoubleList list = lruCache.cache;
-        for (Node node : list) {
-            System.out.println(node.key + "\t" + node.val);
-        }
-    }
-
     public int get(int key) {
         if (!map.containsKey(key))
             return -1;
@@ -145,6 +132,18 @@ public class LRUCache {
         }
     }
 
+    public static void main(String[] args) {
+        LRUCache lruCache = new LRUCache(3);
+        lruCache.put(1, 1);
+        lruCache.put(2, 2);
+        lruCache.put(3, 3);
+        lruCache.get(2);
+        lruCache.put(4, 4);
+        DoubleList list = lruCache.cache;
+        for (Node node : list) {
+            System.out.println(node.key + "\t" + node.val);
+        }
+    }
 }
 
 

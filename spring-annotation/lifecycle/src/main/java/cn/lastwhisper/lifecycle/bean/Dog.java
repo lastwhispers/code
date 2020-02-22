@@ -10,10 +10,11 @@ import javax.annotation.PreDestroy;
 
 /**
  * @author lastwhisper
+ * implements ApplicationContextAware
  */
 @Component
 public class Dog implements ApplicationContextAware {
-    private ApplicationContext applicationContext;
+    ApplicationContext applicationContext;
 
     public Dog() {
         System.out.println("dog constructor...");
@@ -31,6 +32,7 @@ public class Dog implements ApplicationContextAware {
         System.out.println("dog @PreDestroy...");
     }
 
+    @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
     }

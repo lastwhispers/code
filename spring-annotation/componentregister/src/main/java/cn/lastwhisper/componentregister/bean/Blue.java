@@ -5,3 +5,4 @@ package cn.lastwhisper.componentregister.bean;
  */
 public class Blue {
 }
+

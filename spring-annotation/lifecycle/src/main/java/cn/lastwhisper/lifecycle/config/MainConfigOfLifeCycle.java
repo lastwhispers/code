@@ -23,13 +23,16 @@ import org.springframework.context.annotation.Scope;
  *      通过@Bean(initMethod = "init", destroyMethod = "destroy")指定初始化和销毁方法
  *      相当于xml中的配置：init-method="init" destroy-method="destroy"
  * 2）通过bean实现InitializingBean（定义初始化逻辑）、DisposableBean（定义销毁逻辑）
+ *
  * 3）JSR250规范
  *      *@PostConstruct：在bean创建完成并且属性赋值完成，来执行初始化方法
  *      *@PreDestroy：在容器销毁bean之前调用
- * 4）BeanPostProcessor：bean的后置处理器，在bean初始化前后进行处理
+ * 4）BeanPostProcessor：对所有bean的后置处理器，在bean初始化前后进行处理
+ *     该接口有两个方法：
  *      postProcessBeforeInitialization：在对象任何初始化（initMethod、afterPropertiesSet）之前调用
  *      postProcessAfterInitialization：在对象初始化之后调用
- *    BeanPostProcessor原理：
+ *
+ *   BeanPostProcessor原理：
  *      AbstractAutowireCapableBeanFactory.doCreateBean{
  *           populateBean(beanName, mbd, instanceWrapper); // 给对象中的字段赋值
  *           initializeBean{
@@ -39,16 +42,23 @@ import org.springframework.context.annotation.Scope;
  *           }
  *      }
  *
+ * Spring底层BeanPostProcessor的使用：
+ *   AsyncAnnotationBeanPostProcessor 处理@Async注解的方法
+ *   ApplicationContextAwareProcessor 处理实现ApplicationContextAware的类
+ *   BeanValidationPostProcessor 处理JSR-303数据校验
+ *   InitDestroyAnnotationBeanPostProcessor 处理@PostConstruct和@PreDestroy注解
+ *   AutowiredAnnotationBeanPostProcessor 处理@Autowire注解
+ *
  * @author lastwhisper
  */
 @ComponentScan("cn.lastwhisper.lifecycle.bean")
 @Configuration
 public class MainConfigOfLifeCycle {
 
-    @Scope("singleton")
-    //@Scope("prototype")
-    @Bean(initMethod = "init", destroyMethod = "destroy")
-    public Car car() {
-        return new Car();
-    }
+    //@Scope("singleton")
+    ////@Scope("prototype")
+    //@Bean(initMethod = "init", destroyMethod = "destroy")
+    //public Car car() {
+    //    return new Car();
+    //}
 }

@@ -9,8 +9,7 @@ public class ArticleMementoManager {
     private final Stack<ArticleMemento> ARTICLE_MEMENTO_STACK = new Stack<>();
 
     public ArticleMemento getMemento() {
-        ArticleMemento articleMemento = ARTICLE_MEMENTO_STACK.pop();
-        return articleMemento;
+        return ARTICLE_MEMENTO_STACK.pop();
     }
 
     public void addMemento(ArticleMemento articleMemento) {

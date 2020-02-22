@@ -14,10 +14,11 @@ public class WindowsCondition implements Condition {
     /**
      * 匹配windows操作系统
      *
-     * @param context
-     * @param metadata
+     * @param context 上下文
+     * @param metadata 注解信息
      * @return boolean
      */
+    @Override
     public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
         // 获取运行时环境
         Environment environment = context.getEnvironment();

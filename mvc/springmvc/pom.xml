@@ -9,7 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.lastwhisper</groupId>
     <artifactId>springmvc</artifactId>
     <packaging>war</packaging>
 
@@ -33,13 +32,14 @@
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>5.0.4.RELEASE</version>
+            <artifactId>spring-webmvc</artifactId>
+            <version>4.3.11.RELEASE</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>5.0.4.RELEASE</version>
+            <version>4.3.11.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>

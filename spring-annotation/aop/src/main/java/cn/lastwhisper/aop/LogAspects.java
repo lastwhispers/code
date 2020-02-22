@@ -3,6 +3,8 @@ package cn.lastwhisper.aop;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 
+import java.util.Arrays;
+
 /**
  * 切面类
  * @author lastwhisper
@@ -19,13 +21,13 @@ public class LogAspects {
     // 前置通知：在目标方法运行之前运行
     @Before(value = "pointCut()")
     public void logStart(JoinPoint joinPoint) {
-        System.out.println(joinPoint.getSignature().getName() + "开始...参数列表是：{" + joinPoint.getArgs() + "}");
+        System.out.println(joinPoint.getSignature().getName() + "开始...参数列表是：{" + Arrays.toString(joinPoint.getArgs()) + "}");
     }
 
     // 后置通知：在目标方法运行之后运行
     @After(value = "pointCut()")
     public void logEnd(JoinPoint joinPoint) {
-        System.out.println(joinPoint.getSignature().getName() + "结束...参数列表是：{" + joinPoint.getArgs() + "}");
+        System.out.println(joinPoint.getSignature().getName() + "结束...参数列表是：{" + Arrays.toString(joinPoint.getArgs()) + "}");
     }
 
     // JoinPoint一定要放到方法参数列表第一位

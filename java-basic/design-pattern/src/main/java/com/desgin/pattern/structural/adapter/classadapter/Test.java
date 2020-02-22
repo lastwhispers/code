@@ -5,7 +5,7 @@ public abstract class Test {
         Target target = new ConcreteTarget();
         target.request();
 
-        /** 现在，我们就来通过适配器类来进行实现 */
+        /* 现在，我们就来通过适配器类来进行实现 */
         Target adapterTarget = new Adapter();
         adapterTarget.request();
     }

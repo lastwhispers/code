@@ -9,7 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.lastwhisper</groupId>
     <artifactId>aop</artifactId>
 
     <dependencies>
@@ -17,9 +16,8 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
-            <version>5.1.5.RELEASE</version>
+            <version>4.3.12.RELEASE</version>
         </dependency>
-
     </dependencies>
 
 </project>

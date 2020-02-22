@@ -16,8 +16,8 @@ public class Solution1 {
             return;
         }
         int[] count = new int[3];
-        for (int i = 0; i < nums.length; i++) {
-            count[nums[i]]++;
+        for (int num : nums) {
+            count[num]++;
         }
 
         for (int i = 0; i < count[0]; i++) {
@@ -37,8 +37,8 @@ public class Solution1 {
             return;
         }
         int[] count = new int[3];
-        for (int i = 0; i < nums.length; i++) {
-            count[nums[i]]++;
+        for (int num : nums) {
+            count[num]++;
         }
         int index = 0;
         for (int i = 0; i < 3; i++) {

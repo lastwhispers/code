@@ -26,6 +26,7 @@ class Solution3 {
         }
         int result = -1;
         for (int i = 1; i < n; i++) {
+            // 分解成i、n-i；
             result = Math.max(result, Math.max(i * (n - i), i * dfs(n - i, memo)));
         }
         memo[n] = result;

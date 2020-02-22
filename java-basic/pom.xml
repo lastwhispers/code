@@ -19,7 +19,6 @@
         <module>jdk11</module>
         <module>jdk12</module>
         <module>jdk13</module>
-        <module>xiaofengqing</module>
     </modules>
 
     <dependencies>

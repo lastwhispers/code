@@ -6,27 +6,25 @@ class Solution1 {
      * -------------------------------------------------------------------
      * 思考：
      * -------------------------------------------------------------------
-     * 思路：
+     * 思路：线性遍历
      * -------------------------------------------------------------------
      * 时间复杂度：
      * 空间复杂度：
      */
     public int searchInsert(int[] nums, int target) {
-        int left = 0, right = nums.length - 1;
-        while (left <= right) {
-            int mid = (left + right) / 2;
-            if (nums[mid] == target) {
-                return mid;
-            } else if (nums[mid] < target) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
+        for (int i = 0; i < nums.length; i++) {
+            // 起始,中间
+            if (nums[i] >= target) {
+                return i;
             }
         }
-        return left;
+        // 最后
+        return nums.length;
     }
 
     public static void main(String[] args) {
-
+        int[] nums = {1, 3, 5, 6};
+        int target = 5;
+        System.out.println(new Solution1().searchInsert(nums, target));
     }
 }

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author lastwhisper
  */
-@Component
+//@Component
 public class MyBeanPostProcessor implements BeanPostProcessor {
     /**
      * 在对象任何初始化之前调用

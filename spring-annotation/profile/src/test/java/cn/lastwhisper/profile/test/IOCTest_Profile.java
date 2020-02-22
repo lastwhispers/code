@@ -18,9 +18,6 @@ public class IOCTest_Profile {
      *  1）使用命令参数加载profile
      *      -Dspring.profiles.active=test
      *  2）使用AnnotationConfigApplicationContext无参构造器
-     *
-     * @param
-     * @return void
      */
     @Test
     public void test01() {

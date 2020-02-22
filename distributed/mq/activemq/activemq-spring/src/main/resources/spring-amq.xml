@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amq="http://activemq.apache.org/schema/core"
+	xmlns:jms="http://www.springframework.org/schema/jms"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd   
+        http://www.springframework.org/schema/context   
+        http://www.springframework.org/schema/context/spring-context-4.1.xsd
+        http://www.springframework.org/schema/jms
+        http://www.springframework.org/schema/jms/spring-jms-4.1.xsd
+        http://activemq.apache.org/schema/core
+        http://activemq.apache.org/schema/core/activemq-core-5.14.5.xsd">
+
+	<!-- 1、定义ActiveMQ服务厂商提供的连接工厂 ，这才是真正实现JMS的 -->
+	<amq:connectionFactory id="amqConnectionFactory"
+		brokerURL="tcp://192.168.217.101:61616" userName="admin" password="admin" />
+
+	<!-- 2、定义Spring内部的连接工厂，并引用上面的AMQ的连接工厂; Spring使用CachingConnectionFactory来管理实际的AMQ工厂 -->
+	<bean id="connectionFactory"
+		class="org.springframework.jms.connection.CachingConnectionFactory">
+		<!-- 通过此属性引用AMQ的连接工厂 -->
+		<property name="targetConnectionFactory" ref="amqConnectionFactory"/>
+		<!-- 也可以这样 -->
+		<!-- <constructor-arg ref="amqConnectionFactory" /> -->
+		<!-- 配置Session缓存数量 -->
+		<property name="sessionCacheSize" value="100" />
+	</bean>
+
+	<!-- 3、定义JmsTemplate的Queue类型 -->
+	<bean id="jmsQueueTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<!-- 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 -->
+		<constructor-arg ref="connectionFactory" />
+		<!-- false，表示非pub/sub模型（发布/订阅），即队列 -->
+		<property name="pubSubDomain" value="false" />
+	</bean>
+
+	<!-- 4、定义JmsTemplate的Topic类型 -->
+	<bean id="jmsTopicTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<!-- 这个connectionFactory对应的是我们定义的Spring提供的那个ConnectionFactory对象 -->
+		<constructor-arg ref="connectionFactory" />
+		<!-- true，表示pub/sub模型（发布/订阅） -->
+		<property name="pubSubDomain" value="true" />
+	</bean>
+
+	<!-- 5、定义Queue监听器 -->
+	<jms:listener-container destination-type="queue"
+		container-type="default" connection-factory="connectionFactory"
+		acknowledge="auto">
+		<jms:listener destination="my.queue" ref="queueReceiver1" />
+		<jms:listener destination="my.queue" ref="queueReceiver2" />
+	</jms:listener-container>
+
+	<!-- 6、定义Topic监听器 -->
+	<jms:listener-container destination-type="topic"
+		container-type="default" connection-factory="connectionFactory"
+		acknowledge="auto">
+		<jms:listener destination="my.topic" ref="topicReceiver1" />
+		<jms:listener destination="my.topic" ref="topicReceiver2" />
+	</jms:listener-container>
+
+</beans>

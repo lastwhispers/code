@@ -25,9 +25,6 @@ class Solution1 {
         // 至少拆分出1，至多拆分出n-1
         // temp-i >= 0(剪枝)、i < n(剪枝)
         for (int i = 1; temp - i >= 0 && i < n; i++) {
-            //if (temp - i < 0) {
-            //    break;
-            //}
             temp = temp - i;
             result = result * i;
             dfs(n, temp, result);

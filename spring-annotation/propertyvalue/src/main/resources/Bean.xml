@@ -10,8 +10,8 @@
     <!--    <bean id="person" class="cn.lastwhisper.propertyvalue.bean.Person" scope="prototype" init-method="" destroy-method="">-->
 
     <bean id="person" class="cn.lastwhisper.propertyvalue.bean.Person">
-        <property name="name" value="张三"></property>
-        <property name="age" value="18"></property>
+        <property name="name" value="张三"/>
+        <property name="age" value="18"/>
     </bean>
 
 

@@ -39,8 +39,7 @@ import org.springframework.context.annotation.Primary;
  * @author lastwhisper
  */
 @Configuration
-@ComponentScan({"cn.lastwhisper.autowired.controller", "cn.lastwhisper.autowired.service",
-        "cn.lastwhisper.autowired.dao", "cn.lastwhisper.autowired.bean"})
+@ComponentScan({"cn.lastwhisper"})
 public class MainConfigOfAutoWired {
     // @Primary() Antowired多个bean时首选bean
     @Primary()

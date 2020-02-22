@@ -24,7 +24,7 @@ public class IOCTest {
         Object factoryBean = applicationContext.getBean("colorFactoryBean");
         Object factoryBean2 = applicationContext.getBean("colorFactoryBean");
         System.out.println("bean的类型：" + factoryBean.getClass());
-        System.out.println(factoryBean == factoryBean2);
+        System.out.println(factoryBean == factoryBean2? "单实例" : "多实例");
 
         Object factoryBean3 = applicationContext.getBean("&colorFactoryBean");
         System.out.println("bean的类型：" + factoryBean3.getClass());
@@ -32,9 +32,6 @@ public class IOCTest {
 
     /**
      * 测试Import
-     *
-     * @param
-     * @return void
      */
     @Test
     public void test04() {
@@ -62,9 +59,6 @@ public class IOCTest {
 
     /**
      * 测试组件作用域与懒加载
-     *
-     * @param
-     * @return void
      */
     @Test
     public void test02() {
@@ -72,7 +66,7 @@ public class IOCTest {
         System.out.println("IOC容器启动完毕");
         Object person = applicationContext.getBean("person");
         Object person2 = applicationContext.getBean("person");
-        System.out.println(person == person2);
+        System.out.println(person == person2 ? "单实例" : "多实例");
     }
 
     /**

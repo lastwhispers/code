@@ -14,14 +14,17 @@ import org.springframework.util.StringValueResolver;
 @Component
 public class Red implements ApplicationContextAware, BeanNameAware, EmbeddedValueResolverAware {
 
+    @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         System.out.println("applicationContext：" + applicationContext);
     }
 
+    @Override
     public void setBeanName(String name) {
         System.out.println("name：" + name);
     }
 
+    @Override
     public void setEmbeddedValueResolver(StringValueResolver resolver) {
         String stringValue = resolver.resolveStringValue("操作系统：${os.name},#{2019710+1}");
         System.out.println(stringValue);

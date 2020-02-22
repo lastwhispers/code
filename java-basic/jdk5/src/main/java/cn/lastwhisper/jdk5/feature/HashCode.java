@@ -64,7 +64,7 @@ public class HashCode {
      */
     @Test
     public void testHashCodeToOOM() {
-        Set<ReflectPoint> set = new HashSet();
+        Set<ReflectPoint> set = new HashSet<ReflectPoint>();
         ReflectPoint pt1 = new ReflectPoint(1, 1);
         ReflectPoint pt2 = new ReflectPoint(2, 2);
         ReflectPoint pt3 = new ReflectPoint(1, 1);
@@ -72,7 +72,7 @@ public class HashCode {
         set.add(pt1);
         set.add(pt2);
         set.add(pt3);//重写hashcode发现重复
-        set.add(pt1);//
+        set.add(pt1);//内存地址一样发现重复
 
         // 对象重写hashcode方法，添加到集合中后不要修改对象的属性值
         pt1.setX(2);

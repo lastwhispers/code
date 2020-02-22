@@ -36,8 +36,7 @@ public class WechatServer implements Observerable {
     /**遍历*/
     @Override
     public void notifyObserver() {
-        for (int i = 0; i < list.size(); i++) {
-            Observer oserver = list.get(i);
+        for (Observer oserver : list) {
             oserver.update(message);
         }
     }

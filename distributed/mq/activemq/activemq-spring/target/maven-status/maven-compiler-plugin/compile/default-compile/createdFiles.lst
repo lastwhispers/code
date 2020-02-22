@@ -1,0 +1,9 @@
+cn\lastwhisper\activemq\amq\consumer\queue\QueueReceiver1.class
+cn\lastwhisper\activemq\amq\producer\TopicSender$1.class
+cn\lastwhisper\activemq\ctrl\DemoController.class
+cn\lastwhisper\activemq\amq\consumer\topic\TopicReceiver2.class
+cn\lastwhisper\activemq\amq\producer\TopicSender.class
+cn\lastwhisper\activemq\amq\producer\QueueSender.class
+cn\lastwhisper\activemq\amq\consumer\topic\TopicReceiver1.class
+cn\lastwhisper\activemq\amq\consumer\queue\QueueReceiver2.class
+cn\lastwhisper\activemq\amq\producer\QueueSender$1.class
