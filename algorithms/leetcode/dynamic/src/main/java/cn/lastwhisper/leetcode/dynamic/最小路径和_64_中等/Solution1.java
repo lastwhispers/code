@@ -6,42 +6,53 @@ class Solution1 {
      * -------------------------------------------------------------------
      * 思考：
      * -------------------------------------------------------------------
-     * 思路：递归
+     * 思路：动态规划——自顶向下
+     *  1、状态定义：dp[i][j]表示包含第i行第j列元素的最小路径和
+     *  2、状态分析
+     *      初始：
+     *          dp[0][0]=grid[0][0]
+     *      常规：
+     *          grid[i][j]一定会经过grid[i][j-1]或者grid[i-1][j]
+     *          所以状态dp[i][j]一定等于dp[i][j-1]或者dp[i-1][j]的最小值+grid[i][j]
+     *          状态转换方程：
+     *              dp[i][j]=min(dp[i][j-1],dp[i-1][j])+grid[i][j]
+     *      特殊：
+     *          grid[i][0]没有左边 只能从上边grid[i-1][0]经过
+     *          grid[0][j]没有上边 只能从左边grid[0][j-1]经过
+     *          状态转换方程：
+     *              dp[i][0]=dp[i-1][0]+grid[i][j]
+     *              dp[0][j]=dp[0][j-1]+grid[i][j]
      * -------------------------------------------------------------------
-     * 时间复杂度：
-     * 空间复杂度：
+     * 时间复杂度：O(n^2)
+     * 空间复杂度：O(n^2)
      */
-    private int min=Integer.MAX_VALUE, m, n;
-    private int[][] dir = {{0, 1}, {1, 0}};
-
     public int minPathSum(int[][] grid) {
-        m = grid.length;
-        n = grid[0].length;
-        findMin(grid, 0, 0, grid[0][0]);
-        return min;
-    }
-
-    /**
-     * 此种递归无法缓存中间值重复使用
-     */
-    private void findMin(int[][] grid, int startX, int startY, int result) {
-        // 终点
-        if (m - 1 == startX && n - 1 == startY) {
-            min = Math.min(min, result);
-            return;
+        // 特判
+        if (grid == null || grid.length == 0) {
+            return 0;
         }
-        for (int i = 0; i < dir.length; i++) {
-            int newX = startX + dir[i][0];
-            int newY = startY + dir[i][1];
-            // 防止不合法坐标
-            if (isValid(newX, newY)) {
-                findMin(grid, newX, newY, grid[newX][newY] + result);
+        int row = grid.length;
+        int column = grid[0].length;
+
+        int[][] dp = new int[row][column];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                if (i == 0 && j == 0) {
+                    // 起点
+                    dp[0][0] = grid[0][0];
+                } else if (i == 0) {
+                    // 从左边来
+                    dp[i][j] = dp[i][j - 1] + grid[i][j];
+                } else if (j == 0) {
+                    // 从上面来
+                    dp[i][j] = dp[i - 1][j] + grid[i][j];
+                } else {
+                    dp[i][j] = Math.min(dp[i][j - 1], dp[i - 1][j]) + grid[i][j];
+                }
             }
         }
-    }
 
-    private boolean isValid(int x, int y) {
-        return x < m && y < n;
+        return dp[row - 1][column - 1];
     }
 
     public static void main(String[] args) {

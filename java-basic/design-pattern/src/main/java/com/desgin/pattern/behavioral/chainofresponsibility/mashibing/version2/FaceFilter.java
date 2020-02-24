@@ -7,8 +7,7 @@ public class FaceFilter implements Filter {
     // process the face tag <>
     @Override
     public String doFilter(String str) {
-        String r = str.replaceAll("QAQ", "^V^");
-        return r;
+        return str.replaceAll("QAQ", "^V^");
     }
 
 }

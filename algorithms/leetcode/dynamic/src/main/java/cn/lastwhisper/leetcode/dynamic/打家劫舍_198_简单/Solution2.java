@@ -1,45 +1,39 @@
 package cn.lastwhisper.leetcode.dynamic.打家劫舍_198_简单;
 
-import java.util.Arrays;
-
 class Solution2 {
     /**
      * 题目地址：https://leetcode-cn.com/problems/house-robber/
      * -------------------------------------------------------------------
      * 思考：
      * -------------------------------------------------------------------
-     * 思路：递归+备忘录
-     *  状态：考虑抢劫 nums[index...num.length） 这个范围内的所有房子
-     *  状态转移：tryRob(n) = Max{rob(0) + tryRob(2), rob(1) + tryRob(3)... rob(n-3) + tryRob(n-1), rob(n-2), rob(n-1)}
+     * 思路：动态规划
      * -------------------------------------------------------------------
      * 时间复杂度：O(n)
      * 空间复杂度：O(n)
      */
     public int rob(int[] nums) {
-        int[] memo = new int[nums.length];
-        // 必须先初始化为-1，有特殊用例
-        Arrays.fill(memo, -1);
-        return tryRob(0, nums, memo);
-    }
-
-    public int tryRob(int index, int[] nums, int[] memo) {
-        if (index >= nums.length) {
+        int n = nums.length;
+        if (n == 0) {
             return 0;
         }
-        if (memo[index] != -1) {
-            return memo[index];
+        // memo[i] 表示考虑抢劫 nums[i...n-1] 所能获得最大收益（不是说一定从 i 开始抢劫）
+        int[] memo = new int[n];
+        // 先考虑最简单的情况
+        memo[n - 1] = nums[n - 1];
+        for (int i = n - 2; i >= 0; i--) {
+            // memo[i] 的取值在考虑抢劫 i 号房子和不考虑抢劫之间取最大值
+            for (int j = i; j < n; j++) {
+                memo[i] = Math.max(memo[i], nums[j] + (j + 2 < n ? memo[j + 2] : 0));
+            }
         }
-        int max = 0;
-        for (int i = index; i < nums.length; i++) {
-            max = Math.max(max, nums[i] + tryRob(i + 2, nums, memo));
-        }
-        memo[index] = max;
-        return max;
+
+        return memo[0];
     }
 
+
     public static void main(String[] args) {
-        System.out.println(new Solution1().rob(new int[]{2, 1, 1, 2}));
-        System.out.println(new Solution1().rob(new int[]{2, 7, 9, 3, 1}));
+        System.out.println(new Solution2().rob(new int[]{2, 1, 1, 2}));
+        System.out.println(new Solution2().rob(new int[]{2, 7, 9, 3, 1}));
         System.out.println(new Solution2().rob(new int[]{1, 2, 3, 1}));
     }
 }

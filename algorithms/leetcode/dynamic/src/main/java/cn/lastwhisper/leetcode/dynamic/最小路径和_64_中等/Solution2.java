@@ -6,37 +6,40 @@ class Solution2 {
      * -------------------------------------------------------------------
      * 思考：
      * -------------------------------------------------------------------
-     * 思路：递归
+     * 思路：动态规划——基于思路二
+     *    空间优化：
+     *        只需要左边和上边的值保存即可，一维数组dp[j]存储上边的值，
+     *         dp[j-1]存储左边的值
      * -------------------------------------------------------------------
-     * 时间复杂度：
-     * 空间复杂度：
+     * 时间复杂度：O(n^2)
+     * 空间复杂度：O(n)
      */
-    private int m, n;
-    private int[][] dir = {{0, 1}, {1, 0}};
-
     public int minPathSum(int[][] grid) {
-        m = grid.length;
-        n = grid[0].length;
-        return findMin(grid, 0, 0);
-    }
-
-    private int findMin(int[][] grid, int startX, int startY) {
-        if (m - 1 == startX && n - 1 == startY) {
-            return grid[startX][startY];
+        // 特判
+        if (grid == null || grid.length == 0) {
+            return 0;
         }
-        int result = Integer.MAX_VALUE;
-        for (int i = 0; i < dir.length; i++) {
-            int newX = startX + dir[i][0];
-            int newY = startY + dir[i][1];
-            if (isValid(newX, newY)) {
-                result = Math.min(result, grid[startX][startY] + findMin(grid, newX, newY));
+        int row = grid.length;
+        int column = grid[0].length;
+
+        int[] dp = new int[column];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                if (i == 0 && j == 0) {
+                    // 起点
+                    dp[0] = grid[0][0];
+                } else if (i == 0) {
+                    // 从左边来
+                    dp[j] = dp[j - 1] + grid[i][j];
+                } else if (j == 0) {
+                    // 从上面来
+                    dp[j] = dp[j] + grid[i][j];
+                } else {
+                    dp[j] = Math.min(dp[j - 1], dp[j]) + grid[i][j];
+                }
             }
         }
-        return result;
-    }
-
-    private boolean isValid(int x, int y) {
-        return x < m && y < n;
+        return dp[column - 1];
     }
 
     public static void main(String[] args) {

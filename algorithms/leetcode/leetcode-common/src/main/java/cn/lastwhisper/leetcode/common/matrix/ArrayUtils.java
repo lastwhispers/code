@@ -1,5 +1,8 @@
 package cn.lastwhisper.leetcode.common.matrix;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author lastwhisper
@@ -8,6 +11,7 @@ package cn.lastwhisper.leetcode.common.matrix;
 public class ArrayUtils {
 
     /**
+     * {"ab","cd"}=>
      * 创建二维字符数组
      */
     public static char[][] createCharArrays(String[] arr) {
@@ -35,4 +39,19 @@ public class ArrayUtils {
         return ints;
     }
 
+
+    /**
+     * 创建list
+     */
+    public static List<List<Integer>> createList(int[][] arrays) {
+        List<List<Integer>> lists = new ArrayList<>(arrays.length);
+        for (int[] array : arrays) {
+            List<Integer> list = new ArrayList<>(array.length);
+            for (int num : array) {
+                list.add(num);
+            }
+            lists.add(list);
+        }
+        return lists;
+    }
 }

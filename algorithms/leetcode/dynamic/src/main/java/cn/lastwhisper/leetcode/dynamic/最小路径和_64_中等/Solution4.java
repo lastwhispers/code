@@ -6,43 +6,37 @@ class Solution4 {
      * -------------------------------------------------------------------
      * 思考：
      * -------------------------------------------------------------------
-     * 思路：递归+记忆化搜索
+     * 思路：动态规划——基于思路三
+     *    空间优化：
+     *        只需要左边和上边的值保存即可，一维数组dp[j]存储下边的值，
+     *         dp[j+1]存储右边的值
      * -------------------------------------------------------------------
-     * 时间复杂度：O(2^(m+n))。每次移动最多可以有两种选择。
-     * 空间复杂度：O(m+n)。递归的深度是 m+n。
+     * 时间复杂度：O(n^2)
+     * 空间复杂度：O(n^2)
      */
-    private int m, n;
-    private int[][] dir = {{0, 1}, {1, 0}};
-
     public int minPathSum(int[][] grid) {
-        m = grid.length;
-        n = grid[0].length;
-        int[][] memo = new int[m][n];
-        return findMin(grid, 0, 0, memo);
-    }
+        // 特判
+        if (grid == null || grid.length == 0) {
+            return 0;
+        }
+        int row = grid.length;
+        int column = grid[0].length;
 
-    private int findMin(int[][] grid, int startX, int startY, int[][] memo) {
-        // 终点
-        if (m - 1 == startX && n - 1 == startY) {
-            return grid[startX][startY];
-        }
-        if (memo[startX][startY] != 0) {
-            return memo[startX][startY];
-        }
-        int result = Integer.MAX_VALUE;
-        for (int i = 0; i < dir.length; i++) {
-            int newX = startX + dir[i][0];
-            int newY = startY + dir[i][1];
-            if (isValid(newX, newY)) {
-                result = Math.min(result, grid[startX][startY] + findMin(grid, newX, newY, memo));
+        int[] dp = new int[column ];
+        for (int i = row - 1; i >= 0; i--) {
+            for (int j = column - 1; j >= 0; j--) {
+                if (i == row - 1 && j == column - 1) {
+                    dp[j] = grid[i][j];
+                } else if (j == column - 1) {
+                    dp[j] = dp[j] + grid[i][j];
+                } else if (i == row - 1) {
+                    dp[j] = dp[j + 1] + grid[i][j];
+                } else {
+                    dp[j] = Math.min(dp[j], dp[j + 1]) + grid[i][j];
+                }
             }
         }
-        memo[startX][startY] = result;
-        return result;
-    }
-
-    private boolean isValid(int x, int y) {
-        return x < m && y < n;
+        return dp[0];
     }
 
     public static void main(String[] args) {

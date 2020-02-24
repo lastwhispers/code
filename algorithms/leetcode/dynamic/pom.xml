@@ -13,4 +13,13 @@
     <artifactId>dynamic</artifactId>
 
 
+    <dependencies>
+
+        <dependency>
+            <artifactId>leetcode-common</artifactId>
+            <groupId>cn.lastwhisper</groupId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
 </project>

@@ -7,8 +7,7 @@ public class HTMLFilter implements Filter {
     // process the html tag <>
     @Override
     public String doFilter(String str) {
-        String r = str.replaceAll("<", "[")
+        return str.replaceAll("<", "[")
                 .replaceAll(">", "]");
-        return r;
     }
 }
