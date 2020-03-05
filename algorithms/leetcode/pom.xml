@@ -26,6 +26,8 @@
         <module>binarysearch</module>
         <module>union-find</module>
         <module>week</module>
+        <module>bitoperation</module>
+        <module>dfsbfs</module>
     </modules>
 
 

@@ -21,8 +21,8 @@ class Solution1 {
      *  3.如果minNode的next不为空，取出minNode的next放入最小堆中
      *  4.重复1、2、3步骤，直至最小堆中没有节点，返回虚拟头节点的next即可
      * -------------------------------------------------------------------
-     * 时间复杂度：
-     * 空间复杂度：
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(n*n)
      */
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists.length == 0) {
@@ -31,13 +31,7 @@ class Solution1 {
 
         ListNode dummyHead = new ListNode(0);
         ListNode current = dummyHead;
-        Queue<ListNode> minHeap = new PriorityQueue<>(new Comparator<ListNode>() {
-            @Override
-            public int compare(ListNode o1, ListNode o2) {
-                // 升序
-                return o1.val - o2.val;
-            }
-        });
+        Queue<ListNode> minHeap = new PriorityQueue<>(Comparator.comparingInt(o -> o.val));
         // 链表头部放入最小堆中
         for (ListNode listNode : lists) {
             if (listNode == null) {

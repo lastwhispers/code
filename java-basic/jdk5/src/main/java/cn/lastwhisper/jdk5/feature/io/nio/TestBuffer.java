@@ -77,7 +77,7 @@ public class TestBuffer {
         System.out.println("--------------get()------------");
         byte[] dst = new byte[buffer.limit()];
         buffer.get(dst);
-        System.out.println(new String(dst, 0, dst.length));//abcd
+        System.out.println(new String(dst, 0, dst.length));//abced
         System.out.println(buffer.position());//5
         System.out.println(buffer.limit());//5
         System.out.println(buffer.capacity());//1024

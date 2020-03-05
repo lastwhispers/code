@@ -28,7 +28,7 @@ public class Main {
         }
         StringBuilder sb = new StringBuilder();
         // 余数
-        int remainder = -1;
+        int remainder;
         // 被除数
         int divisor = decimal;
         while (divisor != 0 && divisor / radix >= 0) {

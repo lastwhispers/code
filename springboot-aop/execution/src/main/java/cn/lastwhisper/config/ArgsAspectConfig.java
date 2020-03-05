@@ -16,7 +16,7 @@ public class ArgsAspectConfig {
      * 第四节：匹配参数：args()
      *
      * // 匹配cn.lastwhisper.service包下任意类,只有一个参数且参数类型为Long的方法
-     * @Pointcut("args(Long) && within(cn.lastwhisper.service.*)")
+     * @Pointcut("args(Long) && within(cn.lastwhisper.service.*  )")
      * // 匹配cn.lastwhisper.service包下任意类,第一个参数类型为Long,其他参数任意或无的方法
      * @Pointcut("args(Long,..) && within(cn.lastwhisper.service.*)")
      * // 匹配cn.lastwhisper.service包下任意类,第一个参数类型为Long,第二个参数类型为String的方法

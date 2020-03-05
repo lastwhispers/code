@@ -26,6 +26,21 @@ public class ArrayUtils {
     }
 
     /**
+     * {{"a","b","c","d"}}=>
+     * 创建二维字符数组
+     */
+    public static char[][] createCharArrays(String[][] arr) {
+        int m = arr.length, n = arr[0].length;
+        char[][] chars = new char[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                chars[i][j] = arr[i][j].charAt(0);
+            }
+        }
+        return chars;
+    }
+
+    /**
      * 创建二维数组
      */
     public static int[][] createIntArrays(String[] arr) {

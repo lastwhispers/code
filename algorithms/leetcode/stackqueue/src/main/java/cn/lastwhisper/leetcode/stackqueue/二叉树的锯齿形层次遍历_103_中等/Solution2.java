@@ -31,7 +31,7 @@ class Solution2 {
         }
 
         if (res.size() == level) {
-            res.add(new ArrayList<Integer>());
+            res.add(new ArrayList<>());
         }
 
         if ((level & 1) == 1) {

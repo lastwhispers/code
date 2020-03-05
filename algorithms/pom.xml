@@ -15,6 +15,7 @@
         <module>algorithm</module>
         <module>leetcode</module>
         <module>thread</module>
+        <module>dfsbfs</module>
     </modules>
 
     <dependencies>

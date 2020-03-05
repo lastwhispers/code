@@ -38,12 +38,12 @@ public class ThreadLocal_GC_Demo {
                             System.out.println(this.toString() + " is GC");
                         }
                     });
-                    System.out.println(Thread.currentThread().getId()+":create SimpleDataFormat");
+                    System.out.println(Thread.currentThread().getId() + ":create SimpleDataFormat");
                 }
                 Date t = tl.get().parse("2015-03-28 19:15:" + i % 60);
             } catch (ParseException e) {
                 e.printStackTrace();
-            }finally {
+            } finally {
                 latch.countDown();
             }
         }
