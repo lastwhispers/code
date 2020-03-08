@@ -18,7 +18,7 @@ public class MyLRUCache {
         this.capacity = capacity;
     }
 
-    class Node {
+    static class Node {
         public int key, val;
         public Node prev, next;
 
@@ -34,7 +34,7 @@ public class MyLRUCache {
      *  3、获取尾节点
      *  每一步操作都要维护相关节点prev、next指针的关系
      */
-    class DoubleLinkedList implements Iterable<Node> {
+    static class DoubleLinkedList implements Iterable<Node> {
         private Node head, tail;
         private int size;
 

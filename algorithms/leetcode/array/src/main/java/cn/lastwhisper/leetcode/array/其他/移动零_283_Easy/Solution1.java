@@ -9,7 +9,7 @@ public class Solution1 {
     //空间复杂度：O(n)
     public void moveZeroes(int[] nums) {
         // 缓存非0元素
-        List<Integer> nonZeroElements = new ArrayList<Integer>();
+        List<Integer> nonZeroElements = new ArrayList<>();
         // 找出非0元素并将它缓存进nonZeroElements
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {

@@ -19,8 +19,8 @@ public class ReferenceQueueDemo {
         System.gc();
         Thread.sleep(500);
 
-        System.out.println(o);
-        System.out.println(weakReference.get());
+        System.out.println(o);//o==null
+        System.out.println(weakReference.get());//o==null
         System.out.println(referenceQueue.poll());// o被回收以后，队列有值
     }
 }

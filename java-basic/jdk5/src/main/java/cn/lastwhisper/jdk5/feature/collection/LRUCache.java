@@ -15,10 +15,14 @@ public class LRUCache<K, V> extends LinkedHashMap<K, V> {
 
     @Override
     protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
-        return size() > MAX_ENTRIES;
+        boolean flag = size() > MAX_ENTRIES;
+        if (flag) {
+            System.out.println("移除的key=" + eldest.getKey());
+        }
+        return flag;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         LRUCache<Integer, String> cache = new LRUCache<>();
         cache.put(1, "a");
         cache.put(2, "b");

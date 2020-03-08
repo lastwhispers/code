@@ -23,6 +23,7 @@ class MinStack {
 
     }
 
+    // minStack为空，直接插入。不为空，peek栈顶和当前值相比，push最小值
     public void push(int x) {
         // 保证minStack栈顶永远是最小值
         if (!minStack.isEmpty()) {
