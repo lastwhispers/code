@@ -5,7 +5,7 @@ package cn.lastwhisper.datastructure.sort;
  */
 public class QuickSort2 {
     public static void main(String[] args) {
-        int arr[] = {7, 3, 2, 8, 1, 9, 5, 4, 6};
+        int[] arr = {7, 3, 2, 8, 1, 9, 5, 4, 6};
         //int arr[] = {7, 3, 2, 8, 1, 9, 5, 4, 6, 0};//为什么left++和right--条件里面要加 left <= right 限定
         //int arr[] = {7, 3, 2, 8, 1, 9, 5, 4, 6, 10};
         //int arr[] = {7, 3, 2, 6, 8, 1, 9, 5, 4, 6, 10, 6, 6}; // 为什么不取等 arr[right] > pivot
@@ -44,8 +44,8 @@ public class QuickSort2 {
     }
 
     private static void print(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + "\t");
+        for (int value : arr) {
+            System.out.print(value + "\t");
         }
     }
 }

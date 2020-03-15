@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -24,13 +25,11 @@ public class Main {
 
             如果没有该行，则执行第一个in.nextLine()命令时的返回值是int n = in.nextInt()的值*/
             sc.nextLine();
-            HashSet<String> set = new HashSet();
+            HashSet<String> set = new HashSet<>();
             for (int i = 0; i < n; i++) {
                 String line =sc.nextLine();
                 String[] arr = line.split(" ");
-                for (int j = 0; j < arr.length; j++) {
-                    set.add(arr[j]);
-                }
+                set.addAll(Arrays.asList(arr));
             }
             System.out.println("sum:" + set.size());
         }

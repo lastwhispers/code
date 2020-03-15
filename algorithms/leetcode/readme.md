@@ -2,6 +2,25 @@
 
 课程练习题的参考答案可以在我的 [**Leetcode题解代码仓**](https://github.com/liuyubobobo/Play-Leetcode) 中查询参考代码。如果在我的题解代码仓中没有你想要的问题的相应的代码，可以随时在课程问答区留言索要相应代码和简单的算法思路说明：）
 
+- array 数组
+- hashtable 查找表
+- linkedlist 链表
+- stackqueue 栈与队列
+- binarysearch 二叉树和递归
+- recursion-backtracking 递归与回溯
+- dynamic 动态规划
+- greedy 贪心
+
+- binarysearch 二分查找
+- bitoperation 位运算
+- dfsbfs 深度宽度搜索
+- divide 分治
+- leetcode-common 工具类
+- string 字符串
+- union-find 并查集
+
+
+
 | 章节                                                         | 讲解例题 | 课程练习题              |
 | ------------------------------------------------------------ | ---------- | ----------------------- |
 | **第一章 算法面试到底是什么鬼?**                             | [无]       | [无]                    |
@@ -11,9 +30,10 @@
 | 3-2 改变变量定义，依然可以写出正确的算法                     | [无]       | [无]                    |
 | 3-3 在LeetCode上解决第一个问题 Move Zeros                    | ~~283~~        | [无]                    |
 | 3-4 即使简单的问题，也有很多优化的思路                       | ~~283~~        | ~~27 26 80~~                |
-| 3-5 三路快排partition思路的应用 Sort Color                   | ~~75~~         | ~~88 215~~                  |
+| 3-5 三路快排partition思路的应用 Sort Color                   | ~~75~~剑指40 | ~~88 215~~                  |
 | 3-6 对撞指针 Two Sum II - Input Array is Sorted              | ~~167~~        | ~~125 344 345 11~~          |
 | 3-7 滑动窗口 Minimum Size Subarray Sum                       | ~~209 3~~      | ~~438 76~~                  |
+| 3-8 其他                       |      | 1013                  |
 | **第四章 查找表相关问题**                                    |            |                         |
 | 4-1 set的使用 Intersection of Two Arrays                     | ~~349~~        | [无]                    |
 | 4-2 map的使用 Intersection of Two Arrays II                  | ~~350~~        | [无]                    |

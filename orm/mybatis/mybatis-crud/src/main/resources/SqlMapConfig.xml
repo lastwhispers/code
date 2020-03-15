@@ -11,7 +11,7 @@
         <!--<typeAlias type="cn.lastwhisper.mybatiscrud.domain.User" alias="user"></typeAlias>-->
 
         <!-- 用于指定要配置别名的包，当指定之后，该包下的实体类都会注册别名，并且类名就是别名，不再区分大小写-->
-        <package name="cn.lastwhisper.mybatiscrud.domain"></package>
+        <package name="cn.lastwhisper.mybatiscrud.domain"/>
     </typeAliases>
 
     <!-- 配置 mybatis 的环境 -->
@@ -19,7 +19,7 @@
         <!-- 配置 mysql 的环境 -->
         <environment id="mysql">
             <!-- 配置事务的类型 -->
-            <transactionManager type="JDBC"></transactionManager>
+            <transactionManager type="JDBC"/>
             <!-- 配置连接数据库的信息：用的是数据源(连接池) -->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>

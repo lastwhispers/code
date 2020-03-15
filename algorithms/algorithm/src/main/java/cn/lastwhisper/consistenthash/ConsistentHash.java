@@ -9,7 +9,7 @@ import java.util.TreeMap;
  * https://www.iteye.com/blog/imtinx-1290696
  *
  */
-public class ConsistentHash<T> {  
+class ConsistentHash<T> {
     /** 
      * 计算使用的hash函数，推荐使用MD5 
      */  

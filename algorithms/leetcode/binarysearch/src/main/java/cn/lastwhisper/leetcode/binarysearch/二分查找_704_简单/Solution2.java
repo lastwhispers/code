@@ -14,14 +14,14 @@ class Solution2 {
      * 空间复杂度：O(logn)
      */
     public int search(int[] nums, int target) {
-        return binarySearch(nums, target, 0, nums.length - 1, 0);
+        return binarySearch(nums, target, 0, nums.length - 1);
     }
 
-    public int binarySearch(int[] nums, int target, int start, int end, int middle) {
+    public int binarySearch(int[] nums, int target, int start, int end) {
         if (end < start) {
             return -1;
         }
-        middle = (end - start) / 2 + start;
+        int middle = (end - start) / 2 + start;
         if (nums[middle] == target) {
             return middle;
         } else if (nums[middle] > target) {
@@ -29,7 +29,7 @@ class Solution2 {
         } else {
             start = middle + 1;
         }
-        return binarySearch(nums, target, start, end, middle);
+        return binarySearch(nums, target, start, end);
     }
 
     public static void main(String[] args) {

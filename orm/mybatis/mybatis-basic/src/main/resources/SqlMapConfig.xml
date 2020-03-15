@@ -8,7 +8,7 @@
         <!-- 配置 mysql 的环境 -->
         <environment id="mysql">
             <!-- 配置事务的类型 -->
-            <transactionManager type="JDBC"></transactionManager>
+            <transactionManager type="JDBC"/>
             <!-- 配置连接数据库的信息：用的是数据源(连接池) -->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>

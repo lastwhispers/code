@@ -22,10 +22,10 @@ public class Solution1 {
     }
 
     public static void main(String[] args) {
-        char[] reverses = new char[]{'H','a','n','n','a','h'};
+        char[] reverses = new char[]{'H', 'a', 'n', 'n', 'a', 'h'};
         new Solution1().reverseString(reverses);
         for (char c : reverses) {
-            System.out.printf("\"%s\",",c);
+            System.out.printf("\"%s\",", c);
         }
     }
 }

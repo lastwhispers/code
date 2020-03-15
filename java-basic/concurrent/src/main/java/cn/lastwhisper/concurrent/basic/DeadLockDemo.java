@@ -21,8 +21,8 @@ public class DeadLockDemo {
 
 class HoldLock implements Runnable {
 
-    private String lockA;
-    private String lockB;
+    private final String lockA;
+    private final String lockB;
 
     public HoldLock(String lockA, String lockB) {
         this.lockA = lockA;

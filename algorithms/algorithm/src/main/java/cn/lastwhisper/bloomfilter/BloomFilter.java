@@ -8,7 +8,7 @@ import java.util.Random;
  * 原文：https://www.iteye.com/blog/imtinx-1290636
  * Long类型元素的布隆过滤器
  */
-public class BloomFilter implements Serializable {
+class BloomFilter implements Serializable {
     private static final long serialVersionUID = 1L;
     private static final int ELEM_NUM = 1000; // 欲容纳的元素个数
     private static final double PERCENTAGE = 0.001; // 希望的误差率

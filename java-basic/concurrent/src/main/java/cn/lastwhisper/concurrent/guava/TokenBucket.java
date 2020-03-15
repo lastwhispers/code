@@ -16,11 +16,7 @@ public class TokenBucket {
     }
 
     private int min(int tokens) {
-        if (bucketNums > tokens) {
-            return tokens;
-        } else {
-            return bucketNums;
-        }
+        return Math.min(bucketNums, tokens);
     }
 
     public boolean getToken() {

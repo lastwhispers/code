@@ -87,11 +87,11 @@ class Solution1 {
     //}
 
     //private boolean isExist(int x1, int y1, int x2, int y2, int x, int y) {
-    //    int g1 = gcd(y2 - y1, x2 - x1);
+    //    int g1 = gcdlcm(y2 - y1, x2 - x1);
     //    if(y == y2 && x == x2){
     //        return true;
     //    }
-    //    int g2 = gcd(y - y2, x - x2);
+    //    int g2 = gcdlcm(y - y2, x - x2);
     //    return (y2 - y1) / g1 == (y - y2) / g2 && (x2 - x1) / g1 == (x - x2) / g2;
     //}
 

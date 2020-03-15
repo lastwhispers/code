@@ -1,14 +1,14 @@
 package cn.lastwhisper.concurrent.basic;
 
 public class JoinDemo {
-    private class A extends Thread {
+    static class A extends Thread {
         @Override
         public void run() {
             System.out.println("A");
         }
     }
 
-    private class B extends Thread {
+    static class B extends Thread {
         private A a;
 
         B(A a) {

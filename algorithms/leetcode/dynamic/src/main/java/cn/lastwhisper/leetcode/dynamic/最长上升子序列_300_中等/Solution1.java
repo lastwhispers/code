@@ -21,7 +21,6 @@ class Solution1 {
         if (nums.length == 0) {
             return 0;
         }
-
         int res = 1;
         int[] dp = new int[nums.length];
         Arrays.fill(dp, 1);
@@ -31,6 +30,8 @@ class Solution1 {
             for (int j = 0; j < i; j++) {
                 if (nums[i] > nums[j]) {
                     // num[i]能以num[j]为结尾，更新dp[i]
+                    // 为什么要Math.max(dp[j] + 1, dp[i])，而不是直接dp[j] + 1？
+                    //  {1, 3, 6, 7, 9, 4, 10, 5, 6}，i=6时，最长子序列是1,3,6,7,9,10，而不是1,3,4,10
                     dp[i] = Math.max(dp[j] + 1, dp[i]);
                 }
             }

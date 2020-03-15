@@ -9,7 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.lastwhisper</groupId>
     <artifactId>leetcode</artifactId>
     <packaging>pom</packaging>
     <modules>
@@ -18,7 +17,7 @@
         <module>linkedlist</module>
         <module>stackqueue</module>
         <module>binarytree</module>
-        <module>recurionbacktracking</module>
+        <module>recursion-backtracking</module>
         <module>dynamic</module>
         <module>greedy</module>
         <module>other</module>
@@ -28,6 +27,8 @@
         <module>week</module>
         <module>bitoperation</module>
         <module>dfsbfs</module>
+        <module>string</module>
+        <module>divide</module>
     </modules>
 
 

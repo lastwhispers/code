@@ -9,26 +9,27 @@ class Solution1 {
     }
 
     public int partition(int[] nums, int leftBound, int rightBound, int k) {
-        int left = leftBound;
-        int right = rightBound;
+        int i = leftBound;
         int pivot = nums[leftBound];
-        while (left < right) {
-            while (left < right && nums[left] <= pivot) {
-                left++;
+        int j = rightBound - 1;
+        while (i <= j) {
+            while (i <= j && nums[i] <= pivot) {
+                i++;
             }
-            while (left < right && nums[right] > pivot) {
-                right--;
+            while (i <= j && nums[j] > pivot) {
+                j--;
             }
-            if (left < right) {
-                swap(nums, left, right);
+            if (i < j) {
+                swap(nums, i, j);
             }
         }
-        if (left == k) {
+        //swap(nums, i, rightBound);
+        if (i == k) {
             return pivot;
-        } else if (left > k) {
-            return partition(nums, leftBound, left - 1, k);
+        } else if (i > k) {
+            return partition(nums, leftBound, i - 1, k);
         } else {
-            return partition(nums, left + 1, rightBound, k);
+            return partition(nums, i + 1, rightBound, k);
         }
     }
 

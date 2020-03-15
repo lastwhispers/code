@@ -75,7 +75,7 @@ class Solution3 {
         int[][] points = {{1, 1}, {1, 1}, {2, 3}};
         System.out.println(new Solution3().maxPoints(points));
 
-        //System.out.println(new Solution3().gcd(3,6));
+        //System.out.println(new Solution3().gcdlcm(3,6));
     }
 }
 
