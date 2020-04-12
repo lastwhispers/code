@@ -2,7 +2,7 @@ package cn.lastwhisper.leetcode.binarytree.二叉树的最大深度_104_简单;
 
 
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
-import cn.lastwhisper.leetcode.common.tree.TreeUtils;
+import cn.lastwhisper.leetcode.common.tree.TreeUtil;
 import javafx.util.Pair;
 
 import java.util.LinkedList;
@@ -41,7 +41,7 @@ class Solution2 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution2().maxDepth(TreeUtils.createTree()));
+        System.out.println(new Solution2().maxDepth(TreeUtil.createTree()));
     }
 
 }

@@ -1,7 +1,7 @@
 package cn.lastwhisper.offer.面试题07_重建二叉树_中等;
 
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
-import cn.lastwhisper.leetcode.common.tree.TreeUtils;
+import cn.lastwhisper.leetcode.common.tree.TreeUtil;
 
 class Solution1 {
     /**
@@ -50,6 +50,6 @@ class Solution1 {
 
     public static void main(String[] args) {
         int[] preorder = {3, 9, 20, 15, 7}, inorder = {9, 3, 15, 20, 7};
-        TreeUtils.printLevelOrder(new Solution1().buildTree(preorder, inorder));
+        TreeUtil.printLevelOrder(new Solution1().buildTree(preorder, inorder));
     }
 }

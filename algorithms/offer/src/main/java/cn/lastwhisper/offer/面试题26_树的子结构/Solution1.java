@@ -1,7 +1,7 @@
 package cn.lastwhisper.offer.面试题26_树的子结构;
 
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
-import cn.lastwhisper.leetcode.common.tree.TreeUtils;
+import cn.lastwhisper.leetcode.common.tree.TreeUtil;
 
 class Solution1 {
     /**
@@ -49,8 +49,8 @@ class Solution1 {
     public static void main(String[] args) {
         //TreeNode A = TreeUtils.createTree(1, 2, 3);
         //TreeNode B = TreeUtils.createTree(3, 1);
-        TreeNode A = TreeUtils.createTree(3, 4, 5, 1, 2);
-        TreeNode B = TreeUtils.createTree(4, 1);
+        TreeNode A = TreeUtil.createTree(3, 4, 5, 1, 2);
+        TreeNode B = TreeUtil.createTree(4, 1);
         System.out.println(new Solution1().isSubStructure(A, B));
     }
 }

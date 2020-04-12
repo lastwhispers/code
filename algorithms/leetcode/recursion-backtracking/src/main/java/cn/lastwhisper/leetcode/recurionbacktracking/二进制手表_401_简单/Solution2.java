@@ -3,7 +3,7 @@ package cn.lastwhisper.leetcode.recurionbacktracking.二进制手表_401_简单;
 import java.util.ArrayList;
 import java.util.List;
 
-import static cn.lastwhisper.leetcode.common.print.PrintUtils.printList;
+import static cn.lastwhisper.leetcode.common.print.PrintUtil.printList;
 
 class Solution2 {
     /**

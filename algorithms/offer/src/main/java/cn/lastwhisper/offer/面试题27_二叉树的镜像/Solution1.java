@@ -1,7 +1,7 @@
 package cn.lastwhisper.offer.面试题27_二叉树的镜像;
 
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
-import cn.lastwhisper.leetcode.common.tree.TreeUtils;
+import cn.lastwhisper.leetcode.common.tree.TreeUtil;
 
 class Solution1 {
     /**
@@ -27,7 +27,7 @@ class Solution1 {
     }
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.createTree(4, 2, 7, 1, 3, 6, 9);
-        TreeUtils.printLevelOrder(new Solution1().mirrorTree(tree));
+        TreeNode tree = TreeUtil.createTree(4, 2, 7, 1, 3, 6, 9);
+        TreeUtil.printLevelOrder(new Solution1().mirrorTree(tree));
     }
 }

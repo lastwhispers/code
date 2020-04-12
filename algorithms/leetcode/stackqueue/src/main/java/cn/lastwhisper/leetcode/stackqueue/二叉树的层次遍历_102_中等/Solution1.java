@@ -7,8 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import static cn.lastwhisper.leetcode.common.print.PrintUtils.printLists;
-import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
+import static cn.lastwhisper.leetcode.common.print.PrintUtil.printLists;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtil.createTree;
 
 class Solution1 {
     /**

@@ -104,13 +104,10 @@ public class TestMap {
     @Test
     public void testLinkedHashMap() {
         LinkedHashMap<Long, String> linkedHashMap = new LinkedHashMap<>();
-        linkedHashMap.put(1L, "1");
-        linkedHashMap.put(4L, "4");
-        linkedHashMap.put(3L, "3");
-        linkedHashMap.put(7L, "7");
-        for (Map.Entry<Long, String> entry : linkedHashMap.entrySet()) {
-            System.out.println(entry.getKey() + "\t" + entry.getValue());
-        }
+        linkedHashMap.put(3L, "张三");
+        linkedHashMap.put(4L, "李四");
+        linkedHashMap.put(5L, "王五");
+        linkedHashMap.forEach((k, v) -> System.out.println(k + "\t" + v));
     }
 
     /**

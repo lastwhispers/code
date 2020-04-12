@@ -1,7 +1,7 @@
 package cn.lastwhisper.leetcode.binarytree.二叉树的最小深度_111_简单;
 
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
-import cn.lastwhisper.leetcode.common.tree.TreeUtils;
+import cn.lastwhisper.leetcode.common.tree.TreeUtil;
 import javafx.util.Pair;
 
 import java.util.LinkedList;
@@ -55,6 +55,6 @@ class Solution3 {
          *     /  \
          *    15   7
          */
-        System.out.println(new Solution2().minDepth(TreeUtils.createTree(3,9,20,null,null,15,7)));
+        System.out.println(new Solution2().minDepth(TreeUtil.createTree(3,9,20,null,null,15,7)));
     }
 }

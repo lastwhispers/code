@@ -1,6 +1,6 @@
 package cn.lastwhisper.offer.面试题12_矩阵中的路径_中等;
 
-import cn.lastwhisper.leetcode.common.matrix.ArrayUtils;
+import cn.lastwhisper.leetcode.common.array.ArrayUtil;
 
 class Solution1 {
 
@@ -90,6 +90,6 @@ class Solution1 {
         //String word = "ABCCED";
         String[][] board = new String[][]{{"a", "b"}, {"c", "d"}};
         String word = "abcd";
-        System.err.println(new Solution1().exist(ArrayUtils.createCharArrays(board), word));
+        System.err.println(new Solution1().exist(ArrayUtil.createCharArrays(board), word));
     }
 }

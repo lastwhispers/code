@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
-import static cn.lastwhisper.leetcode.common.print.PrintUtils.printLists;
+import static cn.lastwhisper.leetcode.common.print.PrintUtil.printLists;
 
 
 public class Solution3 {

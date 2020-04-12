@@ -1,7 +1,7 @@
 package cn.lastwhisper.offer.面试题28_对称的二叉树;
 
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
-import cn.lastwhisper.leetcode.common.tree.TreeUtils;
+import cn.lastwhisper.leetcode.common.tree.TreeUtil;
 
 class Solution1 {
     /**
@@ -36,6 +36,6 @@ class Solution1 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution1().isSymmetric(TreeUtils.createTree(1, 2, 2, 3, 4, 4, 3)));
+        System.out.println(new Solution1().isSymmetric(TreeUtil.createTree(1, 2, 2, 3, 4, 4, 3)));
     }
 }

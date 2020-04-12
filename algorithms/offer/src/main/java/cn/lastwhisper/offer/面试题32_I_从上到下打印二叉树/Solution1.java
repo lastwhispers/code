@@ -1,7 +1,7 @@
 package cn.lastwhisper.offer.面试题32_I_从上到下打印二叉树;
 
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
-import cn.lastwhisper.leetcode.common.tree.TreeUtils;
+import cn.lastwhisper.leetcode.common.tree.TreeUtil;
 
 import java.util.*;
 
@@ -37,6 +37,6 @@ class Solution1 {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(new Solution1().levelOrder(TreeUtils.createTree(3, 9, 20, 15, 7))));
+        System.out.println(Arrays.toString(new Solution1().levelOrder(TreeUtil.createTree(3, 9, 20, 15, 7))));
     }
 }

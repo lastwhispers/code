@@ -2,7 +2,7 @@ package cn.lastwhisper.leetcode.binarytree.完全二叉树的节点个数_222_�
 
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
 
-import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtil.createTree;
 
 class Solution3 {
     /**

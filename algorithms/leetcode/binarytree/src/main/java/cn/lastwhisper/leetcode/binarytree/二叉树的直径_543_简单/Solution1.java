@@ -1,7 +1,7 @@
 package cn.lastwhisper.leetcode.binarytree.二叉树的直径_543_简单;
 
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
-import cn.lastwhisper.leetcode.common.tree.TreeUtils;
+import cn.lastwhisper.leetcode.common.tree.TreeUtil;
 
 class Solution1 {
     /**
@@ -45,7 +45,7 @@ class Solution1 {
 
     public static void main(String[] args) {
         Integer[] nums = new Integer[]{4, -7, -3, null, null, -9, -3, 9, -7, -4, null, 6, null, -6, -6, null, null, 0, 6, 5, null, 9, null, null, -1, -4, null, null, null, -2};
-        TreeNode tree = TreeUtils.createTree(nums);
+        TreeNode tree = TreeUtil.createTree(nums);
         System.out.println(new Solution1().diameterOfBinaryTree(tree));
     }
 }

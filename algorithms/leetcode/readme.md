@@ -1,7 +1,3 @@
-## 课程练习题目录
-
-课程练习题的参考答案可以在我的 [**Leetcode题解代码仓**](https://github.com/liuyubobobo/Play-Leetcode) 中查询参考代码。如果在我的题解代码仓中没有你想要的问题的相应的代码，可以随时在课程问答区留言索要相应代码和简单的算法思路说明：）
-
 - array 数组
 - hashtable 查找表
 - linkedlist 链表

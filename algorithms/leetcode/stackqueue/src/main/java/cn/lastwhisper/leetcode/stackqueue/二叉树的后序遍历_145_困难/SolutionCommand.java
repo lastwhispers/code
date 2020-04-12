@@ -1,15 +1,13 @@
 package cn.lastwhisper.leetcode.stackqueue.二叉树的后序遍历_145_困难;
 
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
-import cn.lastwhisper.leetcode.common.tree.TreeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import static cn.lastwhisper.leetcode.common.print.PrintUtils.printList;
-import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
-import static cn.lastwhisper.leetcode.common.print.PrintUtils.printLists;
+import static cn.lastwhisper.leetcode.common.print.PrintUtil.printList;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtil.createTree;
 
 class SolutionCommand {
     static class Command {

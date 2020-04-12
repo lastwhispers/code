@@ -2,7 +2,7 @@ package cn.lastwhisper.leetcode.dynamic.三角形最小路径和_120_中等;
 
 import java.util.List;
 
-import static cn.lastwhisper.leetcode.common.matrix.ArrayUtils.createList;
+import static cn.lastwhisper.leetcode.common.array.ArrayUtil.createList;
 
 class Solution1 {
     /**

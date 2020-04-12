@@ -1,4 +1,4 @@
-package time;
+package cn.lastwhisper.interview.string;
 
 /**
  * @author lastwhisper

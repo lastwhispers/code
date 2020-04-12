@@ -1,9 +1,8 @@
 package cn.lastwhisper.offer.面试题32_II_从上到下打印二叉树II;
 
-import cn.lastwhisper.leetcode.common.linkedlist.LinkedListUtil;
-import cn.lastwhisper.leetcode.common.print.PrintUtils;
+import cn.lastwhisper.leetcode.common.print.PrintUtil;
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
-import cn.lastwhisper.leetcode.common.tree.TreeUtils;
+import cn.lastwhisper.leetcode.common.tree.TreeUtil;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -43,6 +42,6 @@ class Solution1 {
     }
 
     public static void main(String[] args) {
-        PrintUtils.printLists(new Solution1().levelOrder(TreeUtils.createTree(3,9,20,null,null,15,7)));
+        PrintUtil.printLists(new Solution1().levelOrder(TreeUtil.createTree(3,9,20,null,null,15,7)));
     }
 }

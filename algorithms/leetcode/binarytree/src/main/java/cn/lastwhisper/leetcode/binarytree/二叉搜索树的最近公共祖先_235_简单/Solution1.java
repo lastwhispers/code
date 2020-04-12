@@ -2,7 +2,7 @@ package cn.lastwhisper.leetcode.binarytree.二叉搜索树的最近公共祖先_
 
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
 
-import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtil.createTree;
 
 class Solution1 {
     /**

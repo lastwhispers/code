@@ -2,7 +2,7 @@ package cn.lastwhisper.leetcode.binarytree.左叶子之和_404_简单;
 
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
 
-import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtil.createTree;
 
 class Solution1 {
     /**

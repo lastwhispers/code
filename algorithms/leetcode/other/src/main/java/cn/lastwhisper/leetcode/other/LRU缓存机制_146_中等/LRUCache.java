@@ -26,7 +26,17 @@ public class LRUCache {
         cache = new DoubleList();
     }
 
-    private class DoubleList implements Iterable<Node> {
+    private static class Node {
+        public int key, val;
+        public Node next, prev;
+
+        public Node(int k, int v) {
+            this.key = k;
+            this.val = v;
+        }
+    }
+
+    private static class DoubleList implements Iterable<Node> {
         private Node head, tail; // 头尾虚节点
         private int size; // 链表元素数
 
@@ -89,16 +99,6 @@ public class LRUCache {
             return new Itr();
         }
 
-    }
-
-    private class Node {
-        public int key, val;
-        public Node next, prev;
-
-        public Node(int k, int v) {
-            this.key = k;
-            this.val = v;
-        }
     }
 
     public int get(int key) {

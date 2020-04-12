@@ -2,7 +2,7 @@ package cn.lastwhisper.leetcode.binarytree.验证二叉搜索树_98_中等;
 
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
 
-import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtil.createTree;
 
 class Solution2 {
     /**

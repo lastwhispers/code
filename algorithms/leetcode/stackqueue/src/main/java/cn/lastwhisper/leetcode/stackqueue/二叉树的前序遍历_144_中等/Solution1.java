@@ -1,7 +1,7 @@
 package cn.lastwhisper.leetcode.stackqueue.二叉树的前序遍历_144_中等;
 
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
-import cn.lastwhisper.leetcode.common.tree.TreeUtils;
+import cn.lastwhisper.leetcode.common.tree.TreeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ class Solution1 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = TreeUtils.createTree();
+        TreeNode root = TreeUtil.createTree();
         new Solution1().preorderTraversal(root).forEach(node -> {
             System.out.print(node + ",");
         });

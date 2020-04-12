@@ -16,4 +16,5 @@ public class MyApplicationListener implements ApplicationListener<ApplicationEve
         // TODO Auto-generated method stub
         System.out.println("收到事件："+event);
     }
+
 }

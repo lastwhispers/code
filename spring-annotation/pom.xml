@@ -17,6 +17,7 @@
         <module>aop</module>
         <module>transaction</module>
         <module>ext</module>
+        <module>event</module>
     </modules>
 
     <dependencies>

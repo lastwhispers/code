@@ -34,8 +34,8 @@ public class TestReadWriteLock {
         Runnable readThread = new Runnable() {
             @Override
             public void run() {
-                //rwl.handleRead(readLock);
-                rwl.handleRead(lock);
+                rwl.handleRead(readLock);
+                //rwl.handleRead(lock);
                 latch.countDown();
             }
         };
@@ -43,8 +43,8 @@ public class TestReadWriteLock {
         Runnable writeThread = new Runnable() {
             @Override
             public void run() {
-                //rwl.handleWrite(writeLock, new Random().nextInt());
-                rwl.handleWrite(lock, new Random().nextInt());
+                rwl.handleWrite(writeLock, new Random().nextInt());
+                //rwl.handleWrite(lock, new Random().nextInt());
                 latch.countDown();
             }
         };

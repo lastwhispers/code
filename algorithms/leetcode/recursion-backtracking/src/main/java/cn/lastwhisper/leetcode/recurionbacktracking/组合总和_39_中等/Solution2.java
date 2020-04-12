@@ -3,8 +3,7 @@ package cn.lastwhisper.leetcode.recurionbacktracking.组合总和_39_中等;
 import java.util.ArrayList;
 import java.util.List;
 
-import static cn.lastwhisper.leetcode.common.print.PrintUtils.collection2String;
-import static cn.lastwhisper.leetcode.common.print.PrintUtils.printLists;
+import static cn.lastwhisper.leetcode.common.print.PrintUtil.printLists;
 
 class Solution2 {
     static int count = 0;

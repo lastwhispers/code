@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
-import static cn.lastwhisper.leetcode.common.print.PrintUtils.printLists;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtil.createTree;
+import static cn.lastwhisper.leetcode.common.print.PrintUtil.printLists;
 
 class Solution2 {
     static class DTO {

@@ -9,8 +9,8 @@ public class ClassLoaderStructure {
     public static void main(String[] args) throws ClassNotFoundException {
         Object obj = new Object();
         System.out.println("Object的类加载器:"+obj.getClass().getClassLoader());
-
-        Class<?> clazz = Class.forName("cn.lastwhisper.cn.lastwhisper.javabasic.ClassLoader.other.Hello");
+        // ExtClassloaderJar.jar放到jdk1.8\jre\lib\ext目录
+        Class<?> clazz = Class.forName("cn.lastwhisper.javabasic.ClassLoader.other.Hello");
         System.out.println("ext下的类加载器:"+clazz.getClassLoader());
 
         ClassLoaderStructure test01 = new ClassLoaderStructure();

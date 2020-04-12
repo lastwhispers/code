@@ -5,7 +5,7 @@ import javafx.util.Pair;
 
 import java.util.LinkedList;
 
-import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtil.createTree;
 
 class Solution5 {
     /**

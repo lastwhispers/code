@@ -1,8 +1,8 @@
 package cn.lastwhisper.offer.面试题34_二叉树中和为某一值的路径;
 
-import cn.lastwhisper.leetcode.common.print.PrintUtils;
+import cn.lastwhisper.leetcode.common.print.PrintUtil;
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
-import cn.lastwhisper.leetcode.common.tree.TreeUtils;
+import cn.lastwhisper.leetcode.common.tree.TreeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,8 +45,8 @@ class Solution1 {
     }
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.createTree(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1);
+        TreeNode tree = TreeUtil.createTree(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1);
         int sum = 22;
-        PrintUtils.printLists(new Solution1().pathSum(tree, sum));
+        PrintUtil.printLists(new Solution1().pathSum(tree, sum));
     }
 }

@@ -3,8 +3,7 @@ package cn.lastwhisper.leetcode.recurionbacktracking.电话号码的字母组合
 import java.util.ArrayList;
 import java.util.List;
 
-import static cn.lastwhisper.leetcode.common.print.PrintUtils.printList;
-import static cn.lastwhisper.leetcode.common.print.PrintUtils.printLists;
+import static cn.lastwhisper.leetcode.common.print.PrintUtil.printList;
 
 class Solution1 {
     private String[] letterMap = {

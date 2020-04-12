@@ -4,7 +4,7 @@ import cn.lastwhisper.leetcode.common.tree.TreeNode;
 
 import java.util.LinkedList;
 
-import static cn.lastwhisper.leetcode.common.tree.TreeUtils.*;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtil.*;
 
 class Solution2 {
     /**

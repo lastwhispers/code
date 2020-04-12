@@ -3,7 +3,7 @@ package cn.lastwhisper.leetcode.recurionbacktracking.复原IP地址_93_中等;
 import java.util.ArrayList;
 import java.util.List;
 
-import static cn.lastwhisper.leetcode.common.print.PrintUtils.printList;
+import static cn.lastwhisper.leetcode.common.print.PrintUtil.printList;
 
 class Solution1 {
     /**

@@ -2,8 +2,8 @@ package cn.lastwhisper.leetcode.binarytree.翻转二叉树_226_简单;
 
 import cn.lastwhisper.leetcode.common.tree.TreeNode;
 
-import static cn.lastwhisper.leetcode.common.tree.TreeUtils.createTree;
-import static cn.lastwhisper.leetcode.common.tree.TreeUtils.printLevelOrder;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtil.createTree;
+import static cn.lastwhisper.leetcode.common.tree.TreeUtil.printLevelOrder;
 
 class Solution4 {
     /**

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-import static cn.lastwhisper.leetcode.common.print.PrintUtils.printStringLists;
+import static cn.lastwhisper.leetcode.common.print.PrintUtil.printStringLists;
 
 class Solution2 {
     /**

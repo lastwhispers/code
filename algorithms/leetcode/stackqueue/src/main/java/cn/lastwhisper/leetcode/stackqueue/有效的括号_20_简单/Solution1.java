@@ -1,6 +1,6 @@
 package cn.lastwhisper.leetcode.stackqueue.有效的括号_20_简单;
 
-import java.util.Stack;
+import java.util.LinkedList;
 
 class Solution1 {
     /**
@@ -19,21 +19,18 @@ class Solution1 {
      * 空间复杂度：O(1)
      */
     public boolean isValid(String s) {
-        //if ("".equals(s)) {
-        //    return true;
-        //}
         if (s.length() % 2 != 0) {
             return false;
         }
 
-        Stack<Character> stack = new Stack<>();
+        LinkedList<Character> stack = new LinkedList<>();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (c == '(' || c == '{' || c == '[') {
                 stack.push(c);
             } else {
                 // "})"
-                if (stack.empty()) {
+                if (stack.isEmpty()) {
                     return false;
                 }
                 if (!match(stack.pop(), c)) {
@@ -41,8 +38,8 @@ class Solution1 {
                 }
             }
         }
-        // 两种情况""、"(("
-        return stack.empty();
+        // 两种情况""=true、"(("=false
+        return stack.isEmpty();
     }
 
     /**
