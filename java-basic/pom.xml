@@ -11,14 +11,12 @@
     <modules>
         <module>concurrent</module>
         <module>jvm</module>
-        <module>jdk5</module>
         <module>design-pattern</module>
         <module>interview</module>
-        <module>jdk8</module>
-        <module>jdk9</module>
-        <module>jdk11</module>
-        <module>jdk12</module>
-        <module>jdk13</module>
+        <module>feature-jdk5</module>
+        <module>feature-jdk8</module>
+        <module>learn-source-jdk7</module>
+        <module>learn-source-jdk8</module>
     </modules>
 
     <dependencies>

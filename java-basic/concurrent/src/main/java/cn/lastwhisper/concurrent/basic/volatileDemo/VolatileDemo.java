@@ -5,6 +5,10 @@ package cn.lastwhisper.concurrent.basic.volatileDemo;
  */
 public class VolatileDemo implements Runnable {
 
+    /**
+     * 无volatile程序不会结束，主线程无法感知update线程修改的值
+     *
+     */
     private volatile boolean[] flag = {false};
 
     @Override
@@ -24,7 +28,7 @@ public class VolatileDemo implements Runnable {
 
     public static void main(String[] args) throws InterruptedException {
         VolatileDemo runnable = new VolatileDemo();
-        new Thread(runnable).start();
+        new Thread(runnable,"update thread").start();
         while (true) {
             if (runnable.isFlag()) {
                 System.out.println("-----------------");

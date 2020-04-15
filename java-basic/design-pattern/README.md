@@ -80,3 +80,11 @@
 
 中间也参考了无数的博客，这里只贴几个参考比较多的。
 [chenssy设计模式](https://www.cnblogs.com/chenssy/category/482229.html)
+
+
+# 4. 进阶
+
+decorator_proxy为装饰者模式与代理模式的对比
+https://www.zhihu.com/question/41988550/answer/462204684
+拳击手、经纪人、移速鞋
+
