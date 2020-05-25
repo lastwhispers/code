@@ -5,6 +5,7 @@ import com.alibaba.fastjson.TypeReference;
 import redis.clients.jedis.Jedis;
 
 import java.lang.reflect.Type;
+import java.util.BitSet;
 import java.util.Set;
 import java.util.UUID;
 
@@ -68,6 +69,7 @@ public class RedisDelayingQueue<T> {
         RedisDelayingQueue<String> queue = new RedisDelayingQueue(jedis, "q-demo");
         Thread producer = new Thread() {
 
+            @Override
             public void run() {
                 for (int i = 0; i < 10; i++) {
                     queue.delay("codehole" + i);
@@ -77,6 +79,7 @@ public class RedisDelayingQueue<T> {
         };
         Thread consumer = new Thread() {
 
+            @Override
             public void run() {
                 queue.loop();
             }

@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
  * @author lastwhisper
  */
 public class SynchronousQueueDemo {
+
     public static void main(String[] args) {
         BlockingQueue<String> blockingQueue = new SynchronousQueue<>();
         new Thread(() -> {

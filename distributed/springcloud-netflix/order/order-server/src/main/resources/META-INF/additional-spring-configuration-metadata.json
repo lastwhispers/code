@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds",
+      "type": "java.lang.String",
+      "description": "Description for hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds."
+  }
+] }

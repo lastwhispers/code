@@ -1,5 +1,6 @@
 package cn.lastwhisper.redis.hyperloglog;
 
+import cn.lastwhisper.redis.constant.Const;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 
@@ -13,7 +14,7 @@ public class PfTest {
      */
     @Test
     public void test1() {
-        Jedis jedis = new Jedis("192.168.108.129", 6379);
+        Jedis jedis = new Jedis(Const.ip, Const.port);
         for (int i = 0; i < 1000; i++) {
             jedis.pfadd("uv", "user" + i);
             // 出现误差
@@ -31,7 +32,7 @@ public class PfTest {
      */
     @Test
     public void test2() {
-        Jedis jedis = new Jedis("192.168.108.129", 6379);
+        Jedis jedis = new Jedis(Const.ip, Const.port);
         for (int i = 0; i < 10000; i++) {
             jedis.pfadd("uv", "user" + i);
         }

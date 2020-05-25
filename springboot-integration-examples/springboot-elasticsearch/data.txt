@@ -1,0 +1,214 @@
+# 创建 索引/类型/id
+PUT /megacorp/employee/1
+{
+    "first_name" : "John",
+    "last_name" :  "Smith",
+    "age" :        25,
+    "about" :      "I love to go rock climbing",
+    "interests": [ "sports", "music" ]
+}
+
+PUT /megacorp/employee/2
+{
+    "first_name" :  "Jane",
+    "last_name" :   "Smith",
+    "age" :         32,
+    "about" :       "I like to collect rock albums",
+    "interests":  [ "music" ]
+}
+
+PUT /megacorp/employee/3
+{
+    "first_name" :  "Douglas",
+    "last_name" :   "Fir",
+    "age" :         35,
+    "about":        "I like to build cabinets",
+    "interests":  [ "forestry" ]
+}
+
+# 检索文档
+GET /megacorp/employee/1
+
+# 删除文档
+DELETE /megacorp/employee/1
+DELETE /megacorp/employee/2
+DELETE /megacorp/employee/3
+DELETE /megacorp/employee/4
+
+# 检查文档
+HEAD /megacorp/employee/2
+HEAD /megacorp/employee/3
+
+# 更新文档
+PUT /megacorp/employee/2
+{
+    "first_name" :  "Jane2",
+    "last_name" :   "Smith",
+    "age" :         32,
+    "about" :       "I like to collect rock albums",
+    "interests":  [ "music" ]
+}
+
+# 新增文档
+POST /megacorp/employee
+{
+    "first_name" :  "Jane4",
+    "last_name" :   "Smith4",
+    "age" :         34,
+    "about" :       "I like to collect rock albums4",
+    "interests":  [ "music" ]
+}
+
+POST /megacorp/employee/4
+{
+    "first_name" :  "Jane4",
+    "last_name" :   "Smith4",
+    "age" :         34,
+    "about" :       "I like to collect rock albums4",
+    "interests":  [ "music" ]
+}
+
+
+# 查询所有
+GET /megacorp/employee/_search
+GET /megacorp/_search
+
+GET /megacorp/employee/_search
+{
+    "query":{
+        "match_all": {}
+    }
+}
+
+# 匹配查询
+GET /megacorp/employee/_search
+{
+  "query": {
+    "match": {
+      "last_name": "Smith"
+    }
+  }
+}
+
+# 布尔过滤
+GET /megacorp/employee/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "last_name": "Smith"
+          }
+        }
+      ],
+      "filter": {
+        "range": {
+          "age": {
+            "gt": 30
+          }
+        }
+      }
+    }
+  }
+}
+
+# 全文搜索
+# 找出属性中的独立单词
+GET /megacorp/employee/_search
+{
+    "query" : {
+        "match" : {
+            "about" : "rock climbing"
+        }
+    }
+}
+
+# 短语搜索
+# 精确匹配一系列单词或者_短语_
+GET /megacorp/employee/_search
+{
+    "query" : {
+        "match_phrase" : {
+            "about" : "rock climbing"
+        }
+    }
+}
+
+# 高亮字段
+GET /megacorp/employee/_search
+{
+  "query": {
+    "match_phrase": {
+      "about": "rock climbing"
+    }
+  },
+  "highlight": {
+    "fields": {
+      "about": {}
+    }
+  }
+}
+
+# 分组聚合
+GET /megacorp/employee/_search
+{
+  "aggs": {
+    "all_interests": {
+      "terms": {
+        "field": "interests"
+      }
+    }
+  }
+}
+# 字段需要开启 fielddata 才可以聚合
+PUT megacorp/_mapping/employee/
+{
+  "properties": {
+    "interests": {
+      "type": "text",
+      "fielddata": true
+    }
+  }
+}
+
+# 分级聚合
+# 按 interests 分组，计算每组的平均年龄
+GET /megacorp/employee/_search?pretty
+{
+  "aggs": {
+    "all_interests": {
+      "terms": {
+        "field": "interests"
+      },
+      "aggs": {
+        "avg_age": {
+          "avg": {
+            "field": "age"
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

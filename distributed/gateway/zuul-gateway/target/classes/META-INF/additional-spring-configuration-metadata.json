@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "api-2.ribbon.listOfServers",
+      "type": "java.lang.String",
+      "description": "Description for api-2.ribbon.listOfServers."
+  }
+] }

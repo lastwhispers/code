@@ -38,7 +38,7 @@ public class JedisClusterFactory {
     }
 
 
-    public void destory() {
+    public void destroy() {
         if (jedisCluster != null) {
             try {
                 jedisCluster.close();

@@ -1,0 +1,16 @@
+server:
+  port: 9000
+zuul:
+  routes:
+    product:
+      path: /shop-api/product/**
+      url: http://localhost:8081/
+    order:
+      path: /shop-api/order/**
+#      url: http://localhost:8083/
+order:
+  ribbon:
+    listOfServers: http://localhost:8082,http://localhost:8083
+ribbon:
+  eureka:
+    enabled: false

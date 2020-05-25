@@ -10,6 +10,7 @@ import java.util.List;
  * @author lastwhisper
  */
 public class TransactionTest {
+
     public static void main(String[] args) {
         Jedis jedis = new Jedis("192.168.108.131", 7000);
         String userId = "abc";

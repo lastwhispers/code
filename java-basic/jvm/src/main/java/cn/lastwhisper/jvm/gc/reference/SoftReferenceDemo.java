@@ -45,11 +45,17 @@ public class SoftReferenceDemo {
             //byte[] bytes = new byte[6*1024*1024];//6MB 内存足够，不会回收软引用
             byte[] bytes = new byte[7 * 1024 * 1024];//7MB OOM触发GC，回收软引用
         } catch (Throwable e) {
-            e.printStackTrace();
-        } finally {
             System.out.println("---原引用置为null， OOM触发GC---");
+            e.printStackTrace();
+            // java.lang.OutOfMemoryError: Java heap space
+            //	at cn.lastwhisper.jvm.gc.reference.SoftReferenceDemo.softRef_Memory_NotEnough(SoftReferenceDemo.java:46)
+            //	at cn.lastwhisper.jvm.gc.reference.SoftReferenceDemo.main(SoftReferenceDemo.java:15)
+        } finally {
+
             System.out.println("原引用："+o);//null
             System.out.println("软引用："+softReference.get());// null 内存不足被回收
+            // 是否会被 GC ？不会因为 softReference GCRoots 可到达
+            System.out.println("softReference："+softReference);
         }
     }
 

@@ -9,6 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mybatis-interceptor</artifactId>
+    <artifactId>mybatis-interceptor-datascope</artifactId>
 
 </project>
