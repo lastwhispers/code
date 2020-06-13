@@ -19,6 +19,8 @@
         <module>learn-source-jdk8</module>
         <module>feature-jdk9</module>
         <module>feature-jdk11</module>
+        <module>basic</module>
+        <module>guava</module>
     </modules>
 
     <dependencies>

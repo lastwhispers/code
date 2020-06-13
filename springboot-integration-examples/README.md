@@ -17,6 +17,8 @@
 │
 ├─springboot-oss oss
 │
+├─springboot-wx 微信小程序    
+│
 ├─springboot-simple-websocket 原生websocket   
 │
 ├─springboot-websocket spring封装原生websocket  
@@ -24,10 +26,18 @@
 ├─springboot-websocket-stomp websocket结合stomp 
 │
 ├─springboot-websocket-stomp-chat-cluster 聊天室集群  
-│	参考：https://blog.csdn.net/qqxx6661/article/details/98883166
+│	
 ├─springboot-websocket-stomp-chat-single 聊天室单机
 │
-├─springboot-wx 微信小程序    
+├─springboot-devtools 热部署
+│
+├─springboot-actuator springboot actuator
+│
+├─springboot-task spring线程池与定时任务
+│
+├─springboot-cache spring缓存
+│
+├─springboot-security spring security
 │
 ├─spring-dubbo   
 │
@@ -35,11 +45,6 @@
 │
 ├─spring-thymeleaf
 │
-└─spring-validated
+└─springboot-validated
  
 ```
-
-# springboot-banner
-
-springboot 更换 banner
-
