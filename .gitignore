@@ -1,12 +1,3 @@
-*/target/
-!.mvn/wrapper/maven-wrapper.jar
-/logs
-.svn
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+.idea/
+target/
 *.iml
-*.ipr
-*.class
-/out/
