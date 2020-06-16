@@ -4,6 +4,10 @@ import java.io.FileNotFoundException;
 
 /**
  * 异常
+ *  Error
+ *  Exception
+ *  RuntimeException
+ *
  * @author lastwhisper
  */
 public class ErrorAndException {
