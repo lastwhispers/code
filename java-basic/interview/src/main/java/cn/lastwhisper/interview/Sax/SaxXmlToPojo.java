@@ -31,7 +31,7 @@ public class SaxXmlToPojo {
         PersonHandler personHandler = new PersonHandler();
         reader.setContentHandler(personHandler);
         // 5.读取xml的文档内容
-        reader.parse("src/main/java/cn/lastwhisper/cn.lastwhisper.javabasic/Sax/person.xml");
+        reader.parse("/Users/cunchang/Projects/Github/code/java-basic/interview/src/main/java/cn/lastwhisper/interview/Sax/person.xml");
 
         List<Person> persons = personHandler.getPersons();
         for (Person person : persons) {
@@ -44,7 +44,8 @@ public class SaxXmlToPojo {
 class PersonHandler extends DefaultHandler {
     private List<Person> persons;
     private Person person;
-    private String tag; // 存储操作标签
+    // 存储操作标签
+    private String tag;
 
     /**
      * @author lastwhisper
@@ -53,7 +54,7 @@ class PersonHandler extends DefaultHandler {
      * @return void
      */
     @Override
-    public void startDocument() throws SAXException {
+    public void startDocument(){
         persons = new ArrayList<Person>();
     }
 
@@ -67,7 +68,7 @@ class PersonHandler extends DefaultHandler {
      * @return void
      */
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+    public void startElement(String uri, String localName, String qName, Attributes attributes) {
         tag = qName;
         if ("person".equals(tag)) {
             person = new Person();
@@ -83,13 +84,13 @@ class PersonHandler extends DefaultHandler {
      * @return void
      */
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
+    public void characters(char[] ch, int start, int length) {
         String contents = new String(ch, start, length).trim();
         if ("name".equals(tag)) {
             person.setName(contents);
         } else if ("age".equals(tag)) {
             if (contents.length() > 0) {
-                person.setAge(Integer.valueOf(contents));
+                person.setAge(Integer.parseInt(contents));
             }
         }
     }
@@ -103,11 +104,12 @@ class PersonHandler extends DefaultHandler {
      * @return void
      */
     @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
+    public void endElement(String uri, String localName, String qName) {
         if ("person".equals(qName)) {
             persons.add(person);
+            person = null;
         }
-        tag = null; //tag丢弃了
+        tag = null;
     }
 
     /**
@@ -117,7 +119,7 @@ class PersonHandler extends DefaultHandler {
      * @return void
      */
     @Override
-    public void endDocument() throws SAXException {
+    public void endDocument() {
     }
 
     public List<Person> getPersons() {

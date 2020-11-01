@@ -27,11 +27,11 @@ public class UserTest {
         //6.执行操作
         List<User> users = userMapper.findAll();
         // 延迟加载不使用，不加载Account的查询语句
-        //for (User user : users) {
-        //    System.out.println("-------每个用户的内容---------");
-        //    System.out.println(user);
-        //    System.out.println(user.getAccounts());
-        //}
+        for (User user : users) {
+            System.out.println("-------每个用户的内容---------");
+//            System.out.println(user);
+            System.out.println(user.getAccounts());
+        }
     }
 
     @Before//在测试方法执行之前执行

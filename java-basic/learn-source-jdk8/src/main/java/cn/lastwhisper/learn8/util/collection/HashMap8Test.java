@@ -3,9 +3,9 @@ package cn.lastwhisper.learn8.util.collection;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
- *
  * @author lastwhisper
  * @date 2020/3/26
  */
@@ -98,6 +98,13 @@ public class HashMap8Test {
         /*--------------扩容------------*/
         // size=14 >= threshold=12满足，同时null != table[bucketIndex]满足
         possibleResizeMap.put("15", "15");
+    }
+
+    @Test
+    public void testResize2() {
+        HashMap<String, String> data = new HashMap<>(2);
+        data.put("rows", "rows");
+        data.put("total", "total");
     }
 
     @Test

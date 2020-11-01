@@ -17,6 +17,7 @@ public class Proxy2 {
         Class<?> proxyClass = Proxy.getProxyClass(Collection.class.getClassLoader(), Collection.class);
         Constructor<?> constructor = proxyClass.getConstructor(InvocationHandler.class);
         Collection proxy1 = (Collection) constructor.newInstance(new InvocationHandler() {
+
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 return null;
             }
