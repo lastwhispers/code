@@ -1,4 +1,4 @@
-package cn.lastwhisper.redis.transaction;
+package cn.cunchang.transaction;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Transaction;
@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * redis事务测试
- * @author lastwhisper
+ * @author cunchang
  */
 public class TransactionTest {
 
