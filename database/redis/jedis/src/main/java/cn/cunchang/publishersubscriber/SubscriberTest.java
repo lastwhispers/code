@@ -1,10 +1,10 @@
-package cn.lastwhisper.redis.publishersubscriber;
+package cn.cunchang.publishersubscriber;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPubSub;
 
 /**
- * @author lastwhisper
+ * @author cunchang
  */
 public class SubscriberTest {
     //订阅
