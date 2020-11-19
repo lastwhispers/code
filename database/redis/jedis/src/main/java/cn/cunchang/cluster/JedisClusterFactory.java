@@ -1,4 +1,4 @@
-package cn.lastwhisper.redis.cluster;
+package cn.cunchang.cluster;
 
 import redis.clients.jedis.HostAndPort;
 import redis.clients.jedis.JedisCluster;
