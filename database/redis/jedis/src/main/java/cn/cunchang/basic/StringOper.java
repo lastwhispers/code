@@ -1,10 +1,10 @@
-package cn.lastwhisper.redis.basic;
+package cn.cunchang.basic;
 
 import redis.clients.jedis.Jedis;
 
 /**
  * string数据结构的操作
- * @author lastwhisper
+ * @author cunchang
  * @date 2019/11/24
  */
 public class StringOper {
