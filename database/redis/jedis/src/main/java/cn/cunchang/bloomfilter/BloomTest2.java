@@ -1,4 +1,4 @@
-package cn.lastwhisper.redis.bloomfilter;
+package cn.cunchang.bloomfilter;
 
 import io.rebloom.client.Client;
 
@@ -7,9 +7,11 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * @author lastwhisper
+ * 测试bloomfilter的误判率
+ * @author cunchang
  */
-public class BloomTest3 {
+public class BloomTest2 {
+
     private String chars;
 
     {
@@ -38,24 +40,23 @@ public class BloomTest3 {
     }
 
     public static void main(String[] args) {
-        BloomTest3 bloomer = new BloomTest3();
+        BloomTest2 bloomer = new BloomTest2();
         List<String> users = bloomer.randomUsers(100000);
         List<String> usersTrain = users.subList(0, users.size() / 2);
         List<String> usersTest = users.subList(users.size() / 2, users.size());
+
         Client client = new Client("192.168.108.129", 6379);
-        client.delete("codehole");
-        // 对应 bf.reserve 指令
-        client.createFilter("codehole", 50000, 0.001);
+        client.delete("codehold");
         for (String user : usersTrain) {
-            client.add("codehole", user);
+            client.add("codehold",user);
         }
         int falses = 0;
         for (String user : usersTest) {
-            boolean ret = client.exists("codehole", user);
-            if (ret) {
+            boolean ret = client.exists("codehold", user);
+            if(ret){//true说明误判了
                 falses++;
             }
         }
-        System.out.printf("%d %d\n", falses, usersTest.size());
+        System.out.printf("%d %d\n",falses,usersTest.size());
     }
 }

@@ -1,4 +1,4 @@
-package cn.lastwhisper.redis.bloomfilter;
+package cn.cunchang.bloomfilter;
 
 import io.rebloom.client.Client;
 import org.junit.Test;
@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 布隆过滤器测试
- * @author lastwhisper
+ * @author cunchang
  */
 public class BloomTest {
 

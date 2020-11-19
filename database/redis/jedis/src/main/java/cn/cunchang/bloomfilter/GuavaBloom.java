@@ -1,11 +1,11 @@
-package cn.lastwhisper.redis.bloomfilter;
+package cn.cunchang.bloomfilter;
 
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnel;
 import com.google.common.hash.Funnels;
 
 /**
- * @author lastwhisper
+ * @author cunchang
  */
 public class GuavaBloom {
     public static void main(String[] args) {
