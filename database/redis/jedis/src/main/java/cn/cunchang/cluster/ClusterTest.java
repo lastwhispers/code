@@ -1,4 +1,4 @@
-package cn.lastwhisper.redis.cluster;
+package cn.cunchang.cluster;
 
 import redis.clients.jedis.HostAndPort;
 import redis.clients.jedis.JedisCluster;
@@ -12,7 +12,7 @@ import java.util.Set;
 
 /**
  * 集群测试
- * @author lastwhisper
+ * @author cunchang
  */
 public class ClusterTest {
 

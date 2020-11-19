@@ -1,4 +1,4 @@
-package cn.lastwhisper.redis.pipeline;
+package cn.cunchang.pipeline;
 
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
@@ -6,7 +6,7 @@ import redis.clients.jedis.Pipeline;
 
 /**
  * 流水线
- * @author lastwhisper
+ * @author cunchang
  */
 public class PipelineTest {
     //没有使用pipieline的情况下

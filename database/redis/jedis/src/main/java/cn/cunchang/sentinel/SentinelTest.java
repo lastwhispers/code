@@ -1,4 +1,4 @@
-package cn.lastwhisper.redis.sentinel;
+package cn.cunchang.sentinel;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +12,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author lastwhisper
+ * @author cunchang
  */
 public class SentinelTest {
     private JedisSentinelPool sentinelPool;

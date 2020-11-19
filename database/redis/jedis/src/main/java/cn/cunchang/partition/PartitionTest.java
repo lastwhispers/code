@@ -1,4 +1,4 @@
-package cn.lastwhisper.redis.partition;
+package cn.cunchang.partition;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * hash分区 迁移率
- * @author lastwhisper
+ * @author cunchang
  */
 public class PartitionTest {
     private final static Object value = new Object();
