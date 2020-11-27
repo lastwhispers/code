@@ -142,6 +142,7 @@ public class JULTest {
          *
          */
 //        Logger logger = Logger.getLogger(this.getClass().getName());
+        // cn.cunchang.log.MyJULLogFilter会过滤掉"cn.cunchang.log"
         Logger logger = Logger.getLogger("cn.cunchang.log");
 
         // 2、自定义日志配置
