@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 
 /**
  * Java 正则表达式
+ *
  * @author lastwhisper
  * @date 2020/5/29
  */
@@ -70,19 +71,8 @@ public class RegExTest {
     public void testIllegal() {
         // 按指定模式在字符串查找
         String[] lines = {"13812345abc", "13812345哈哈", "aaa13812345;", "13812345】"};
-
         String regEx = "[^0-9]";
-        // 创建 Pattern 对象,这个类的实例是不可变的，可以安全地被多个并发线程使用。
-        Pattern pattern = Pattern.compile(regEx);
-        for (String line : lines) {
-            Matcher m = pattern.matcher(line);
-            // find()方法是部分匹配
-            if (m.find()) {
-                System.out.println("Found value:" + m.group(0));
-            } else {
-                System.out.println("NO MATCH");
-            }
-        }
+        match(regEx, lines);
     }
 
     /**
@@ -94,17 +84,7 @@ public class RegExTest {
         String[] lines = {"杨元庆001Abc@lenovo.com.cn"};
         // 138、166、198、199
         String regEx = "^[A-Za-z0-9\\u4e00-\\u9fa5]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$";
-        // 创建 Pattern 对象,这个类的实例是不可变的，可以安全地被多个并发线程使用。
-        Pattern pattern = Pattern.compile(regEx);
-        for (String line : lines) {
-            Matcher m = pattern.matcher(line);
-            // matches()是全部匹配
-            if (m.matches()) {
-                System.out.println("Found value:" + m.group(0));
-            } else {
-                System.out.println("NO MATCH");
-            }
-        }
+        match(regEx, lines);
     }
 
     /**
@@ -115,6 +95,17 @@ public class RegExTest {
         // 按指定模式在字符串查找
         String[] lines = {"zhangsan-001@gmail.com "};
         String regEx = "^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$";
+        match(regEx, lines);
+    }
+
+    @Test
+    public void test1() {
+        String[] lines = {"${asdasdasd}"};
+        String regEx = "\\$\\{(.*?)\\}";
+        match(regEx, lines);
+    }
+
+    private void match(String regEx, String[] lines) {
         // 创建 Pattern 对象,这个类的实例是不可变的，可以安全地被多个并发线程使用。
         Pattern pattern = Pattern.compile(regEx);
         for (String line : lines) {
@@ -127,5 +118,4 @@ public class RegExTest {
             }
         }
     }
-
 }
