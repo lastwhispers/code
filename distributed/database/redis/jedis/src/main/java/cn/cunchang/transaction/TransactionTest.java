@@ -1,5 +1,6 @@
 package cn.cunchang.transaction;
 
+import cn.cunchang.JedisUtil;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Transaction;
 
@@ -12,9 +13,9 @@ import java.util.List;
 public class TransactionTest {
 
     public static void main(String[] args) {
-        Jedis jedis = new Jedis("192.168.108.131", 7000);
+        Jedis jedis = JedisUtil.getJedis();
         String userId = "abc";
-        String key = keyFor(userId);
+        String key = buildKey(userId);
         jedis.setnx(key, String.valueOf(5)); // setnx 做初始化
         System.out.println(doubleAccount(jedis, userId));
         jedis.close();
@@ -24,7 +25,7 @@ public class TransactionTest {
      *
      */
     public static int doubleAccount(Jedis jedis, String userId) {
-        String key = keyFor(userId);
+        String key = buildKey(userId);
         while (true) {
             jedis.watch(key);
             int value = Integer.parseInt(jedis.get(key));
@@ -39,7 +40,7 @@ public class TransactionTest {
         return Integer.parseInt(jedis.get(key)); // 重新获取余额
     }
 
-    public static String keyFor(String userId) {
+    public static String buildKey(String userId) {
         return String.format("account_{}", userId);
     }
 }
