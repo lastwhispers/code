@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cn.cunchang</groupId>
-    <artifactId>seckill1</artifactId>
+    <artifactId>flow2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>seckill1</name>
+    <name>flow2</name>
     <description>Demo project for redis distributed lock</description>
 
     <properties>

@@ -50,7 +50,7 @@ public class GoodController7_2 {
             return " 商品已经售罄 / 活动结束 / 调用超时，欢迎下次光临 " + " \t 服务器端口 : " + serverPort;
         } finally {
             while (true) {
-                stringRedisTemplate.watch(LOCK_KEY); // 加事务，乐观锁                 
+                stringRedisTemplate.watch(LOCK_KEY); // 加事务，乐观锁
                 if (lockValue.equalsIgnoreCase(stringRedisTemplate.opsForValue().get(LOCK_KEY))) {
                     stringRedisTemplate.setEnableTransactionSupport(true);
                     stringRedisTemplate.multi();
