@@ -13,6 +13,7 @@ public class MultiLockTest {
 
     /**
      * 不设置过期时间有watch dog续租
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -39,10 +40,9 @@ public class MultiLockTest {
             e.printStackTrace();
         } finally {
             // lock.isHeldByCurrentThread() =》java.lang.UnsupportedOperationException
-            if (lock.isLocked()) {
-                System.out.println("unlock -->lock1 lock2 lock3");
-                lock.unlock();
-            }
+            // lock.isLocked() =》java.lang.UnsupportedOperationException
+            System.out.println("unlock -->lock1 lock2 lock3");
+            lock.unlock();
             redissonInstance1.shutdown();
             redissonInstance2.shutdown();
             redissonInstance3.shutdown();

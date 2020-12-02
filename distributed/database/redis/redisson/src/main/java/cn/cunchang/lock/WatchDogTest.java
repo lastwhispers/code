@@ -5,21 +5,26 @@ import org.redisson.api.RBucket;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 
-import java.util.concurrent.TimeUnit;
+public class WatchDogTest {
 
-public class LockTest {
+    static long doSomethingTime = 20;
+    /**
+     *
+     * 每隔 leaseRenewalTime/3 就会进行续租，每次续租 leaseRenewalTime 毫秒
+     */
+    static long leaseRenewalTime = 9 * 1000;
 
-    static long doSomethingTime = 10L;
-    // 锁租约时间
-    static long leaseTime = 10L;
-
+    /**
+     * 不设置过期时间有watch dog续租
+     *
+     * @param args
+     */
     public static void main(String[] args) {
-        RedissonClient redisson = RedissonUtil.getRedissonClient();
+        RedissonClient redisson = RedissonUtil.getRedissonClient(leaseRenewalTime);
         RLock lock = redisson.getLock("myLock");
         RBucket<Object> rBucket = redisson.getBucket("myLock");
         try {
-            lock.tryLock( leaseTime, TimeUnit.SECONDS);
-//            lock.tryLock(0L, leaseTime, TimeUnit.SECONDS);
+            lock.lock();
             long ttl = rBucket.remainTimeToLive();
             System.out.println("lock | lockkey:myLock,ttl:" + ttl);
             for (int i = 1; i <= doSomethingTime; i++) {
