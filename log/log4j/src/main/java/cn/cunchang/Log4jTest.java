@@ -3,12 +3,13 @@ package cn.cunchang;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.apache.log4j.helpers.Loader;
+import org.apache.log4j.helpers.LogLog;
 import org.junit.Test;
 
 
 /**
- *
- *
  * @author cunchang
  */
 public class Log4jTest {
@@ -21,10 +22,6 @@ public class Log4jTest {
      * info 一般和在粗粒度级别上，强调应用程序的运行全程。
      * debug 一般用于细粒度级别上，对调试应用程序非常有帮助。
      * trace 是程序追踪，可以用于输出程序运行中的变量，显示执行的流程。
-     * <p>
-     * 特殊级别
-     * OFF，可用来关闭日志记录。
-     * ALL，启用所有消息的日志记录。
      * <p>
      * 一般只使用4个级别，优先级从高到低为 ERROR > WARN > INFO > DEBUG
      */
@@ -46,24 +43,128 @@ public class Log4jTest {
         logger.trace("trace");// 追踪信息，记录程序的所有流程信
     }
 
+    /**
+     * 熟悉log4j组件和配置文件
+     */
+    @Test
+    public void test组件和配置文件() {
+        PropertyConfigurator.configure(Loader.getResource("log4j_组件和配置文件.properties"));
+        Logger logger = Logger.getLogger(this.getClass());
+
+        // 日志级别
+        logger.fatal("fatal");
+        logger.error("error");
+        logger.warn("warn");
+        logger.info("info");
+        logger.debug("debug");
+        logger.trace("trace");
+    }
+
+
+    /**
+     * log4j内部日志 LogLog
+     */
+    @Test
+    public void test内部日志() {
+        // 开启内部日志
+        LogLog.setInternalDebugging(true);
+
+        PropertyConfigurator.configure(Loader.getResource("log4j_组件和配置文件.properties"));
+        Logger logger = Logger.getLogger(this.getClass());
+
+        logger.fatal("fatal");
+        logger.error("error");
+        logger.warn("warn");
+        logger.info("info");
+        logger.debug("debug");
+        logger.trace("trace");
+    }
+
+    /**
+     * log4j Layout配置
+     */
+    @Test
+    public void testLayout配置() {
+        // 开启内部日志
+        LogLog.setInternalDebugging(true);
+        PropertyConfigurator.configure(Loader.getResource("log4j_Layout配置.properties"));
+        Logger logger = Logger.getLogger(this.getClass());
+
+        logger.fatal("fatal");
+        logger.error("error");
+        logger.warn("warn");
+        logger.info("info");
+        logger.debug("debug");
+        logger.trace("trace");
+    }
+
+    /**
+     * log4j FileAppender配置
+     */
+    @Test
+    public void testFileAppender配置() {
+        // 开启内部日志
+        LogLog.setInternalDebugging(true);
+        PropertyConfigurator.configure(Loader.getResource("log4j_FileAppender配置.properties"));
+        Logger logger = Logger.getLogger(this.getClass());
+
+        for (int i = 0; i < 100; i++) {
+            logger.fatal("fatal");
+            logger.error("error");
+            logger.warn("warn");
+            logger.info("info");
+            logger.debug("debug");
+            logger.trace("trace");
+        }
+    }
+
+
+    /**
+     * log4j JDBCAppender配置
+     */
+    @Test
+    public void testJDBCAppender配置() {
+        // 开启内部日志
+        LogLog.setInternalDebugging(true);
+        PropertyConfigurator.configure(Loader.getResource("log4j_JDBCAppender配置.properties"));
+        Logger logger = Logger.getLogger(this.getClass());
+
+        for (int i = 0; i < 100; i++) {
+            logger.fatal("fatal");
+            logger.error("error");
+            logger.warn("warn");
+            logger.info("info");
+            logger.debug("debug");
+            logger.trace("trace");
+        }
+    }
+
+
+    /**
+     * 自定义Logger是为了，不同业务日志输出到不同位置<br>
+     * 比如业务代码输出到文件，log4j日志输出到控制台
+     */
     @Test
     public void testCustomLogger() {
+        // 开启内部日志
+        LogLog.setInternalDebugging(true);
+        PropertyConfigurator.configure(Loader.getResource("log4j_自定义Logger.properties"));
         // 自定义 cn.cunchang
-        Logger Logger1 = Logger.getLogger(this.getClass());
-        Logger1.fatal("fatal");
-        Logger1.error("error");
-        Logger1.warn("warn");
-        Logger1.info("info");
-        Logger1.debug("debug");
-        Logger1.trace("trace");
+        Logger myLogger = Logger.getLogger(this.getClass());
+        myLogger.fatal("myLogger fatal");
+        myLogger.error("myLogger error");
+        myLogger.warn("myLogger warn");
+        myLogger.info("myLogger info");
+        myLogger.debug("myLogger debug");
+        myLogger.trace("myLogger trace");
         // 自定义 org.apache
         Logger rootLogger = Logger.getLogger(Logger.class);
-        rootLogger.fatal("fatal");
-        rootLogger.error("error");
-        rootLogger.warn("warn");
-        rootLogger.info("info");
-        rootLogger.debug("debug");
-        rootLogger.trace("trace");
+        rootLogger.fatal("rootLogger fatal");
+        rootLogger.error("rootLogger error");
+        rootLogger.warn("rootLogger warn");
+        rootLogger.info("rootLogger info");
+        rootLogger.debug("rootLogger debug");
+        rootLogger.trace("rootLogger trace");
     }
 
 }

@@ -51,7 +51,7 @@ public class HashCode {
         Person p2 = new Person(1, "张三");
         System.out.println(p1.equals(p2));//true
 
-        Map<Person, String> map = new HashMap<>();
+        Map<Person, String> map = new HashMap<Person, String>();
         map.put(p1, "张三");
         System.out.println(map.get(p2));
 

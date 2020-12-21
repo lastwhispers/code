@@ -1,6 +1,8 @@
 package cn.lastwhisper.jpaonetomany.domain;
 
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.io.Serializable;

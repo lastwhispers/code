@@ -9,4 +9,5 @@ public class Client {
         Proxy subject = new Proxy(new RealSubject());
         subject.request();
     }
+
 }

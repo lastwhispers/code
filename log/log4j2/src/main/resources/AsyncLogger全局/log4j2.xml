@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    status="warn" 日志框架本身的输出日志级别
+    monitorInterval="5" 自动加载配置文件的间隔时间，不低于 5 秒
+-->
+<Configuration status="debug" monitorInterval="5">
+
+    <!--
+        集中配置属性进行管理
+        使用时通过:${name}
+    -->
+    <properties>
+        <property name="LOG_HOME">/Users/cunchang/logs/</property>
+    </properties>
+
+    <!--日志处理-->
+    <Appenders>
+        <!--控制台输出 appender-->
+        <Console name="Console" target="SYSTEM_ERR">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] [%-5level] %c{36}:%L --- %m%n" />
+        </Console>
+
+        <!--日志文件输出 appender-->
+        <File name="file" fileName="${LOG_HOME}/log4j2_file.log">
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] %l %c{36} - %m%n" />
+        </File>
+
+        <!--使用随机读写刘的日志文件输出 appender，性能提高-->
+        <RandomAccessFile name="accessFile" fileName="${LOG_HOME}/log4j2_Acclog.log">
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] %l %c{36} - %m%n" />
+        </RandomAccessFile>
+
+        <!--按照一定规则拆分的日志文件的 appender-->
+        <RollingFile name="rollingFile" fileName="${LOG_HOME}/log4j2_rollog.log"
+                     filePattern="/logs/$${date:yyyy-MM-dd}/log4j2_rollog-%d{yyyy-MM-dd-HH-mm}-%i.log">
+            <!--日志级别过滤器-->
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY" />
+            <!--日志消息格式-->
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] %l %c{36} - %msg%n" />
+            <Policies>
+                <!--在系统启动时，出发拆分规则，生产一个新的日志文件-->
+                <OnStartupTriggeringPolicy />
+                <!--按照文件大小拆分，10MB -->
+                <SizeBasedTriggeringPolicy size="10 MB" />
+                <!--按照时间节点拆分，规则根据filePattern定义的-->
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+            <!--在同一个目录下，文件的个数限定为 30 个，超过进行覆盖-->
+            <DefaultRolloverStrategy max="30" />
+        </RollingFile>
+
+    </Appenders>
+
+    <!--logger 定义-->
+    <Loggers>
+        <!--使用 rootLogger 配置 日志级别 level="trace"-->
+        <Root level="trace">
+            <!--指定日志使用的处理器-->
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+</Configuration>

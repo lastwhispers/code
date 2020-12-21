@@ -23,7 +23,7 @@ public class ClassLoaderHotDeploy {
                 System.out.println(path);
                 String className = "cn.lastwhisper.jdk5.feature.classloader.hotdeploy.HotCodeTest";
 
-                Set<String> set = new HashSet<>();
+                Set<String> set = new HashSet<String>();
                 set.add(className);
 
                 MyClassLoader myClassLoader = new MyClassLoader(path, set);

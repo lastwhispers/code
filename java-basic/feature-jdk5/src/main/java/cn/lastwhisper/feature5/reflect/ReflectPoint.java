@@ -38,7 +38,6 @@ public class ReflectPoint {
         return Objects.hash(x, y);
     }
 
-
     public int getX() {
         return x;
     }
