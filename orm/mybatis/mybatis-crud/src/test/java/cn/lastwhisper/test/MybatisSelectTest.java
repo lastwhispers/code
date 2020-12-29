@@ -62,7 +62,7 @@ public class MybatisSelectTest {
     public void testFindByQueryVo() {
         QueryVo vo = new QueryVo();
         User user = new User();
-        user.setUserName("%王%");
+        user.setUsername("%王%");
         vo.setUser(user);
         List<User> users = userMapper.findUserByVo(vo);
         for(User u : users) {

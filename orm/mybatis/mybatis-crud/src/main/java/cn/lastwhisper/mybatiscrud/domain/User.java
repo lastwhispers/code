@@ -14,9 +14,16 @@ import java.util.Date;
 @Setter
 @ToString
 public class User implements Serializable {
-    private Integer userId;
-    private String userName;
-    private Date userBirthday;
-    private String userSex;
-    private String userAddress;
+
+//    private Integer userId;
+//    private String userName;
+//    private Date userBirthday;
+//    private String userSex;
+//    private String userAddress;
+
+    private Integer id;
+    private String username;
+    private Date birthday;
+    private String sex;
+    private String address;
 }

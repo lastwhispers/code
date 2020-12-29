@@ -35,10 +35,10 @@ public class MybatisCRUDTest {
     @Test
     public void testSave() {
         User user = new User();
-        user.setUserName("modify User property");
-        user.setUserAddress("北京市顺义区");
-        user.setUserSex("男");
-        user.setUserBirthday(new Date());
+        user.setUsername("modify User property");
+        user.setAddress("北京市顺义区");
+        user.setSex("男");
+        user.setBirthday(new Date());
         System.out.println("保存操作之前： " + user);
         //5.执行保存方法
         userMapper.saveUser(user);
@@ -50,7 +50,7 @@ public class MybatisCRUDTest {
         // 根据 id 查询
         User user = userMapper.findById(52);
         //6.执行操作
-        user.setUserAddress("北京市顺义区");
+        user.setAddress("北京市顺义区");
         int res = userMapper.updateUser(user);
         System.out.println(res);
     }
