@@ -1,6 +1,6 @@
-package cn.lastwhisper.rocketmq.quickstart.async;
+package cn.cunchang.simple.async;
 
-import cn.lastwhisper.rocketmq.contants.Const;
+import cn.cunchang.contants.Const;
 import org.apache.rocketmq.client.exception.MQBrokerException;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
@@ -9,13 +9,16 @@ import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.remoting.exception.RemotingException;
 
-public class Producer {
+public class AsyncProducer {
 
     public static void main(String[] args) throws MQClientException, RemotingException, MQBrokerException, InterruptedException {
 
-        DefaultMQProducer producer = new DefaultMQProducer("test_async_producer_name");
+        DefaultMQProducer producer = new DefaultMQProducer();
 
         producer.setNamesrvAddr(Const.NAMESRV_ADDR_SINGLE);
+        producer.setVipChannelEnabled(false);
+        // 生产者的组名
+        producer.setProducerGroup("test_quick_producer_name");
 
         producer.start();
 

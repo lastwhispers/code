@@ -1,6 +1,6 @@
-package cn.lastwhisper.rocketmq.quickstart.async;
+package cn.cunchang.consumerretry;
 
-import cn.lastwhisper.rocketmq.contants.Const;
+import cn.cunchang.contants.Const;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
@@ -17,16 +17,17 @@ public class Consumer {
 
     public static void main(String[] args) throws MQClientException {
 
-        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("test_async_producer_name");
-
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer();
+        //指定NameServer地址，多个地址以 ; 隔开
         consumer.setNamesrvAddr(Const.NAMESRV_ADDR_SINGLE);
-
+        //CONSUME_FROM_LAST_OFFSET 默认策略，从该队列最尾开始消费，跳过历史消息
+        //CONSUME_FROM_FIRST_OFFSET 从队列最开始开始消费，即历史消息（还储存在broker的）全部消费一遍
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_LAST_OFFSET);
-
+        consumer.setConsumerGroup("test_quick_ms_consumer_name");
+        //设置consumer所订阅的Topic和Tag，*代表全部的Tag
         consumer.subscribe("test_quick_topic", "*");
 
         consumer.registerMessageListener(new MessageListenerConcurrently() {
-
             @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
                 MessageExt me = msgs.get(0);
@@ -34,6 +35,12 @@ public class Consumer {
                     String topic = me.getTopic();
                     String tags = me.getTags();
                     String keys = me.getKeys();
+
+                    // 模拟消息消费失败异常
+					//if(keys.equals("key1")) {
+					//	System.err.println("消息消费失败..");
+					//	int a = 1/0;
+					//}
 
                     String msgBody = new String(me.getBody(), RemotingHelper.DEFAULT_CHARSET);
                     System.err.println("topic: " + topic + ",tags: " + tags + ", keys: " + keys + ",body: " + msgBody);

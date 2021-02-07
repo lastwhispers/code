@@ -1,6 +1,6 @@
-package cn.lastwhisper.rocketmq.quickstart.ms;
+package cn.cunchang.consumerretry;
 
-import cn.lastwhisper.rocketmq.contants.Const;
+import cn.cunchang.contants.Const;
 import org.apache.rocketmq.client.exception.MQBrokerException;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
