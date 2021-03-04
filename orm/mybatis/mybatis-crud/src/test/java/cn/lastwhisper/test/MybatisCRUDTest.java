@@ -41,7 +41,8 @@ public class MybatisCRUDTest {
         user.setBirthday(new Date());
         System.out.println("保存操作之前： " + user);
         //5.执行保存方法
-        userMapper.saveUser(user);
+        int row = userMapper.saveUser(user);
+        System.out.println("更新行数："+row);
         System.out.println("保存操作之后： " + user);//出现id值
     }
 

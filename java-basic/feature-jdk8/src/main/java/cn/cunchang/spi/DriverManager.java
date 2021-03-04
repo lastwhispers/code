@@ -17,14 +17,14 @@ import java.util.*;
  */
 public class DriverManager {
 
-    public static cn.cunchang.chapter2.article1.spi.Driver driver;
+    public static Driver driver;
 
     static {
-        ServiceLoader<cn.cunchang.chapter2.article1.spi.Driver> services = ServiceLoader.load(cn.cunchang.chapter2.article1.spi.Driver.class);
-        Iterator<cn.cunchang.chapter2.article1.spi.Driver> iterator = services.iterator();
-        List<cn.cunchang.chapter2.article1.spi.Driver> driverList = new ArrayList<>();
+        ServiceLoader<Driver> services = ServiceLoader.load(Driver.class);
+        Iterator<Driver> iterator = services.iterator();
+        List<Driver> driverList = new ArrayList<>();
         while (iterator.hasNext()) {
-            cn.cunchang.chapter2.article1.spi.Driver driver = iterator.next();
+            Driver driver = iterator.next();
             driverList.add(driver);
         }
         if (driverList.size() < 1) {
@@ -36,7 +36,7 @@ public class DriverManager {
         driver = driverList.get(0);
     }
 
-    public static cn.cunchang.chapter2.article1.spi.Driver getDriver() {
+    public static Driver getDriver() {
         if (Objects.isNull(driver)) {
             throw new IllegalStateException("未找到 Driver 的实现");
         }

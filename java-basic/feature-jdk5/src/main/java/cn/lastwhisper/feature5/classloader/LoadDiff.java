@@ -10,6 +10,5 @@ public class LoadDiff {
         ClassLoader classLoader = DemoObj.class.getClassLoader();
         // 连接Mysql，注册驱动com.mysql.jdbc.Driver
         //Class<?> clazz = Class.forName("cn.lastwhisper.jdk5.feature.classloader.DemoObj");
-
     }
 }

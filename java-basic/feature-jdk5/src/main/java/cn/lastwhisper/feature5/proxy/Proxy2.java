@@ -25,7 +25,7 @@ public class Proxy2 {
         proxy1.clear();
         // 为什么待返回值的方法会报错？
         // 因为InvocationHandler的invoke方法返回值为null
-        //proxy1.size();
+        proxy1.size();
 
         // 第二种方法、创建代理对象；使用Proxy提供的静态方法newProxyInstance
         // 参数一：目标增强类的类加载器（用于加载代理类）；

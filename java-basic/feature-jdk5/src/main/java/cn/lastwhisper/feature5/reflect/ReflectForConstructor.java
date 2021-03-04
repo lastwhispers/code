@@ -4,7 +4,8 @@ import java.lang.reflect.Constructor;
 
 /**
  * 反射之Constructor类
- *  Constructor类代表某个类中的一个构造方法
+ * Constructor类代表某个类中的一个构造方法
+ *
  * @author lastwhisper
  */
 public class ReflectForConstructor {
@@ -21,4 +22,7 @@ public class ReflectForConstructor {
         // 3.2 反射方式  constructor.newInstance与clazz.newInstance
         String str2 = constructor.newInstance(new StringBuffer("constructor.newInstance String"));
     }
+
+
+
 }

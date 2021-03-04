@@ -8,6 +8,7 @@ import java.util.Collection;
 
 /**
  * 创建代理类的实例，并完善InvocationHandler
+ *
  * @author lastwhisper
  */
 public class Proxy3 {
@@ -24,11 +25,12 @@ public class Proxy3 {
         System.out.println(proxyClass.size());
     }
 
-    private static Object getProxy(final Object target, final Advice advice) {
+    private static Object getProxy(final Object target, Advice advice) {
         // 目标增强类的类加载器（用于加载代理类）；
         // 目标增强类的接口（代理类实现接口）；
         // InvocationHandler执行增强代码和目标方法
-        Object proxyClass = Proxy.newProxyInstance(target.getClass().getClassLoader(),
+        Object proxyClass = Proxy.newProxyInstance(
+                target.getClass().getClassLoader(),
                 target.getClass().getInterfaces(),
                 new InvocationHandler() {
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {

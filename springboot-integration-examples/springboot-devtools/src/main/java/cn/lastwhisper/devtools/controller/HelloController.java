@@ -8,6 +8,8 @@ public class HelloController {
 
     @GetMapping("/devtools")
     public String hello(){
+        System.out.println("hello idea 热部署");
         return "hello";
     }
+
 }

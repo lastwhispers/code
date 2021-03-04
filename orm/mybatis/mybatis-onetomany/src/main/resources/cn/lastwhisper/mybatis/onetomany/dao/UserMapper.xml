@@ -24,13 +24,11 @@
 
     <!--查询所有用户信息及用户关联的账户信息。-->
     <select id="findAll" resultMap="userMap">
-        SELECT
-            u.*,
+        SELECT u.*,
             acc.id aid,
             acc.uid,
             acc.money
-        FROM
-            USER u
+        FROM USER u
             LEFT JOIN account acc ON u.id = acc.uid
     </select>
 </mapper>

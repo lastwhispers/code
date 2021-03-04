@@ -29,7 +29,7 @@ public class BeanFactory {
      */
     public Object getBean(String name) {
         String className = props.getProperty(name);
-        Class<?> clazz = null;
+        Class<?> clazz;
         Object bean = null;
         try {
             clazz = Class.forName(className);
@@ -44,11 +44,11 @@ public class BeanFactory {
         //
         if (bean instanceof ProxyFactoryBean) {
             ProxyFactoryBean proxyFactoryBean = (ProxyFactoryBean) bean;
-            Advice advice = null;
             Object target = null;
+            Advice advice = null;
             try {
-                advice = (Advice) Class.forName(props.getProperty(name + ".advice")).newInstance();
                 target = Class.forName(props.getProperty(name + ".target")).newInstance();
+                advice = (Advice) Class.forName(props.getProperty(name + ".advice")).newInstance();
             } catch (InstantiationException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {
