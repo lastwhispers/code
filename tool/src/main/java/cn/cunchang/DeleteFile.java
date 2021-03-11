@@ -30,9 +30,9 @@ public class DeleteFile {
 
     /**
      * 可能的值：
-     * *.war
-     * *.iml
-     * *.jar
+     * .war
+     * .iml
+     * .jar
      */
     private static HashSet<String> deleteFiles;
 
@@ -41,7 +41,7 @@ public class DeleteFile {
     public static void main(String[] args) throws IOException {
         init(args);
         check();
-        //delete();
+        delete();
         after();
     }
 
@@ -50,7 +50,12 @@ public class DeleteFile {
         deleteDirs = new HashSet<>();
         deleteFiles = new HashSet<>();
 
-        InputStream inputStream = DeleteFile.class.getResourceAsStream("config.properties");
+        String configPath = "/config.properties";
+
+        if (args != null && args.length > 0) {
+            configPath = args[0];
+        }
+        InputStream inputStream = DeleteFile.class.getResourceAsStream(configPath);
 
         Properties prop = new Properties();
         prop.load(inputStream);
@@ -58,25 +63,26 @@ public class DeleteFile {
         String targetDirsStr = prop.getProperty("targetDirs");
         String deleteDirsStr = prop.getProperty("deleteDirs");
         String deleteFilesStr = prop.getProperty("deleteFiles");
-        String[] targetDirArr = targetDirsStr.split(",");
-        String[] deleteDirsArr = deleteDirsStr.split(",");
-        String[] deleteFilesArr = deleteFilesStr.split(",");
-
+        String[] targetDirArr = targetDirsStr.split(";");
+        String[] deleteDirsArr = deleteDirsStr.split(";");
+        String[] deleteFilesArr = deleteFilesStr.split(";");
+        System.out.println("targetDirs:" + Arrays.toString(targetDirArr));
+        System.out.println("deleteDirs:" + Arrays.toString(deleteDirsArr));
+        System.out.println("deleteFiles:" + Arrays.toString(deleteFilesArr));
         targetDirs.addAll(Arrays.asList(targetDirArr));
         deleteDirs.addAll(Arrays.asList(deleteDirsArr));
         deleteFiles.addAll(Arrays.asList(deleteFilesArr));
-
     }
 
     private static void check() {
         if (targetDirs.isEmpty()) {
-            throw new IllegalArgumentException("目标目录不能为空");
+            throw new IllegalArgumentException("targetDirs not empty");
         }
         if (deleteDirs.isEmpty()) {
-            throw new IllegalArgumentException("删除目录不能为空");
+            throw new IllegalArgumentException("deleteDirs not empty");
         }
         if (deleteFiles.isEmpty()) {
-            throw new IllegalArgumentException("删除文件不能为空");
+            throw new IllegalArgumentException("deleteFiles not empty");
         }
     }
 
@@ -85,11 +91,10 @@ public class DeleteFile {
     }
 
     private static void delete() {
-        targetDirs.forEach(dir ->
-        {
-            System.out.println("DeleteFile run,target==>" + dir);
-            recursionDelDir(new File(dir));
-        });
+        for (String targetDir : targetDirs) {
+            System.out.println("DeleteFile run,target==>" + targetDir);
+            recursionDelDir(new File(targetDir));
+        }
     }
 
 
@@ -105,20 +110,13 @@ public class DeleteFile {
         }
         for (File f : files) {
             if (f.isDirectory()) {
-                for (String deleteDir : deleteDirs) {
-                    if (f.getName().matches(deleteDir)) {
-                        recursionDelFile(f);
-                        count++;
-                        break;
-                    }
+                if (deleteDirs.contains(f.getName())) {
+                    recursionDelFile(f);
                 }
             } else {
-                for (String deleteFile : deleteFiles) {
-                    if (f.getName().matches(deleteFile)) {
-                        count++;
-                        System.out.println("delete file==>" + f.getAbsolutePath() + " :" + f.delete());
-                        break;
-                    }
+                if (deleteFiles.contains(f.getName())) {
+                    System.out.println("delete file==>" + f.getAbsolutePath() + " :" + f.delete());
+                    count++;
                 }
             }
             recursionDelDir(f);
@@ -134,18 +132,19 @@ public class DeleteFile {
         }
         File[] files = file.listFiles();
         if (files == null || files.length == 0) {
+            // 找到根,删除
+            System.out.println("delete dir==>" + file.getAbsolutePath() + " :" + file.delete());
+            count++;
             return;
         }
         for (File f : files) {
             if (f.isDirectory()) {
                 recursionDelFile(f);
             } else {
-                count++;
                 System.out.println("delete file==>" + f.getAbsolutePath() + " :" + f.delete());
+                count++;
             }
         }
-        count++;
-        System.out.println("delete dir==>" + file.getAbsolutePath() + " :" + file.delete());
     }
 
 }

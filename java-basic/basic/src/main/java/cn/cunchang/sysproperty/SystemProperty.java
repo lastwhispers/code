@@ -27,6 +27,10 @@ public class SystemProperty {
         System.out.println("载入库时搜索的路径列表：" + props.getProperty("java.library.path"));
         System.out.println("默认的暂时文件路径：" + props.getProperty("java.io.tmpdir"));
         System.out.println("一个或多个扩展文件夹的路径：" + props.getProperty("java.ext.dirs"));
+        // 操作系统	输出
+        // linux	Linux
+        // windows	Windows XP
+        // mac      Mac OS X
         System.out.println("操作系统的名称：" + props.getProperty("os.name"));
         System.out.println("操作系统的构架：" + props.getProperty("os.arch"));
         System.out.println("操作系统的版本号：" + props.getProperty("os.version"));
@@ -40,5 +44,13 @@ public class SystemProperty {
         System.out.println("用户的主文件夹：" + props.getProperty("user.home"));
         System.out.println("用户的当前工作文件夹：" + props.getProperty("user.dir"));
     }
+
+    @Test
+    public void dynamicPath() {
+        String userHome = System.getProperty("user.home");
+        System.out.println(userHome+"/upload");
+    }
+
+
 
 }
