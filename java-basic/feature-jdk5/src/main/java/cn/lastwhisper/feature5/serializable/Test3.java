@@ -38,9 +38,7 @@ public class Test3 implements Serializable{
             Object object = readFields.get("password", "");
             System.out.println("要解密的字符串:" + object.toString());
             password = "pass";//模拟解密,需要获得本地的密钥
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 

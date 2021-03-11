@@ -13,13 +13,6 @@
     </properties>
 
     <dependencies>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13</version>
-        </dependency>
-
         <!--使用slf4j 作为日志门面-->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -47,7 +40,14 @@
             <artifactId>log4j-core</artifactId>
             <version>2.11.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13</version>
+        </dependency>
     </dependencies>
+
     <build>
         <finalName>feature-jdk5</finalName>
         <plugins>

@@ -1,3 +1,0 @@
-cookie实现session
-token+redis
-jwt
