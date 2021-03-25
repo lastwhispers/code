@@ -6,6 +6,7 @@ package com.desgin.pattern.behavioral.state;
 public class Test {
     public static void main(String[] args){
         CourseVideoContext courseVideoContext = new CourseVideoContext();
+        // 改变一个对象，所属的类
         courseVideoContext.setCourseVideoState(new PlayState());
         System.out.println("当前状态"+ courseVideoContext.getCourseVideoState().getClass().getSimpleName());
 

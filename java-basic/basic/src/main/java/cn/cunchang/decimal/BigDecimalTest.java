@@ -3,6 +3,7 @@ package cn.cunchang.decimal;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  * @author cunchang
@@ -30,10 +31,22 @@ public class BigDecimalTest {
     public void testNewBigDecimal() {
         BigDecimal bigDecimal1 = new BigDecimal(1.23);
         String str1 = bigDecimal1.toString();
-        System.out.println(str1);
+        System.out.println(str1);// 1.229999999999999982236431605997495353221893310546875
         BigDecimal bigDecimal2 = new BigDecimal("1.23");
         String str2 = bigDecimal2.toString();
-        System.out.println(str2);
+        System.out.println(str2);// 1.23
     }
 
+    @Test
+    public void test保留小数() {
+        BigDecimal bigDecimal = new BigDecimal("3.1415926572358452");
+
+        BigDecimal bigDecimal1 = bigDecimal.setScale(4, RoundingMode.DOWN);
+        // 保留四位，不会四舍五入
+        System.out.println(bigDecimal1);// 3.1415
+
+        BigDecimal bigDecimal2 = bigDecimal.setScale(4, RoundingMode.HALF_UP);
+        // 保留四位，会四舍五入
+        System.out.println(bigDecimal2);// 3.1416
+    }
 }

@@ -23,9 +23,9 @@
             select 字段 from user where id in (?)
         <foreach>标签用于遍历集合，它的属性：
             collection:代表要遍历的集合元素，注意编写时不要写#{}
+            item:代表遍历集合的每个元素，生成的变量名
             open:代表语句的开始部分
             close:代表结束部分
-            item:代表遍历集合的每个元素，生成的变量名
             separator:代表分隔符
     -->
     <!-- 查询所有用户在 id 的集合之中 -->
