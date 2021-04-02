@@ -49,4 +49,12 @@ public class BigDecimalTest {
         // 保留四位，会四舍五入
         System.out.println(bigDecimal2);// 3.1416
     }
+
+    @Test
+    public void test比较大小() {
+        System.out.println(new BigDecimal("0").compareTo(new BigDecimal("0")) <= 0);
+        System.out.println(new BigDecimal("1").compareTo(new BigDecimal("0")) <= 0);
+
+    }
+
 }
