@@ -23,11 +23,17 @@ public @interface MyAnnotation {
 
     Level enumLevel() default Level.GOOD;
 
-    MetaAnnotation annotation() default @MetaAnnotation("xxxx");
+    MetaAnnotation annotation() default @MetaAnnotation("xxx");
 
 }
 
 
 interface Formatter {
 }
+
+@interface MetaAnnotation {
+    String value();
+}
+
+enum Level {BAD, INDIFFERENT, GOOD}
 
