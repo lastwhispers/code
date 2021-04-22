@@ -2,6 +2,8 @@ package cn.cunchang.regex;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -113,13 +115,17 @@ public class RegExTest {
     }
 
     @Test
-    public void test匹配12位数字(){
-        Pattern p = Pattern.compile("\\d{12}");
-        Matcher m = p.matcher("请问奥所，啊啊啊123456789101，阿萨德");
-        System.out.println(m.find());//匹配2223,返回true
-        System.out.println(m.start());//返回3,返回的是2223起始的索引号
-        System.out.println(m.end());//返回7,返回的是2223结束的索引号
-        System.out.println(m.group());//返回2223
+    public void test匹配所有数字() {
+        Pattern p = Pattern.compile("\\d+");
+//        Matcher matcher = p.matcher("请问奥所，啊啊啊12356789101，999956789101阿萨德");// 2个12位数字
+        Matcher matcher = p.matcher("请问奥所，啊啊啊123567891011，999956789101阿萨德");// 13 12
+//        Matcher matcher = p.matcher("请问奥所，啊啊啊123567891011阿萨德");// 13位数字
+//        Matcher matcher = p.matcher("请问奥所，啊啊啊 阿萨德");
+        List<String> list = new ArrayList<>();
+        while (matcher.find()) {
+            list.add(matcher.group());
+        }
+        System.out.println(list);
     }
 
 }

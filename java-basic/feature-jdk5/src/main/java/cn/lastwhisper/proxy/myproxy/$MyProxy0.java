@@ -1,0 +1,1 @@
+package cn.lastwhisper.proxy.myproxy;import java.lang.reflect.Method;public class $MyProxy0 implements Man {MyInvocationHandler h;public $MyProxy0(MyInvocationHandler h){this.h = h;}public void findObj()throws Throwable{Method method1 = Man.class.getMethod("findObj",new Class[]{});this.h.invoke(this,method1,null);}}
