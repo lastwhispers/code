@@ -1,6 +1,6 @@
 package com.desgin.pattern.structural.proxy.staticproxy;
 
-import com.desgin.pattern.structural.proxy.Order;
+import com.desgin.pattern.structural.proxy.biz.Order;
 
 public class Test {
     public static void main(String[]args){

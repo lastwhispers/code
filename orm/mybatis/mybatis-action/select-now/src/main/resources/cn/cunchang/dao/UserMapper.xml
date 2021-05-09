@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.cunchang.dao.UserMapper">
+
+    <insert id="insert" parameterType="user">
+        insert into user(username,birthday,sex,address)
+        values(#{username},#{birthday},#{sex},#{address})
+    </insert>
+
+    <insert id="insert1" parameterType="user">
+        <selectKey keyColumn="id" keyProperty="id" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+        insert into user(username,birthday,sex,address)
+        values(#{username},#{birthday},#{sex},#{address})
+    </insert>
+
+    <insert id="insert2" parameterType="user" useGeneratedKeys="true" keyProperty="id">
+        insert into user(username,birthday,sex,address)
+        values(#{username},#{birthday},#{sex},#{address})
+    </insert>
+
+    <insert id="insert3" useGeneratedKeys="true" keyProperty="do.id">
+        insert into user(username,birthday,sex,address)
+        values(#{do.username},#{do.birthday},#{do.sex},#{do.address})
+    </insert>
+
+    <insert id="insertBatch">
+        insert into user(username,birthday,sex,address)
+        values
+        <foreach collection="list" item="do" separator=",">
+            (#{do.username},#{do.birthday},#{do.sex},#{do.address})
+        </foreach>
+    </insert>
+
+    <insert id="insertBatch1" useGeneratedKeys="true" keyProperty="id">
+        insert into user(username,birthday,sex,address)
+        values
+        <foreach collection="list" item="do" separator=",">
+            (#{do.username},#{do.birthday},#{do.sex},#{do.address})
+        </foreach>
+    </insert>
+
+</mapper>

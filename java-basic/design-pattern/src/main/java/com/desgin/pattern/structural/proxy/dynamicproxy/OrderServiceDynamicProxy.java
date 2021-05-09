@@ -1,7 +1,7 @@
 package com.desgin.pattern.structural.proxy.dynamicproxy;
 
-import com.desgin.pattern.structural.proxy.Order;
-import com.desgin.pattern.structural.proxy.db.DataSourceContextHolder;
+import com.desgin.pattern.structural.proxy.biz.Order;
+import com.desgin.pattern.structural.proxy.biz.db.DataSourceContextHolder;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

@@ -1,8 +1,8 @@
 package com.desgin.pattern.structural.proxy.dynamicproxy;
 
-import com.desgin.pattern.structural.proxy.IOrderService;
-import com.desgin.pattern.structural.proxy.Order;
-import com.desgin.pattern.structural.proxy.OrderServiceImpl;
+import com.desgin.pattern.structural.proxy.biz.IOrderService;
+import com.desgin.pattern.structural.proxy.biz.Order;
+import com.desgin.pattern.structural.proxy.biz.OrderServiceImpl;
 
 public class Test {
     public static void main(String[]args){

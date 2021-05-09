@@ -115,7 +115,8 @@ public class DeleteFile {
                 }
             } else {
                 if (deleteFiles.contains(f.getName())) {
-                    System.out.println("delete file==>" + f.getAbsolutePath() + " :" + f.delete());
+                    boolean deleteFlag = f.delete();
+                    System.out.println("delete file==>" + f.getAbsolutePath() + " :" + deleteFlag);
                     count++;
                 }
             }
@@ -133,7 +134,8 @@ public class DeleteFile {
         File[] files = file.listFiles();
         if (files == null || files.length == 0) {
             // 找到根,删除
-            System.out.println("delete dir==>" + file.getAbsolutePath() + " :" + file.delete());
+            boolean deleteFlag = file.delete();
+            System.out.println("delete dir==>" + file.getAbsolutePath() + " :" + deleteFlag);
             count++;
             return;
         }
@@ -141,7 +143,8 @@ public class DeleteFile {
             if (f.isDirectory()) {
                 recursionDelFile(f);
             } else {
-                System.out.println("delete file==>" + f.getAbsolutePath() + " :" + f.delete());
+                boolean deleteFlag = file.delete();
+                System.out.println("delete file==>" + f.getAbsolutePath() + " :" + deleteFlag);
                 count++;
             }
         }
