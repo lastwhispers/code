@@ -14,7 +14,7 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
 
 public class ClasspathPackageScanner implements PackageScanner {
-    private Logger logger = LoggerFactory.getLogger(ClasspathPackageScanner.class);
+    private Logger log = LoggerFactory.getLogger(ClasspathPackageScanner.class);
     private String basePackage;
     private ClassLoader cl;
 
@@ -36,8 +36,9 @@ public class ClasspathPackageScanner implements PackageScanner {
     /**
      * 获取指定包下的所有字节码文件的全类名
      */
+    @Override
     public List<String> getFullyQualifiedClassNameList() throws IOException {
-        logger.info("开始扫描包{}下的所有类", basePackage);
+        log.info("开始扫描包{}下的所有类", basePackage);
         return doScan(basePackage, new ArrayList<String>());
     }
 
@@ -55,10 +56,10 @@ public class ClasspathPackageScanner implements PackageScanner {
         String filePath = StringUtil.getRootPath(url);
         List<String> names = null; // contains the name of the class file. e.g., Apple.class will be stored as "Apple"
         if (isJarFile(filePath)) {// 先判断是否是jar包，如果是jar包，通过JarInputStream产生的JarEntity去递归查询所有类
-            logger.debug("{} 是一个JAR包", filePath);
+            log.debug("{} 是一个JAR包", filePath);
             names = readFromJarFile(filePath, splashPath);
         } else {
-            logger.debug("{} 是一个目录", filePath);
+            log.debug("{} 是一个目录", filePath);
             names = readFromDirectory(filePath);
         }
         for (String name : names) {
@@ -69,7 +70,7 @@ public class ClasspathPackageScanner implements PackageScanner {
             }
         }
         for (String n : nameList) {
-            logger.debug("找到{}", n);
+            log.debug("找到{}", n);
         }
         return nameList;
     }
@@ -84,7 +85,7 @@ public class ClasspathPackageScanner implements PackageScanner {
     }
 
     private List<String> readFromJarFile(String jarPath, String splashedPackageName) throws IOException {
-        logger.debug("从JAR包中读取类: {}", jarPath);
+        log.debug("从JAR包中读取类: {}", jarPath);
         JarInputStream jarIn = new JarInputStream(new FileInputStream(jarPath));
         JarEntry entry = jarIn.getNextJarEntry();
         List<String> nameList = new ArrayList<String>();
@@ -124,7 +125,7 @@ public class ClasspathPackageScanner implements PackageScanner {
      */
     public static void main(String[] args) throws Exception {
         // https://www.cnblogs.com/juncaoit/p/7591778.html
-        PackageScanner scan = new ClasspathPackageScanner("cn.lastwhisper.feature5.packagesacn");
+        PackageScanner scan = new ClasspathPackageScanner("cn.cunchang");
         scan.getFullyQualifiedClassNameList();
     }
 }

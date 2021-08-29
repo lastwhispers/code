@@ -84,7 +84,4 @@
 
 # 4. 进阶
 
-decorator_proxy为装饰者模式与代理模式的对比
-https://www.zhihu.com/question/41988550/answer/462204684
-拳击手、经纪人、移速鞋
 

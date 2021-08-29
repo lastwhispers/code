@@ -128,4 +128,16 @@ public class RegExTest {
         System.out.println(list);
     }
 
+    @Test
+    public void test匹配表达式() {
+        String str = "#10110#+#10120#+#10130#+#10140#+#10150#";
+        Pattern p = Pattern.compile("\\d+");
+        Matcher matcher = p.matcher(str);
+        List<String> list = new ArrayList<>();
+        while (matcher.find()) {
+            list.add(matcher.group());
+        }
+        System.out.println(list);
+    }
+
 }

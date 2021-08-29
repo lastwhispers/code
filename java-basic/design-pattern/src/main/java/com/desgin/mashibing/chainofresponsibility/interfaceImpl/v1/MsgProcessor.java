@@ -16,8 +16,8 @@ public class MsgProcessor {
 
     public String process() {
         // process the html tag <>
-        String r = msg.replaceAll("<", "[")
-                .replaceAll(">", "]");
+        String r = msg.replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;");
         // process the sensitive words
         r= r.replaceAll("郭嘉", "**")
                 .replaceAll("漂亮国", "***");

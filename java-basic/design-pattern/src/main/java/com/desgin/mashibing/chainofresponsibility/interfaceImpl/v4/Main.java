@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         // 初始化数据
-        String msg = "大家好，QAQ， <script>alert('xss')</script>，敏感字眼，不学习！";
+        String msg = "大家好，QAQ， <script>alert('xss 注入')</script>，郭嘉，漂亮国！";
         Request request = new Request();
         request.setRequestStr(msg);
         Response response = new Response();
