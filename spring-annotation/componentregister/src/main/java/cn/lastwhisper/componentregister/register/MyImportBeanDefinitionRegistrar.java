@@ -10,10 +10,11 @@ import org.springframework.core.type.AnnotationMetadata;
  * @author lastwhisper
  */
 public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
+
     /**
-     * 把所有需要添加到容器中的bean通过BeanDefinitionRegistry里面的registerBeanDefinition方法来手动的进行注册
+     * 把所有需要添加到容器中的bean，通过BeanDefinitionRegistry来手动的进行注册
      *
-     * @param importingClassMetadata 当前类的注解信息
+     * @param importingClassMetadata 使用MyImportSelector类的所有注解（MainConfigRegister类的注解）
      * @param registry BeanDefinition注册类
      * @return void
      */

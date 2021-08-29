@@ -114,7 +114,9 @@ public class DeleteFile {
                     recursionDelFile(f);
                 }
             } else {
-                if (deleteFiles.contains(f.getName())) {
+                String fileName = f.getName();
+                fileName = fileName.substring(0, fileName.lastIndexOf("."));
+                if (deleteFiles.contains(fileName)) {
                     boolean deleteFlag = f.delete();
                     System.out.println("delete file==>" + f.getAbsolutePath() + " :" + deleteFlag);
                     count++;

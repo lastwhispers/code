@@ -3,6 +3,10 @@ package cn.lastwhisper.componentregister.bean;
 import org.springframework.beans.factory.FactoryBean;
 
 /**
+ * FactoryBean有啥用？
+ *  与其他框架进行整合
+ *
+ *
  * @author lastwhisper
  */
 public class ColorFactoryBean implements FactoryBean<Color> {

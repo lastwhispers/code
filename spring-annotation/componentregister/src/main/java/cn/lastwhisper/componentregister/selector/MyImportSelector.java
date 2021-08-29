@@ -8,13 +8,15 @@ import org.springframework.core.type.AnnotationMetadata;
  * @author lastwhisper
  */
 public class MyImportSelector implements ImportSelector {
+
     /**
      *
-     * @param importingClassMetadata 使用MyImportSelector类的所有注解
+     * @param importingClassMetadata 使用MyImportSelector类的所有注解（MainConfigRegister类的注解）
      * @return java.lang.String[] 导入组件的全类名
      */
     @Override
     public String[] selectImports(AnnotationMetadata importingClassMetadata) {
         return new String[]{"cn.lastwhisper.componentregister.bean.Blue", "cn.lastwhisper.componentregister.bean.Yellow"};
     }
+
 }

@@ -10,7 +10,7 @@ import javax.annotation.PreDestroy;
 
 /**
  * @author lastwhisper
- * implements ApplicationContextAware
+ * implements ApplicationContextAware注入ioc容器，由ApplicationContextAwareProcessor实现
  */
 @Component
 public class Dog implements ApplicationContextAware {

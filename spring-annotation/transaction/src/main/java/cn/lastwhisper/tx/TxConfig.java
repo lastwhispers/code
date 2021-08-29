@@ -47,7 +47,7 @@ import java.beans.PropertyVetoException;
  *                  在目标方法执行的时候；
  *                      执行拦截器链；
  *                      事务拦截器：
- *                          看invokeWithinTransaction方法
+ *                          看(MethodInterceptor.invoke(this)里面的invokeWithinTransaction方法
  *                          1）、先获取事务相关的属性
  *                          2）、再获取PlatformTransactionManager，如果事先没有添加指定任何transactionmanger
  *                              最终会从容器中按照类型获取一个PlatformTransactionManager；
@@ -71,9 +71,9 @@ public class TxConfig {
     public DataSource dataSource() throws PropertyVetoException {
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
         dataSource.setUser("root");
-        dataSource.setPassword("root");
-        dataSource.setDriverClass("com.mysql.jdbc.Driver");
-        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/test");
+        dataSource.setPassword("123456");
+        dataSource.setDriverClass("com.mysql.cj.jdbc.Driver");
+        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/test?useSSL=false");
         return dataSource;
     }
 

@@ -29,16 +29,16 @@ import org.springframework.context.annotation.Scope;
  *      *@PreDestroy：在容器销毁bean之前调用
  * 4）BeanPostProcessor：对所有bean的后置处理器，在bean初始化前后进行处理
  *     该接口有两个方法：
- *      postProcessBeforeInitialization：在对象任何初始化（initMethod、afterPropertiesSet）之前调用
+ *      postProcessBeforeInitialization：在对象创建之后，任何初始化（initMethod、afterPropertiesSet）之前调用
  *      postProcessAfterInitialization：在对象初始化之后调用
  *
  *   BeanPostProcessor原理：
  *      AbstractAutowireCapableBeanFactory.doCreateBean{
- *           populateBean(beanName, mbd, instanceWrapper); // 给对象中的字段赋值
+ *           populateBean(beanName, mbd, instanceWrapper); // 给Bean对象中的成员变量赋值
  *           initializeBean{
- *               applyBeanPostProcessorsBeforeInitialization(wrappedBean, beanName);// 调用postProcessBeforeInitialization处理器
+ *               applyBeanPostProcessorsBeforeInitialization(wrappedBean, beanName);// 调用postProcessBeforeInitialization处理器，一旦返回null就结束
  *               invokeInitMethods(beanName, wrappedBean, mbd); // 调用对象的初始化方法
- *               applyBeanPostProcessorsAfterInitialization(wrappedBean, beanName);//调用postProcessAfterInitialization处理器
+ *               applyBeanPostProcessorsAfterInitialization(wrappedBean, beanName);//调用postProcessAfterInitialization处理器，一旦返回null就结束
  *           }
  *      }
  *
@@ -47,6 +47,7 @@ import org.springframework.context.annotation.Scope;
  *   ApplicationContextAwareProcessor 处理实现ApplicationContextAware的类
  *   BeanValidationPostProcessor 处理JSR-303数据校验
  *   InitDestroyAnnotationBeanPostProcessor 处理@PostConstruct和@PreDestroy注解
+ *      CommonAnnotationBeanPostProcessor 初始化时，设置@PostConstruct和@PreDestroy为初始化和销毁注解
  *   AutowiredAnnotationBeanPostProcessor 处理@Autowire注解
  *
  * @author lastwhisper
@@ -55,10 +56,12 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class MainConfigOfLifeCycle {
 
-    //@Scope("singleton")
-    ////@Scope("prototype")
-    //@Bean(initMethod = "init", destroyMethod = "destroy")
-    //public Car car() {
-    //    return new Car();
-    //}
+
+    //@Scope("prototype")
+    @Scope("singleton")
+    @Bean(initMethod = "init", destroyMethod = "destroy")
+    public Car car() {
+        return new Car();
+    }
+
 }

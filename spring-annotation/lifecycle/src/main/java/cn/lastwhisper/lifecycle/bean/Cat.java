@@ -2,12 +2,14 @@ package cn.lastwhisper.lifecycle.bean;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
  * @author lastwhisper
  */
-//@Component
+
+@Component
 public class Cat implements InitializingBean, DisposableBean {
 
     public Cat() {

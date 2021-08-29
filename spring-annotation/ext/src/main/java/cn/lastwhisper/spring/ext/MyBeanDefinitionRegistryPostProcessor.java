@@ -9,12 +9,15 @@ import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
 import org.springframework.stereotype.Component;
 
+import static org.springframework.beans.factory.config.AutowireCapableBeanFactory.AUTOWIRE_BY_NAME;
+
+
 @Component
 public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor {
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        // TODO Auto-generated method stub
+
         System.out.println("MyBeanDefinitionRegistryPostProcessor...bean的数量：" + beanFactory.getBeanDefinitionCount());
     }
 
@@ -23,10 +26,17 @@ public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegi
      */
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
-        // TODO Auto-generated method stub
+
         System.out.println("postProcessBeanDefinitionRegistry...bean的数量：" + registry.getBeanDefinitionCount());
         //RootBeanDefinition beanDefinition = new RootBeanDefinition(Blue.class);
-        AbstractBeanDefinition beanDefinition = BeanDefinitionBuilder.rootBeanDefinition(Blue.class).getBeanDefinition();
+        BeanDefinitionBuilder builder = BeanDefinitionBuilder.rootBeanDefinition(Blue.class);
+
+        //设置属性值
+        builder.addPropertyValue("name","i am blue");
+        //设置可通过@Autowire注解引用
+        builder.setAutowireMode(AUTOWIRE_BY_NAME);
+
+        AbstractBeanDefinition beanDefinition = builder.getBeanDefinition();
         registry.registerBeanDefinition("hello", beanDefinition);
     }
 

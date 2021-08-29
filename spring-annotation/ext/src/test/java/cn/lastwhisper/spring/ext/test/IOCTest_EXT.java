@@ -1,9 +1,8 @@
 package cn.lastwhisper.spring.ext.test;
 
 import cn.lastwhisper.spring.ext.ExtConfig;
-import com.sun.org.apache.xpath.internal.operations.String;
+import cn.lastwhisper.spring.ext.bean.Blue;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -12,9 +11,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class IOCTest_EXT {
 
-
     /**
      * 测试Spring事件
+     * 查询Spring容器启动流程
      *
      * @param
      * @return void
@@ -25,6 +24,9 @@ public class IOCTest_EXT {
         System.out.println("容器初始化...");
 
         applicationContext.publishEvent(new ApplicationEvent("发布事件"){});
+
+        Blue blue = (Blue) applicationContext.getBean("hello");
+        System.out.println(blue);
 
         applicationContext.close();
     }

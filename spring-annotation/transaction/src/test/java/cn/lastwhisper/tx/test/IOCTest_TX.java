@@ -20,13 +20,13 @@ public class IOCTest_TX {
      */
     @Test
     public void test01() {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(TxConfig.class);
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(TxConfig.class);
         System.out.println("容器初始化...");
 
         UserService userService = applicationContext.getBean(UserService.class);
         userService.insertUser();
 
-        //applicationContext.close();
+        applicationContext.close();
         //printBeans(applicationContext);
     }
 

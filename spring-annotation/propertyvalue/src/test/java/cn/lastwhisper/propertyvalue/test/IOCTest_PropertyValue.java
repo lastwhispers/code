@@ -18,6 +18,9 @@ public class IOCTest_PropertyValue {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfPropertyValues.class);
         System.out.println("容器初始化...");
 
+        printBeans(applicationContext);
+
+
         Person person = (Person) applicationContext.getBean("person");
         System.out.println(person);
 
@@ -25,7 +28,6 @@ public class IOCTest_PropertyValue {
         String property = environment.getProperty("person.nickname");
         System.out.println(property);
 
-        //printBeans(applicationContext);
     }
 
     private void printBeans(ApplicationContext applicationContext) {

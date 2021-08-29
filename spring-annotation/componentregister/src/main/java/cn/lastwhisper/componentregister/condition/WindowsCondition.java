@@ -32,4 +32,6 @@ public class WindowsCondition implements Condition {
         }
         return false;
     }
+
+
 }

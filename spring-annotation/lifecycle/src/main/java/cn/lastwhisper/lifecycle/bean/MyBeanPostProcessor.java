@@ -7,13 +7,14 @@ import org.springframework.stereotype.Component;
 /**
  * @author lastwhisper
  */
-//@Component
+@Component
 public class MyBeanPostProcessor implements BeanPostProcessor {
+
     /**
      * 在对象任何初始化之前调用
      *
-     * @param bean
-     * @param beanName
+     * @param bean ioc容器中的每一个Bean对象
+     * @param beanName Bean对象对应的name
      * @return java.lang.Object
      */
     @Override

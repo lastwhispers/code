@@ -1,6 +1,5 @@
 package cn.lastwhisper.componentregister.filter;
 
-import org.springframework.context.annotation.Conditional;
 import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.core.type.ClassMetadata;
 import org.springframework.core.type.classreading.MetadataReader;
@@ -8,7 +7,6 @@ import org.springframework.core.type.classreading.MetadataReaderFactory;
 import org.springframework.core.type.filter.TypeFilter;
 
 import java.io.IOException;
-import java.lang.annotation.Annotation;
 
 /**
  * 自定义ComponentScan过滤器
@@ -31,7 +29,7 @@ public class MyTypeFilter implements TypeFilter {
         ClassMetadata classMetadata = metadataReader.getClassMetadata();
         // 获取类名
         String className = classMetadata.getClassName();
-        System.out.println("扫描的类——》" + className);
+        System.out.println(this.getClass().getSimpleName()+ " 扫描的类——》" + className);
         // 根据类名进行过滤
         if (className.contains("Book")) {
             return true;
