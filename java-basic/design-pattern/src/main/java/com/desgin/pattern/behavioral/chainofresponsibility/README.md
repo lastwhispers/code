@@ -1,0 +1,1 @@
+请查看 design-pattern 项目 com/desgin/mashibing/chainofresponsibility 包
