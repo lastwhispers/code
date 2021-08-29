@@ -14,7 +14,6 @@
         <module>interview</module>
         <module>algorithm</module>
         <module>leetcode</module>
-        <module>thread</module>
         <module>algorithm-common</module>
     </modules>
 
