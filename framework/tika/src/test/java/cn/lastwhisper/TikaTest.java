@@ -15,6 +15,10 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
 
 /**
  * @author cunchang
@@ -23,27 +27,28 @@ import java.io.InputStream;
 public class TikaTest {
 
     public static void main(String[] args) throws IOException, TikaException {
-//        InputStream is = TikaTest.class.getClassLoader().getResourceAsStream("timg");
-//        InputStream is1 = TikaTest.class.getClassLoader().getResourceAsStream("template.xls");
-//        InputStream is2 = TikaTest.class.getClassLoader().getResourceAsStream("timg.jpg.zip");
-//        InputStream is3 = TikaTest.class.getClassLoader().getResourceAsStream("mapreduce-osdi04.pdf");
-//        InputStream is4 = TikaTest.class.getClassLoader().getResourceAsStream("测试.docx");
-//        InputStream is5 = TikaTest.class.getClassLoader().getResourceAsStream("测试.xlsx");
-//        InputStream is6 = TikaTest.class.getClassLoader().getResourceAsStream("office.xlsx");
-//        InputStream is7 = TikaTest.class.getClassLoader().getResourceAsStream("transportation.png");
-//        InputStream is8 = TikaTest.class.getClassLoader().getResourceAsStream("timg.gif");
-//        InputStream is9 = TikaTest.class.getClassLoader().getResourceAsStream("application.properties");
-        InputStream is10 = TikaTest.class.getClassLoader().getResourceAsStream("TikaApplication.java");
-        getMimeType(is10);
-//        xxx(is);
-//        xxx(is1);
-//        xxx(is2);
-        xxx(is10);
-//        xxx(is4);
-//        xxx(is5);
+
+        List<String> fileNames = new ArrayList<>();
+        fileNames.add("template.xls");
+        fileNames.add("mapreduce-osdi04.pdf");
+        fileNames.add("测试.docx");
+        fileNames.add("测试.xlsx");
+        fileNames.add("测试.xlsx");
+        fileNames.add("transportation.png");
+        fileNames.add("timg.gif");
+        fileNames.add("timg");
+
+        for (String fileName : fileNames) {
+            InputStream stream = TikaTest.class.getClassLoader().getResourceAsStream(fileName);
+            System.out.print(fileName+"\t");
+            getMimeType(stream);
+        }
+
+
+
     }
 
-    public static void xxx(InputStream is) throws TikaException, IOException {
+    public static void getType(InputStream is) throws TikaException, IOException {
         TikaConfig tikaConfig = new TikaConfig();
 
         Detector detector = tikaConfig.getDetector();

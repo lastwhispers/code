@@ -1,0 +1,6 @@
+
+
+StringTest1 String基本特性：体现String的不可变性
+StringTest2、GenerateString String基本特性：StringTableSize参数对字符串常量池的影响
+StringTest3 String的内存分配：jdk6在永久代，jdk78在堆中
+

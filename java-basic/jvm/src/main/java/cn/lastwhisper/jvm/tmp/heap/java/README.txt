@@ -1,0 +1,6 @@
+
+HeapDemo、HeapDemo1 一个jvm对应一个进程，使用jvisualvm查看
+SimpleHeap 方法栈、堆、方法区的联系
+HeapPartitionDemo 堆内部分区结构，结合jvisualvm和gc日志查看
+HeapSpaceInitial 堆空间大小设置和查看
+OOMTest
