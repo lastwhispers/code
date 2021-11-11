@@ -43,6 +43,8 @@ public class DeleteFile {
         check();
         delete();
         after();
+//        File file = new File("/Users/cunchang/workspace/java/pdf-mark/target/classes/cn/cunchang/itext/test2/ReplaceRegion.class");
+//        System.out.println(file.delete());
     }
 
     private static void init(String[] args) throws IOException {
@@ -50,7 +52,7 @@ public class DeleteFile {
         deleteDirs = new HashSet<>();
         deleteFiles = new HashSet<>();
 
-        String configPath = "config.properties";
+        String configPath = "/config.properties";
 
         if (args != null && args.length > 0) {
             configPath = args[0];
@@ -104,32 +106,35 @@ public class DeleteFile {
      * deleteFiles文件直接删除
      */
     public static void recursionDelDir(File file) {
-        File[] files = file.listFiles();
-        if (files == null || files.length == 0) {
+        File[] subFiles = file.listFiles();
+        if (subFiles == null||subFiles.length == 0) {
             return;
         }
-        for (File f : files) {
-            if (f.isDirectory()) {
-                if (deleteDirs.contains(f.getName())) {
-                    recursionDelFile(f);
+        for (File subFile : subFiles) {
+            if (subFile.isDirectory()) {
+                // 删除指定文件夹
+                if (deleteDirs.contains(subFile.getName())) {
+                    recursionDelFile(subFile);
                 }
             } else {
-                String fileName = f.getName();
+                // 删除指定后缀文件
+                String fileName = subFile.getName();
                 int lastIndex = fileName.lastIndexOf(".");
-                if(lastIndex==-1){
+                if (lastIndex == -1) {
                     System.out.println("跳过文件==>" + fileName);
                     continue;
                 }
                 fileName = fileName.substring(0, lastIndex);
                 if (deleteFiles.contains(fileName)) {
-                    boolean deleteFlag = f.delete();
-                    System.out.println("delete file==>" + f.getAbsolutePath() + " :" + deleteFlag);
+                    boolean deleteFlag = subFile.delete();
+                    System.out.println("delete file==>" + subFile.getAbsolutePath() + " :" + (deleteFlag ? "成功" : "失败"));
                     count++;
                 }
             }
-            recursionDelDir(f);
+            recursionDelDir(subFile);
         }
     }
+
 
     /**
      * 递归删除file目录下的文件
@@ -138,23 +143,23 @@ public class DeleteFile {
         if (file == null) {
             return;
         }
-        File[] files = file.listFiles();
-        if (files == null || files.length == 0) {
-            // 找到根,删除
-            boolean deleteFlag = file.delete();
-            System.out.println("delete dir==>" + file.getAbsolutePath() + " :" + deleteFlag);
-            count++;
+        File[] subFiles = file.listFiles();
+        if (subFiles == null) {
             return;
         }
-        for (File f : files) {
-            if (f.isDirectory()) {
-                recursionDelFile(f);
+        for (File subFile : subFiles) {
+            if (subFile.isDirectory()) {
+                recursionDelFile(subFile);
             } else {
-                boolean deleteFlag = file.delete();
-                System.out.println("delete file==>" + f.getAbsolutePath() + " :" + deleteFlag);
+                boolean deleteFlag = subFile.delete();
+                System.out.println("delete file==>" + subFile.getAbsolutePath() + " :" + (deleteFlag ? "成功" : "失败"));
                 count++;
             }
         }
+        // 子目录都删除了,删除当前目录
+        boolean deleteFlag = file.delete();
+        System.out.println("delete dir==>" + file.getAbsolutePath() + " :" + (deleteFlag ? "成功" : "失败"));
+        count++;
     }
 
 }
