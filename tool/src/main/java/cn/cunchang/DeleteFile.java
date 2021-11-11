@@ -50,7 +50,7 @@ public class DeleteFile {
         deleteDirs = new HashSet<>();
         deleteFiles = new HashSet<>();
 
-        String configPath = "/config.properties";
+        String configPath = "config.properties";
 
         if (args != null && args.length > 0) {
             configPath = args[0];
@@ -115,7 +115,12 @@ public class DeleteFile {
                 }
             } else {
                 String fileName = f.getName();
-                fileName = fileName.substring(0, fileName.lastIndexOf("."));
+                int lastIndex = fileName.lastIndexOf(".");
+                if(lastIndex==-1){
+                    System.out.println("跳过文件==>" + fileName);
+                    continue;
+                }
+                fileName = fileName.substring(0, lastIndex);
                 if (deleteFiles.contains(fileName)) {
                     boolean deleteFlag = f.delete();
                     System.out.println("delete file==>" + f.getAbsolutePath() + " :" + deleteFlag);
