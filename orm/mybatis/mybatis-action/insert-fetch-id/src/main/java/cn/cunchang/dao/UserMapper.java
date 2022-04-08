@@ -77,4 +77,10 @@ public interface UserMapper {
     @Options(useGeneratedKeys = true, keyProperty = "id")
     int insertBatch2(@Param("list") List<User> list);
 
+
+
+    /*************ExecutorType.BATCH模式************/
+
+
+
 }

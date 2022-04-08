@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TryLockDemo {
 
-    static long doSomethingTime = 30L;
+    static long doSomethingTime = 300L;
     // 锁租约时间
     static long leaseTime = 10L;
 

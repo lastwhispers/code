@@ -1,0 +1,7 @@
+
+
+AsIfSerialSample AsIfSerial语义
+Jmm01_HappensBefore HappensBefore
+Jmm05_CodeReorder 指令重排序
+Jmm06_MemoryBarrier 内存屏障
+
