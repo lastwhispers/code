@@ -1,7 +1,5 @@
 package cn.lastwhisper.concurrent.basic;
 
-import cn.lastwhisper.concurrent.basic.state.SleepUtils;
-
 public class Daemon {
     /**
      * 虚拟机没有非Daemon线程，虚拟机需要退出，此时所有Daemon线程都需要立即终止，

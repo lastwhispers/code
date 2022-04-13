@@ -1,7 +1,5 @@
 package cn.lastwhisper.concurrent.basic;
 
-import cn.lastwhisper.concurrent.basic.state.SleepUtils;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
