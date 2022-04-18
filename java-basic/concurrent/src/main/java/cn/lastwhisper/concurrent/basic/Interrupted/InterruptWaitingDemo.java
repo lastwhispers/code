@@ -8,6 +8,7 @@ public class InterruptWaitingDemo extends Thread {
         Thread.sleep(1000);
     }
 
+    // 中断异常，由自己捕获，自己处理
     @Override
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {

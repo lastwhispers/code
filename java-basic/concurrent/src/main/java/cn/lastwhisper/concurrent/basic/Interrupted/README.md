@@ -8,14 +8,17 @@
 
 ## WAITING/TIMED_WAITING：
 
-线程在等待某个条件或超时 
-案例：InterruptWaitingDemo  
+线程在等待某个条件或超时
+1、案例：InterruptWaitingDemo  
 
 在这些状态时，对线程对象调用interrupt()会使得该线程抛出InterruptedException，抛出异常后，中断标志位会被清空(线程的中断标志位会由true重置为false，因为线程为了处理异常已经重新处于就绪状态。
 
 捕获到InterruptedException，通常表示希望结束该线程，线程大概有两种处理方式：
-1、向上传递该异常，这使得该方法也变成了一个可中断的方法，需要调用者进行处理
-2、有些情况，不能向上传递异常，比如Thread的run方法，它的声明是固定的，不能抛出任何受检异常，这时，应该捕获异常，进行合适的清理操作，清理后，一般应该调用Thread的interrupt方法再次设置中断标志位，使得当前线程知道自己发生了中断。
+（1）向上传递该异常，这使得该方法也变成了一个可中断的方法，需要调用者进行处理
+（2）有些情况，不能向上传递异常，比如Thread的run方法，它的声明是固定的，不能抛出任何受检异常，这时，应该捕获异常，进行合适的清理操作，清理后，一般应该调用Thread的interrupt方法再次设置中断标志位，使得当前线程知道自己发生了中断。
+
+2、案例：InterruptLockSupportDemo
+LockSupport的线程被中断后直接唤醒放行
 
 ## BLOCKED
 
