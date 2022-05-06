@@ -3,7 +3,7 @@
     status="warn" 日志框架本身的输出日志级别
     monitorInterval="5" 自动加载配置文件的间隔时间，不低于 5 秒
 -->
-<Configuration status="debug" monitorInterval="5">
+<Configuration status="info" monitorInterval="5">
 
     <!--日志处理-->
     <Appenders>
@@ -16,7 +16,7 @@
     <!--logger 定义-->
     <Loggers>
         <!--使用 rootLogger 配置 日志级别 level="trace"-->
-        <Root level="trace">
+        <Root level="info">
             <!--指定日志使用的处理器-->
             <AppenderRef ref="Console"/>
         </Root>

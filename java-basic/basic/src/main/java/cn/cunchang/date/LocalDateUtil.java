@@ -1,8 +1,13 @@
 package cn.cunchang.date;
 
+
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.IsoFields;
+import java.time.temporal.TemporalAdjusters;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class LocalDateUtil {
@@ -195,6 +200,87 @@ public class LocalDateUtil {
                 .withSecond(59);
     }
 
+
+    /**
+     * 按步长分割日期
+     * <p>
+     * 20210101~20210630 =》
+     * [2021-01-01=2021-01-31, 2021-02-01=2021-02-28, 2021-03-01=2021-03-31,
+     * 2021-04-01=2021-04-30, 2021-05-01=2021-05-31, 2021-06-01=2021-06-30,
+     * 2021-07-01=2021-07-31, 2021-08-01=2021-08-31, 2021-09-01=2021-09-30,
+     * 2021-10-01=2021-10-31, 2021-11-01=2021-11-30, 2021-12-01=2021-12-31,
+     * 2022-01-01=2022-01-31, 2022-02-01=2022-02-28, 2022-03-01=2022-03-31,
+     * 2022-04-01=2022-04-30, 2022-05-01=2022-05-31, 2022-06-01=2022-06-30,
+     * 2022-07-01=2022-07-31, 2022-08-01=2022-08-31, 2022-09-01=2022-09-30,
+     * 2022-10-01=2022-10-31, 2022-11-01=2022-11-30, 2022-12-01=2022-12-31]
+     * ---------------
+     * 20210101~20210630 =》
+     * [2021-01-01=2021-03-31, 2021-04-01=2021-06-30, 2021-07-01=2021-09-30, 2021-10-01=2021-12-31,
+     * 2022-01-01=2022-03-31, 2022-04-01=2022-06-30, 2022-07-01=2022-09-30, 2022-10-01=2022-12-31]
+     * ---------------
+     * 20210101~20210630 =》
+     * [2021-01-01=2021-06-30, 2021-07-01=2021-12-31,
+     * 2022-01-01=2022-06-30, 2022-07-01=2022-12-31]
+     * ---------------
+     * 20210101~20210630 =》
+     * [2021-01-01=2021-12-31, 2022-01-01=2022-12-31]
+     *
+     * @param startDate 20210101
+     * @param endDate   20210630
+     * @param step      步长 {@link so.dian.olympic.common.enums.AggregateTypeEnum}
+     * @return <起始日期,结束日期>
+     */
+    public static List<Pair<LocalDate, LocalDate>> splitByStep(LocalDate startDate, LocalDate endDate, int step) {
+        LocalDate firstDayOfMonth = startDate.with(TemporalAdjusters.firstDayOfMonth());
+        if(!Objects.equals(startDate, firstDayOfMonth)){
+            throw new IllegalArgumentException(String.format("起始日期必须是月份第一天,startDate:%s", startDate));
+        }
+
+        LocalDate lastDayOfMonth = endDate.with(TemporalAdjusters.lastDayOfMonth());
+        if(!Objects.equals(endDate, lastDayOfMonth)){
+            throw new IllegalArgumentException(String.format("结束日期必须是月份最后一天,endDate:%s", endDate));
+        }
+
+        List<Pair<LocalDate, LocalDate>> list = new ArrayList<>();
+
+        while (startDate.isBefore(endDate)) {
+            // 下一个步长减1的末尾日期
+            LocalDate nextStartDate = startDate.plusMonths(step - 1).with(TemporalAdjusters.lastDayOfMonth());
+            list.add(new Pair<>(startDate, nextStartDate));
+            // 下一个月的起始日期
+            startDate = nextStartDate.plusDays(1L);
+        }
+
+        return list;
+    }
+
+    public static String format(LocalDate localDate, AggregateTypeEnum aggregateTypeEnum) {
+        String topCategoryName = null;
+        switch (aggregateTypeEnum) {
+            case 月:
+                topCategoryName = localDate.getYear() + "年" + localDate.getMonthValue() + "月";
+                break;
+            case 季:
+                int quarter = localDate.get(IsoFields.QUARTER_OF_YEAR);
+                topCategoryName = localDate.getYear() + "年" + "Q" + quarter;
+                break;
+            case 半年:
+                quarter = localDate.get(IsoFields.QUARTER_OF_YEAR);
+                if (quarter <= 2) {
+                    topCategoryName = localDate.getYear() + "年" + "上半年";
+                }
+                if (quarter >= 3) {
+                    topCategoryName = localDate.getYear() + "年" + "下半年";
+                }
+                break;
+            case 年:
+                topCategoryName = localDate.getYear() + "年";
+                break;
+            default:
+
+        }
+        return topCategoryName;
+    }
 
 
 }
