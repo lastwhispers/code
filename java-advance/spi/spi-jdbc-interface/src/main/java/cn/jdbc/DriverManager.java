@@ -1,7 +1,10 @@
 package cn.jdbc;
 
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.ServiceLoader;
 
 /**
  * spi-core: 是提供给用户使用的核心jar文件,
@@ -17,30 +20,33 @@ import java.util.*;
  */
 public class DriverManager {
 
-    public static Driver driver;
+    public static List<Driver> driverList;
 
     static {
-        ServiceLoader<Driver> services = ServiceLoader.load(Driver.class);
-        Iterator<Driver> iterator = services.iterator();
-        List<Driver> driverList = new ArrayList<>();
-        while (iterator.hasNext()) {
-            Driver driver = iterator.next();
-            driverList.add(driver);
-        }
-        if (driverList.size() < 1) {
-            throw new IllegalStateException("未找到 Driver 的实现");
-        }
-        if (driverList.size() > 1) {
-            throw new IllegalStateException("找到多个 Driver 的实现: " + driverList);
-        }
-        driver = driverList.get(0);
+        registerDriver();
     }
 
-    public static Driver getDriver() {
-        if (Objects.isNull(driver)) {
+    private static void registerDriver() {
+        ServiceLoader<Driver> services = ServiceLoader.load(Driver.class);
+        driverList = new ArrayList<>();
+        for (Driver driver : services) {
+            driverList.add(driver);
+        }
+    }
+
+
+    public static Driver getDriver(String url,
+                                   String user, String password) {
+        if (Objects.isNull(driverList)) {
             throw new IllegalStateException("未找到 Driver 的实现");
         }
-        return driver;
+        System.out.println("找到" + driverList.size() + "个jdbc实现驱动");
+        for (Driver driver : driverList) {
+            if (driver.available(url, user, password)) {
+                return driver;
+            }
+        }
+        throw new IllegalStateException("未找到 Driver 的实现");
     }
 
 }

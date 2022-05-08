@@ -4,6 +4,7 @@ package cn.oracle;
 import cn.jdbc.Driver;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
  * spi-boy/spi-gril: 分别是两个厂商对interface的不同实现，所以他们会依赖于interface项目
@@ -13,12 +14,21 @@ import java.sql.Connection;
 public class OracleDriver implements Driver {
 
     static {
-        System.out.println("oracle driver 注册成功");
+        System.out.println("加载oracle driver");
     }
 
     @Override
-    public Connection getConnection() {
-        System.out.println("获取oracle connection");
+    public boolean available(String url, String user, String password) {
+        if (url != null && url.contains("oracle")) {
+            System.out.println("成功注册oracle驱动");
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public Connection getConnection() throws SQLException {
+        // return new OracleConnection();
         return null;
     }
 }
