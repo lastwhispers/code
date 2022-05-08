@@ -1,8 +1,13 @@
-package cn.cunchang.spi;
+package cn.oracle;
 
+
+import cn.jdbc.Driver;
+
+import java.sql.Connection;
 
 /**
  * spi-boy/spi-gril: 分别是两个厂商对interface的不同实现，所以他们会依赖于interface项目
+ *
  * @author lastwhisper
  */
 public class OracleDriver implements Driver {
@@ -12,7 +17,8 @@ public class OracleDriver implements Driver {
     }
 
     @Override
-    public void getConnection() {
+    public Connection getConnection() {
         System.out.println("获取oracle connection");
+        return null;
     }
 }

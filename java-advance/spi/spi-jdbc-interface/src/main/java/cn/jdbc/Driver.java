@@ -1,4 +1,6 @@
-package cn.cunchang.spi;
+package cn.jdbc;
+
+import java.sql.Connection;
 
 /**
  * spi-interface: 是针对厂商定义的接口项目，只提供接口，不提供实现
@@ -9,6 +11,6 @@ package cn.cunchang.spi;
  */
 public interface Driver {
 
-    void getConnection();
+    Connection getConnection();
 
 }
