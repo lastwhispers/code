@@ -1,4 +1,4 @@
-package cn.lastwhisper.concurrent.juc.executor;
+package cn.lastwhisper.concurrent.basic.createthread;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;

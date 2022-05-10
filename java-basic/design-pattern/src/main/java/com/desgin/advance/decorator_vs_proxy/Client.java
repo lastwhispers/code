@@ -3,7 +3,6 @@ package com.desgin.advance.decorator_vs_proxy;
 import com.desgin.advance.decorator_vs_proxy.decorator.FastShoesDecorator;
 import com.desgin.advance.decorator_vs_proxy.proxy.AgentProxy;
 import org.junit.Test;
-import sun.management.resources.agent;
 
 /**
  * @author lastwhisper
