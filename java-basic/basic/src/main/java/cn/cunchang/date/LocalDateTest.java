@@ -35,16 +35,16 @@ public class LocalDateTest {
 //        }
 
         // [20210601,20210610]
-//        while (!startDate.isAfter(endDate)) {
-//            System.out.println(startDate);
-//            startDate = startDate.plusDays(1L);
-//        }
+        while (!startDate.isAfter(endDate)) {
+            System.out.println(startDate);
+            startDate = startDate.plusDays(1L);
+        }
 
         // [20210601,20210610]
-        while (!endDate.isBefore(startDate)) {
-            System.out.println(endDate);
-            endDate = endDate.plusDays(-1L);
-        }
+//        while (!endDate.isBefore(startDate)) {
+//            System.out.println(endDate);
+//            endDate = endDate.plusDays(-1L);
+//        }
     }
 
     /**
