@@ -11,7 +11,7 @@
 - 反射 reflect 
 - 泛型 generic
 - 类加载器 classloader
-- 动态代理与SpringAop实现 proxy
+- 动态代理；已从当前项目移除，查看该项目 /Users/cunchang/workspace/github/code/java-advance/proxy
 - throwable
 
 
