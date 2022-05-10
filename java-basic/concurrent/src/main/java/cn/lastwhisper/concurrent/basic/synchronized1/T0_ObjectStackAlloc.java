@@ -1,12 +1,6 @@
-package cn.lastwhisper;
+package cn.lastwhisper.concurrent.basic.synchronized1;
 
-/**
- * @author ：
- * @date：2019/7/26
- * @version: V1.0
- * @slogan: 天下风云出我辈，一入代码岁月催
- * @description :
- */
+
 public class T0_ObjectStackAlloc {
 
     /**

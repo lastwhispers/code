@@ -1,4 +1,4 @@
-package cn.lastwhisper;
+package cn.lastwhisper.concurrent.basic.synchronized1;
 
 import org.openjdk.jol.info.ClassLayout;
 
