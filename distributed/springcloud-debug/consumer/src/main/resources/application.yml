@@ -1,0 +1,20 @@
+server:
+  port: 8055
+
+spring:
+  application:
+    name: consumer  #微服务名称
+
+  #配置nacos注册中心地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
