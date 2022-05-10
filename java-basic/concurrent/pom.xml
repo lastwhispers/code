@@ -10,9 +10,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>thread-syncronized</module>
         <module>jmm-specification</module>
-        <module>thread-current</module>
     </modules>
 
     <dependencies>
@@ -31,6 +29,19 @@
             <artifactId>junit</artifactId>
             <version>4.13</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-core</artifactId>
+            <version>0.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>transmittable-thread-local</artifactId>
+            <version>2.12.6</version>
+        </dependency>
+
     </dependencies>
 
 </project>
