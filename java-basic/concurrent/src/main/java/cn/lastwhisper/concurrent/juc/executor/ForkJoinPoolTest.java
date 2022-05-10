@@ -10,9 +10,10 @@ import java.util.concurrent.RecursiveTask;
 
 /**
  * fork/join任务偷窃
+ *
  * @author lastwhisper
  */
-public class TestForkJoinPool {
+public class ForkJoinPoolTest {
     public static void main(String[] args) {
         Instant start = Instant.now();
         ForkJoinPool pool = new ForkJoinPool();
@@ -22,8 +23,9 @@ public class TestForkJoinPool {
         Instant end = Instant.now();
         System.out.println("耗费时间：" + Duration.between(start, end).toMillis());//28
     }
+
     @Test
-    public void test1(){
+    public void test1() {
         Instant start = Instant.now();
         long sum = 0L;
         for (long i = 0L; i <= 100000000L; i++) {

@@ -40,7 +40,7 @@ import java.util.concurrent.*;
  *              DiscardPolicy：丢弃无法处理的任务
  * @author lastwhisper
  */
-public class TestThreadPool {
+public class ScheduledExecutorTest {
     // 计划任务线程池
     static ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(5);
     // 普通的线程池
@@ -59,7 +59,7 @@ public class TestThreadPool {
     }
 
     public static void main(String[] args) throws Exception {
-        TestThreadPool test = new TestThreadPool();
+        ScheduledExecutorTest test = new ScheduledExecutorTest();
         //测试普通的线程池
         test.testFixedThreadPool();
         //测试计划任务线程池

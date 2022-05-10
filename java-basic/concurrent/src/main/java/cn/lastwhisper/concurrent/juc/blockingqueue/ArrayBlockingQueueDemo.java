@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  * 阻塞队列
  * @author lastwhisper
  */
-public class BlockingQueueDemo {
+public class ArrayBlockingQueueDemo {
     ArrayBlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(3);
 
     // 超时退出

@@ -1,4 +1,4 @@
-package cn.lastwhisper.concurrent.juc.locks;
+package cn.lastwhisper.concurrent.juc.lockutil;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;

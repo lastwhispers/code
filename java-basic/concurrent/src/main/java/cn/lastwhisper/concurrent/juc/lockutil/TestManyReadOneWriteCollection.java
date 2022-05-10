@@ -1,7 +1,6 @@
-package cn.lastwhisper.concurrent.juc.locks;
+package cn.lastwhisper.concurrent.juc.lockutil;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;

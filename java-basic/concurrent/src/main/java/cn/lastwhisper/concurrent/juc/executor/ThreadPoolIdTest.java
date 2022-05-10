@@ -14,7 +14,8 @@ public class ThreadPoolIdTest {
         // 线程池会复用线程，线程id会重复出现
         ExecutorService pool = Executors.newFixedThreadPool(10);
         for (int i = 0; i < 100; i++) {
-            pool.submit(() -> {
+            pool.execute(() -> {
+//            pool.submit(() -> {
                 System.err.println(Thread.currentThread().getId());
             });
         }
