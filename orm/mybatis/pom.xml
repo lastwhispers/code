@@ -11,11 +11,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>mybatis-basic</module>
-        <module>mybatis-design</module>
         <module>mybatis-crud</module>
         <module>mybatis-dynamicsql</module>
 
-        <module>mybatis-datasource-tx</module>
         <module>mybatis-onetoone</module>
         <module>mybatis-onetomany</module>
         <module>mybatis-manytomany</module>

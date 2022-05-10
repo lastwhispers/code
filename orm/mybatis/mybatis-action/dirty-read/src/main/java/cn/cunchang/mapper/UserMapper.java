@@ -1,6 +1,8 @@
 package cn.cunchang.mapper;
 
 import cn.cunchang.model.User;
+import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.mapping.StatementType;
 
 /**
  * 用户数据层
@@ -16,6 +18,7 @@ public interface UserMapper {
      * @param userId 用户 id
      * @return  用户
      */
+    @Options(flushCache= Options.FlushCachePolicy.TRUE,statementType = StatementType.PREPARED)
     User selectById(Long id);
 
     /**
