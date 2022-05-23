@@ -1,6 +1,6 @@
-package cn.lastwhisper.lifecycle.config;
+package cn.cunchang.config;
 
-import cn.lastwhisper.lifecycle.bean.Car;
+import cn.cunchang.LifeCycleBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +24,7 @@ import org.springframework.context.annotation.Scope;
  *      相当于xml中的配置：init-method="init" destroy-method="destroy"
  * 2）通过bean实现InitializingBean（定义初始化逻辑）、DisposableBean（定义销毁逻辑）
  *
- * 3）JSR250规范
+ * 3）JSR250规
  *      *@PostConstruct：在bean创建完成并且属性赋值完成，来执行初始化方法
  *      *@PreDestroy：在容器销毁bean之前调用
  * 4）BeanPostProcessor：对所有bean的后置处理器，在bean初始化前后进行处理
@@ -52,16 +52,16 @@ import org.springframework.context.annotation.Scope;
  *
  * @author lastwhisper
  */
-@ComponentScan("cn.lastwhisper.lifecycle.bean")
+@ComponentScan("cn.cunchang")
 @Configuration
 public class MainConfigOfLifeCycle {
 
 
     //@Scope("prototype")
     @Scope("singleton")
-    @Bean(initMethod = "init", destroyMethod = "destroy")
-    public Car car() {
-        return new Car();
+    @Bean(initMethod = "initMethod", destroyMethod = "destroyMethod")
+    public LifeCycleBean lifeCycleBean() {
+        return new LifeCycleBean();
     }
 
 }
