@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 
 /**
@@ -73,9 +74,10 @@ public class LocalDateTest {
 
     @Test
     public void test4() {
-        LocalDate startDate = LocalDateUtil.parse4YYYYMMdd("20210601");
-        LocalDate endDate = LocalDateUtil.parse4YYYYMMdd("20210602");
-        log.info("{}",endDate.isAfter(startDate));
+        LocalDate startDate=LocalDate.now().plusDays(-30),  endDate=LocalDate.now();
+        Long cha = endDate.toEpochDay() - startDate.toEpochDay();
+        System.out.println("startDate:"+startDate+" endDate:"+endDate);
+        System.out.println(cha);
     }
 
 }

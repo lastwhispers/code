@@ -227,7 +227,7 @@ public class LocalDateUtil {
      *
      * @param startDate 20210101
      * @param endDate   20210630
-     * @param step      步长 {@link so.dian.olympic.common.enums.AggregateTypeEnum}
+     * @param step      步长 {@link AggregateTypeEnum}
      * @return <起始日期,结束日期>
      */
     public static List<Pair<LocalDate, LocalDate>> splitByStep(LocalDate startDate, LocalDate endDate, int step) {
@@ -281,6 +281,7 @@ public class LocalDateUtil {
         }
         return topCategoryName;
     }
+
 
 
 }
