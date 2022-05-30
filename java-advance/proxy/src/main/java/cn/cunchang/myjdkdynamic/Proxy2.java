@@ -1,4 +1,4 @@
-package cn.cunchang.dynamic;
+package cn.cunchang.myjdkdynamic;
 
 import cn.cunchang.Moveable;
 import cn.cunchang.Tank;
@@ -7,8 +7,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
-import java.net.URL;
-import java.net.URLClassLoader;
 
 import javax.tools.JavaCompiler;
 import javax.tools.JavaCompiler.CompilationTask;

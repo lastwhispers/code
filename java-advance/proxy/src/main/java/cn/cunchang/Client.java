@@ -1,7 +1,7 @@
 package cn.cunchang;
 
 import cn.cunchang.cglib.RunMethodIntercepot;
-import cn.cunchang.dynamic.*;
+import cn.cunchang.myjdkdynamic.*;
 import cn.cunchang.jdkdynamic.JdkTimeHandler;
 import cn.cunchang.staticproxy.combination.TankLogProxy1;
 import cn.cunchang.staticproxy.combination.TankTimeProxy1;
@@ -15,7 +15,6 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 /**
  * @author cunchang

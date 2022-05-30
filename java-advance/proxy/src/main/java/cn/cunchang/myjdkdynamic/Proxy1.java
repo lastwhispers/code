@@ -1,4 +1,4 @@
-package cn.cunchang.dynamic;
+package cn.cunchang.myjdkdynamic;
 
 import cn.cunchang.Moveable;
 import cn.cunchang.Tank;

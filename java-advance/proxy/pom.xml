@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>mybatis-mapper</module>
+        <module>jdk-proxy</module>
     </modules>
 
     <properties>

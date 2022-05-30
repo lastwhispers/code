@@ -1,4 +1,4 @@
-package cn.cunchang.dynamic;
+package cn.cunchang.myjdkdynamic;
 
 import java.lang.reflect.Method;
 public interface InvocationHandler {

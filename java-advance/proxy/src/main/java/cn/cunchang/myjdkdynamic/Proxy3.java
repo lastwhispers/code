@@ -1,7 +1,4 @@
-package cn.cunchang.dynamic;
-
-import cn.cunchang.Moveable;
-import cn.cunchang.Tank;
+package cn.cunchang.myjdkdynamic;
 
 import javax.tools.JavaCompiler;
 import javax.tools.JavaCompiler.CompilationTask;
