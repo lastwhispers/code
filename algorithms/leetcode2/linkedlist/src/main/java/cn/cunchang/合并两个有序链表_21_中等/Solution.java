@@ -17,22 +17,18 @@ class Solution {
             }
             mergeNode = mergeNode.next;
         }
-        while (list1 != null){
+        if (list1 != null) {
             mergeNode.next = list1;
-            mergeNode = mergeNode.next;
-            list1 = list1.next;
         }
-        while (list2 != null){
+        if (list2 != null) {
             mergeNode.next = list2;
-            mergeNode = mergeNode.next;
-            list2 = list2.next;
         }
         return mergeList.next;
     }
 
     public static void main(String[] args) {
         ListNode list1 = LinkedListUtil.createListNode(1, 2, 4);
-        ListNode list2 = LinkedListUtil.createListNode(1,  3, 4);
-        LinkedListUtil.printListNode(new Solution().mergeTwoLists(list1,list2));
+        ListNode list2 = LinkedListUtil.createListNode(1, 3, 4);
+        LinkedListUtil.printListNode(new Solution().mergeTwoLists(list1, list2));
     }
 }

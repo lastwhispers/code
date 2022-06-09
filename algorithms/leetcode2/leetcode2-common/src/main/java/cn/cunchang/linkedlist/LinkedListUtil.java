@@ -16,7 +16,7 @@ public class LinkedListUtil {
      * 创建单链表
      */
     public static ListNode createListNode(int... arr) {
-        if (arr == null) {
+        if (arr == null || arr.length == 0) {
             return null;
         }
         ListNode head = new ListNode(arr[0]);
