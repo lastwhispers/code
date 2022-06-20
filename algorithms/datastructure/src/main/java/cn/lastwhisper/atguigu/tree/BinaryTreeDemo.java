@@ -9,6 +9,7 @@ import java.util.Queue;
 /**
  * 二叉树的遍历：先序、中序、后序
  * 二叉树的查找：查找指定节点
+ *
  * @author cn.lastwhisper
  */
 public class BinaryTreeDemo {
@@ -182,7 +183,7 @@ class BinaryTree {
 
     /**
      * 先序遍历（递归）
-     *  先访问根节点，再先序遍历左子树，再先序遍历右子树
+     * 先访问根节点，再先序遍历左子树，再先序遍历右子树
      *
      * @param node
      */
@@ -196,7 +197,8 @@ class BinaryTree {
 
     /**
      * 中序遍历（递归）
-     *  先遍历左子树，再访问根节点，再中序遍历右子树
+     * 先遍历左子树，再访问根节点，再中序遍历右子树
+     *
      * @param node
      */
     public void infixOrder(HeroNode node) {
@@ -209,7 +211,8 @@ class BinaryTree {
 
     /**
      * 后序遍历（递归）
-     *  先遍历左子树，再后序遍历右子树，再访问根节点
+     * 先遍历左子树，再后序遍历右子树，再访问根节点
+     *
      * @param node
      */
     public void postOrder(HeroNode node) {

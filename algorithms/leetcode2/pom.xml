@@ -10,6 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>leetcode2-common</module>
+        <module>sort</module>
+        <module>dynamic</module>
     </modules>
 
     <properties>
@@ -18,6 +20,7 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

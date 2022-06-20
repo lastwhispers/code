@@ -1,7 +1,7 @@
 package cn.cunchang.tree;
 
 public class TrieNode {
-
+    // 26个字母
     private final int R = 26;
     // 不存储真实的值，TrieNode[]中不为null表示存在
     private TrieNode[] links;

@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author lastwhisper
  * @date 2020/2/4
  */
 public class ArrayUtil {
+
+    public static int[] createArrays(int... arr) {
+        return arr;
+    }
 
     /**
      * {"ab","cd"}=>

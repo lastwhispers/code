@@ -216,10 +216,10 @@ class Node {
         if (this.value == value) {
             return this;
         } else if (this.value > value && this.left != null) {
-            // 2.1 当前节点的value大于value，往左边寻找
+            // 2.1 当前节点的value大于value，往左边寻找，因为左子树的值都小于当前节点
             return this.left.search(value);
         } else if (this.value < value && this.right != null) {
-            // 2.2 当前节点的value小于value，往右边寻找
+            // 2.2 当前节点的value小于value，往右边寻找，因为右子树的值都大于当前节点
             return this.right.search(value);
         } else {
             // 3. this.left&&this.right==null，找不到该节点
