@@ -1,4 +1,4 @@
-package cn.lastwhisper.concurrent.juc.lockfree;
+package cn.lastwhisper.concurrent.juc.cas;
 
 /**
  * 模拟的CAS算法

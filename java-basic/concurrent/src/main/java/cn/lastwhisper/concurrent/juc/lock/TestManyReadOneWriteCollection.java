@@ -1,4 +1,4 @@
-package cn.lastwhisper.concurrent.juc.lockutil;
+package cn.lastwhisper.concurrent.juc.lock;
 
 import java.util.ArrayList;
 import java.util.Random;

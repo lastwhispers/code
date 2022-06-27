@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 阻塞队列
+ *
  * @author lastwhisper
  */
 public class ArrayBlockingQueueDemo {
@@ -19,7 +20,7 @@ public class ArrayBlockingQueueDemo {
         blockingQueue.offer("b");
         blockingQueue.offer("c");
         // 当阻塞队列满时,队列会阻塞生产者线程一定时间,超过后限时后生产者线程就会退出
-        blockingQueue.offer("x",2L, TimeUnit.SECONDS);
+        blockingQueue.offer("x", 2L, TimeUnit.SECONDS);
 
         System.out.println(blockingQueue.poll());
         System.out.println(blockingQueue.poll());
@@ -45,7 +46,7 @@ public class ArrayBlockingQueueDemo {
 
     // 特殊值
     @Test
-    public void test2(){
+    public void test2() {
         System.out.println(blockingQueue.offer("a"));
         System.out.println(blockingQueue.offer("b"));
         System.out.println(blockingQueue.offer("c"));
@@ -61,7 +62,7 @@ public class ArrayBlockingQueueDemo {
 
     // 抛异常
     @Test
-    public void test1(){
+    public void test1() {
         System.out.println(blockingQueue.add("a"));
         System.out.println(blockingQueue.add("b"));
         System.out.println(blockingQueue.add("c"));

@@ -1,4 +1,4 @@
-package cn.lastwhisper.concurrent.example.productconsumer.v2;
+package cn.lastwhisper.concurrent.example.productconsumer.lockcondition;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

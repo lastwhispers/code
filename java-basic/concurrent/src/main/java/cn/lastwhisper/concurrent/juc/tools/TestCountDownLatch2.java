@@ -18,13 +18,13 @@ public class TestCountDownLatch2 {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         LocalDate startDate = LocalDate.now().plusDays(-30), endDate = LocalDate.now();
 
-        Period between = Period.between(startDate, endDate);
-
-//        int dayGap = (int) (endDate.toEpochDay() - startDate.toEpochDay());
-        int dayGap = between.getDays();
+        // 这种才能计算出日期之差
+        int dayGap = (int) (endDate.toEpochDay() - startDate.toEpochDay())+1;
+        // 这种要同月才行
+//        int dayGap = Period.between(endDate,startDate).getDays()+1;
         System.out.println("startDate:" + startDate + " endDate:" + endDate + " 日期之差:" + dayGap);
 
-        CountDownLatch countDownLatch = new CountDownLatch(dayGap+1);
+        CountDownLatch countDownLatch = new CountDownLatch(dayGap);
 
         while (!startDate.isAfter(endDate)) {
             LocalDate finalStartDate = startDate;

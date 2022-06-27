@@ -1,4 +1,4 @@
-package cn.lastwhisper.concurrent.juc.lockfree;
+package cn.lastwhisper.concurrent.juc.cas;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

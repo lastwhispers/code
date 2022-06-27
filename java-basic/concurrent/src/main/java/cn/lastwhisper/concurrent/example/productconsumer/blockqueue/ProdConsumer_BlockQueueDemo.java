@@ -1,4 +1,4 @@
-package cn.lastwhisper.concurrent.example.productconsumer.v3;
+package cn.lastwhisper.concurrent.example.productconsumer.blockqueue;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

@@ -40,8 +40,6 @@ public class MLock implements Lock {
             // 拿到当前排他线程是不是和当前线程一样，如果一样才释放
             return getExclusiveOwnerThread() == Thread.currentThread();
         }
-
-
     }
 
     @Override

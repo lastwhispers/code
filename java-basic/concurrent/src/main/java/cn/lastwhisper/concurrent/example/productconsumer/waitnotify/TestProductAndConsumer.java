@@ -1,4 +1,4 @@
-package cn.lastwhisper.concurrent.example.productconsumer.v1;
+package cn.lastwhisper.concurrent.example.productconsumer.waitnotify;
 
 /**
  * 生产者消费者案例(等待唤醒机制)，使用synchronize+Object的wait和notify；
@@ -17,8 +17,8 @@ public class TestProductAndConsumer {
     public static void main(String[] args) {
         Clerk clerk = new Clerk();
 
-        new Thread(new Product(clerk), "生产者").start();
-        new Thread(new Consumer(clerk), "消费者").start();
+        new Thread(new Product(clerk), "生产者A").start();
+        new Thread(new Consumer(clerk), "消费者B").start();
     }
 }
 
@@ -27,9 +27,9 @@ class Clerk {
     private int product = 0;
 
     //进货（生产者线程调用）
-    public synchronized void get() {//循环次数：2——》1
+    public synchronized void stock() {//循环次数：2——》1
         if (product >= 1) {
-            System.out.println("货物已满！");
+//            System.out.println("货物已满！");
             try {
                 //货物满了之后生产者等待
                 this.wait();
@@ -37,7 +37,7 @@ class Clerk {
                 e.printStackTrace();
             }
         } else {
-            System.out.println(Thread.currentThread().getName() + " : " + ++product);
+            System.out.println(Thread.currentThread().getName() + "添加商品，剩余数量" + ++product);
             //生产货物之后唤醒消费者
             this.notifyAll();
         }
@@ -46,7 +46,7 @@ class Clerk {
     //销售（消费者线程调用）
     public synchronized void sale() {//product：0——》1，循环次数：1——》0
         if (product <= 0) {
-            System.out.println("货物为空！");
+//            System.out.println("货物为空！");
             try {
                 //货物为空之后消费者等待
                 this.wait();
@@ -54,7 +54,7 @@ class Clerk {
                 e.printStackTrace();
             }
         } else {
-            System.out.println(Thread.currentThread().getName() + " : " + --product);
+            System.out.println(Thread.currentThread().getName() + "销售商品，剩余数量" + --product);
             //消费货物之后唤醒生产者
             this.notifyAll();
         }
@@ -77,7 +77,7 @@ class Product implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            clerk.get();
+            clerk.stock();
         }
     }
 }

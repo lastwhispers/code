@@ -8,8 +8,7 @@ import java.util.concurrent.*;
  */
 public class FutureMain {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-//        FutureTask<String> futureTask = new FutureTask<>(new RealData("a"));
-        FutureTask<String> futureTask = new FutureTask(new RealData2("a"),"finish");
+        FutureTask<String> futureTask = new FutureTask<>(new RealData2("a"),"finish");
 
         ExecutorService threadPool = Executors.newFixedThreadPool(1);
         // 执行FutureTask,相当于上例中的client. request ("a")发送请求

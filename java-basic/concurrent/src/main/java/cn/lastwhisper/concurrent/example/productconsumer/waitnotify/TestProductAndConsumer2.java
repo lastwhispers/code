@@ -1,4 +1,4 @@
-package cn.lastwhisper.concurrent.example.productconsumer.v1;
+package cn.lastwhisper.concurrent.example.productconsumer.waitnotify;
 
 /**
  * 生产者消费者案例(等待唤醒机制)，使用synchronize+Object的wait和notify；
@@ -38,7 +38,7 @@ class Clerk2 {
     //进货（生产者线程调用）
     public synchronized void get() {
         while (product >= 1) {
-            System.out.println("货物已满！");
+//            System.out.println("货物已满！");
             try {
                 //货物满了之后生产者等待
                 this.wait();
@@ -46,7 +46,7 @@ class Clerk2 {
                 e.printStackTrace();
             }
         }
-        System.out.println(Thread.currentThread().getName() + " : " + ++product);
+        System.out.println(Thread.currentThread().getName() + "添加商品，剩余数量" + ++product);
         //生产货物之后唤醒消费者
         this.notifyAll();
     }
@@ -54,7 +54,7 @@ class Clerk2 {
     //销售（消费者线程调用）
     public synchronized void sale() {
         while (product <= 0) {
-            System.out.println("货物为空！");
+//            System.out.println("货物为空！");
             try {
                 //货物为空之后消费者等待
                 this.wait();
@@ -62,7 +62,7 @@ class Clerk2 {
                 e.printStackTrace();
             }
         }
-        System.out.println(Thread.currentThread().getName() + " : " + --product);
+        System.out.println(Thread.currentThread().getName() + "销售商品，剩余数量" + --product);
         //消费货物之后唤醒生产者
         this.notifyAll();
 

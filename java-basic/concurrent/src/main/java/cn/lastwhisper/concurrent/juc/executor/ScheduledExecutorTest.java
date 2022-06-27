@@ -61,11 +61,11 @@ public class ScheduledExecutorTest {
     public static void main(String[] args) throws Exception {
         ScheduledExecutorTest test = new ScheduledExecutorTest();
         //测试普通的线程池
-        test.testFixedThreadPool();
+//        test.testFixedThreadPool();
         //测试计划任务线程池
         //test.testSchedule();
         //test.testScheduleAtFixedRate();
-        //test.testScheduleWithFixedDelay();
+        test.testScheduleWithFixedDelay();
     }
 
     private void testFixedThreadPool() throws Exception {
