@@ -26,7 +26,7 @@ public class IOCTest_EXT {
         applicationContext.publishEvent(new ApplicationEvent("发布事件"){});
 
         Blue blue = (Blue) applicationContext.getBean("hello");
-        System.out.println(blue);
+        System.out.println("blue:"+blue);
 
         applicationContext.close();
     }

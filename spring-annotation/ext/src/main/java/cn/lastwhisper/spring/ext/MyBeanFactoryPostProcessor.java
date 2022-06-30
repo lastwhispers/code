@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 
 /**
- *
  * @author lastwhisper
  * @date 2020/2/18
  */
@@ -20,8 +19,9 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
         System.out.println("MyBeanFactoryPostProcessor...postProcessBeanFactory...");
         int count = beanFactory.getBeanDefinitionCount();
         String[] names = beanFactory.getBeanDefinitionNames();
-        System.out.println("当前BeanFactory中有" + count + " 个Bean");
-        System.out.println(Arrays.asList(names));
+        System.out.println("当前BeanFactory中有" + count + " 个Bean。" + " Names:" + Arrays.asList(names));
+
+
     }
 
 }

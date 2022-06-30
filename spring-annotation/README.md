@@ -8,7 +8,12 @@
 7.transaction  声明式事务原理    
 8.ext  扩展   
 
-
+比较重要的模块
+componentregister  组件注册   
+lifecycle2  生命周期
+aop  aop原理    
+transaction  声明式事务原理    
+ext  扩展
 
 
 spring官网

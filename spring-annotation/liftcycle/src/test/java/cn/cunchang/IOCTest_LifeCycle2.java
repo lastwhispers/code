@@ -14,6 +14,8 @@ public class IOCTest_LifeCycle2 {
         // 初始化容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfLifeCycle.class);
         System.out.println("bean容器初始化...");
+        LifeCycleBean lifeCycleBean = applicationContext.getBean(LifeCycleBean.class);
+
         // 关闭容器
         applicationContext.close();
     }

@@ -3,6 +3,7 @@ package cn.lastwhisper.learn8.util.collection;
 import com.alibaba.fastjson.JSON;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.*;
@@ -39,6 +40,21 @@ public class TreeMapTest {
         m.put("sdf", "nihao");
         m.put("df", "nihao");
         m.keySet().iterator();
+    }
+
+    @Test
+    public void testRegionSearch() {
+        TreeMap<Integer, Integer> rankingMap = new TreeMap<>();
+        rankingMap.put(1,1);  //ranking 1 ->1
+        rankingMap.put(2,2); //ranking 2 ->2
+        rankingMap.put(3,3); //ranking 3 -> 3
+        rankingMap.put(4,4); //ranking 4-10 ->4
+        rankingMap.put(11,5); //ranking 11-20 ->5
+        rankingMap.put(21,6); //ranking 21-30 ->6
+        rankingMap.put(31,7); //ranking >= 31 ->7
+
+        Assert.assertEquals(6, (int) rankingMap.floorEntry(30).getValue());
+        Assert.assertEquals(7, (int) rankingMap.floorEntry(71).getValue());
     }
 
     @Test

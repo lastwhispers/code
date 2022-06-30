@@ -4,41 +4,44 @@ import cn.cunchang.array.ArrayUtil;
 import cn.cunchang.tree.TreeNode;
 import cn.cunchang.tree.TreeUtil;
 
-import java.util.HashMap;
-import java.util.Map;
-
+/**
+ * @author cunchang
+ * @date 2022/6/20 6:41 PM
+ */
 class Solution {
-    private Map<Integer, Integer> inorderIndexMap;
-
-    public TreeNode myBuildTree(int[] preorder, int preorderLeft, int preorderRight, int inorderLeft) {
-        if (preorderLeft > preorderRight) {
-            return null;
-        }
-        // 第一个节点是根节点
-        TreeNode root = new TreeNode(preorder[preorderLeft]);
-        // 在中序遍历中定位根节点
-        Integer inorderRootIndex = inorderIndexMap.get(preorder[preorderLeft]);
-        // 得到左子树中的节点数目
-        int leftSize = inorderRootIndex - inorderLeft;
-        // 递归地构造左子树，并连接到根节点
-        // 先序遍历中「从 左边界+1 开始的 leftSize」个元素就对应了中序遍历中「从 左边界 开始到 根节点定位-1」的元素
-        root.left = myBuildTree(preorder, preorderLeft + 1,
-                preorderLeft + leftSize, inorderLeft);
-        // 递归地构造右子树，并连接到根节点
-        // 先序遍历中「从 左边界+左子树节点数目+1 开始到 右边界」的元素就对应了中序遍历中「从 根节点定位+1 到 右边界」的元素
-        root.right = myBuildTree(preorder, preorderLeft + leftSize + 1,
-                preorderRight, inorderRootIndex + 1);
-        return root;
-    }
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        int n = preorder.length;
-        // 构造哈希映射，帮助我们快速定位根节点
-        inorderIndexMap = new HashMap<>();
-        for (int i = 0; i < n; i++) {
-            inorderIndexMap.put(inorder[i], i);
+        return buildTree0(preorder, 0, preorder.length - 1,
+                inorder, 0, inorder.length - 1);
+    }
+
+    public TreeNode buildTree0(int[] preorder, int preLeft, int preRight,
+                               int[] inorder, int inLeft, int inRight) {
+        // 递归终止
+        if (preLeft > preRight) {
+            return null;
         }
-        return myBuildTree(preorder, 0, n - 1, 0);
+
+        // 1、preLeft是preorder的根节点，对根节点进行构造
+        TreeNode root = new TreeNode(preorder[preLeft]);
+        // 2、根节点在inorder的下标为index
+        int inOrderIndex = 0;
+        for (int i = inLeft; i <= inRight; i++) {
+            if (inorder[i] == preorder[preLeft]) {
+                inOrderIndex = i;
+                break;
+            }
+        }
+        // 3、根节点的左子树节点个数leftCount = index-inLeft，根节点左子树在preorder的范围[preLeft+1,preLeft+leftCount],
+        //    根节点已经构造过了，所以从preLeft+1开始，至左子树个数preLeft+leftCount结束；
+        //  在inorder的范围[inLeft,index-1]
+        int leftCount = inOrderIndex - inLeft;
+        root.left = buildTree0(preorder, preLeft + 1, preLeft + leftCount,
+                inorder, inLeft, inOrderIndex - 1);
+        // 4、根节点右子树在preorder的范围[preLeft+leftCount+1,preRight],在inorder的范围[index+1,inRight]
+        root.right = buildTree0(preorder, preLeft + leftCount + 1, preRight,
+                inorder, inOrderIndex + 1, inRight);
+        return root;
     }
 
     public static void main(String[] args) {

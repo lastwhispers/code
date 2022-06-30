@@ -5,6 +5,7 @@ import org.apache.commons.collections.list.UnmodifiableList;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -19,6 +20,8 @@ public class CollectionsTest {
     public void unmodifiable(){
         List<Integer> list =  new ArrayList<>();
         List unmodifiableList = UnmodifiableList.decorate(list);
+
+//        Collections.synchronizedList()
 
     }
 

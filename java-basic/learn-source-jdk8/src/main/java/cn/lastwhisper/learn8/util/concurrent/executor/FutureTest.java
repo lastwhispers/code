@@ -63,6 +63,7 @@ public class FutureTest {
         executor.submit(futureTask);
         String result = (String) futureTask.get();
         log.info("result is {}", result);
+        executor.shutdown();
     }
 
     @Test

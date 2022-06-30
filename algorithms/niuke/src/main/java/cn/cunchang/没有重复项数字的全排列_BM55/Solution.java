@@ -1,13 +1,16 @@
-package cn.cunchang.全排列_46_中等;
+package cn.cunchang.没有重复项数字的全排列_BM55;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
-class Solution {
-    List<List<Integer>> result = new ArrayList<>();
+/**
+ * @author cunchang
+ * @date 2022/6/29 6:47 PM
+ */
+public class Solution {
+    ArrayList<ArrayList<Integer>> result = new ArrayList<>();
 
-    public  List<List<Integer>> permute(int[] num) {
+    public ArrayList<ArrayList<Integer>> permute(int[] num) {
         // 记录「路径」
         LinkedList<Integer> subResult = new LinkedList<>();
         // 「路径」中的元素会被标记为 true，避免重复使用

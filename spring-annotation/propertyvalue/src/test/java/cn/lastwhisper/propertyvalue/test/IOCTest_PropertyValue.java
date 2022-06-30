@@ -1,4 +1,4 @@
-package cn.lastwhisper.lifecycle.test;
+package cn.lastwhisper.propertyvalue.test;
 
 import cn.lastwhisper.propertyvalue.bean.Person;
 import cn.lastwhisper.propertyvalue.config.MainConfigOfPropertyValues;
@@ -18,15 +18,15 @@ public class IOCTest_PropertyValue {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfPropertyValues.class);
         System.out.println("容器初始化...");
 
-        printBeans(applicationContext);
+//        printBeans(applicationContext);
 
 
         Person person = (Person) applicationContext.getBean("person");
         System.out.println(person);
 
-        Environment environment = applicationContext.getEnvironment();
-        String property = environment.getProperty("person.nickname");
-        System.out.println(property);
+//        Environment environment = applicationContext.getEnvironment();
+//        String property = environment.getProperty("person.nickname");
+//        System.out.println(property);
 
     }
 

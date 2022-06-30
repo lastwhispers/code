@@ -88,7 +88,7 @@ public class ScheduledExecutorTest {
      * 3.testScheduleWithFixedDelay不会等待执行体内的执行时间
      */
     private void testScheduleWithFixedDelay() throws Exception {
-        scheduledThreadPool.scheduleWithFixedDelay(new Runnable() {
+        ((ScheduledThreadPoolExecutor)scheduledThreadPool).scheduleWithFixedDelay(new Runnable() {
             @Override
             public void run() {
                 try {

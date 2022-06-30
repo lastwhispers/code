@@ -15,7 +15,7 @@ public class ColorFactoryBean implements FactoryBean<Color> {
      */
     @Override
     public Color getObject() throws Exception {
-        System.out.println("ColorFactoryBean.getObject");
+        System.out.println("ColorFactoryBean.getObject方法执行");
         return new Color();
     }
 

@@ -15,6 +15,7 @@
         <module>algorithm</module>
         <module>leetcode</module>
         <module>algorithm-common</module>
+        <module>niuke</module>
     </modules>
 
     <dependencies>

@@ -2,11 +2,9 @@ package cn.lastwhisper.spring.ext;
 
 import cn.lastwhisper.spring.ext.bean.Blue;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanDefinitionHolder;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
-import org.springframework.beans.factory.support.AbstractBeanDefinition;
-import org.springframework.beans.factory.support.BeanDefinitionBuilder;
-import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
+import org.springframework.beans.factory.support.*;
 import org.springframework.stereotype.Component;
 
 import static org.springframework.beans.factory.config.AutowireCapableBeanFactory.AUTOWIRE_BY_NAME;
@@ -37,7 +35,13 @@ public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegi
         builder.setAutowireMode(AUTOWIRE_BY_NAME);
 
         AbstractBeanDefinition beanDefinition = builder.getBeanDefinition();
-        registry.registerBeanDefinition("hello", beanDefinition);
+
+//        registry.registerBeanDefinition("hello", beanDefinition);
+
+        // 看springcloud openfeign源码，feign接口怎么在容器中声明的
+        BeanDefinitionHolder holder = new BeanDefinitionHolder(beanDefinition, Blue.class.getName(),
+                new String[] { "hello" });
+        BeanDefinitionReaderUtils.registerBeanDefinition(holder, registry);
     }
 
 }

@@ -74,10 +74,10 @@ public class LocalDateTest {
 
     @Test
     public void test4() {
-        LocalDate startDate=LocalDate.now().plusDays(-30),  endDate=LocalDate.now();
-        Long cha = endDate.toEpochDay() - startDate.toEpochDay();
-        System.out.println("startDate:"+startDate+" endDate:"+endDate);
-        System.out.println(cha);
+        LocalDate startDate=LocalDate.now().plusDays(-1),  endDate=LocalDate.now();
+        // 日期之差
+        Long dayDiv = endDate.toEpochDay() - startDate.toEpochDay();
+        System.out.println("startDate:"+startDate+" endDate:"+endDate +" dayDiv:"+dayDiv);
     }
 
 }

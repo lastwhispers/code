@@ -3,6 +3,9 @@ package cn.lastwhisper.propertyvalue.bean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
+import java.util.List;
+import java.util.Set;
+
 /**
  * @author lastwhisper
  */
@@ -20,12 +23,15 @@ public class Person {
     @Value("${person.nickname}")
     private String nickname;
 
-    public Person() {
-    }
+    // 支付宝、微信、银行卡各有多少钱
+    @Value("#{'${person.moneyList}'.split(',')}")
+    private List<Integer> moneyList;
 
-    public Person(String name, Integer age) {
-        this.name = name;
-        this.age = age;
+    @Value("#{'${person.moneyList}'.split(',')}")
+    private Set<Integer> moneySet;
+
+
+    public Person() {
     }
 
     public String getName() {
@@ -52,12 +58,30 @@ public class Person {
         this.nickname = nickname;
     }
 
+    public List<Integer> getMoneyList() {
+        return moneyList;
+    }
+
+    public void setMoneyList(List<Integer> moneyList) {
+        this.moneyList = moneyList;
+    }
+
+    public Set<Integer> getMoneySet() {
+        return moneySet;
+    }
+
+    public void setMoneySet(Set<Integer> moneySet) {
+        this.moneySet = moneySet;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", nickname='" + nickname + '\'' +
+                ", moneyList=" + moneyList +
+                ", moneySet=" + moneySet +
                 '}';
     }
 }
