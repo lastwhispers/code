@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ThreadSafe {
     private static int m = 0;
-    private static Lock lock = new ReentrantLock();
+    private static ReentrantLock lock = new ReentrantLock();
 
     public static void main(String[] args) throws InterruptedException {
         Thread[] threads = new Thread[100];

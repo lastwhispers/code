@@ -6,6 +6,9 @@
     <artifactId>spring-annotation</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>aop-interface</module>
+    </modules>
     <name>spring-annotation</name>
     <description>Spring Annotation</description>
 
