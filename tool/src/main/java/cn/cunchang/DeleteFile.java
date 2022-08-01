@@ -121,7 +121,7 @@ public class DeleteFile {
                 String fileName = subFile.getName();
                 int lastIndex = fileName.lastIndexOf(".");
                 if (lastIndex == -1) {
-                    System.out.println("跳过文件==>" + fileName);
+                    System.out.println("跳过文件==>" +subFile.getAbsolutePath());
                     continue;
                 }
                 fileName = fileName.substring(0, lastIndex);
