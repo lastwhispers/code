@@ -1,9 +1,12 @@
 package cn.cunchang.fastjson;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
 import org.junit.Test;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -23,5 +26,14 @@ public class JSONObjectTest {
         }
     }
 
-    
+    @Test
+    public void test2() {
+        String json2Map = "{\"categoryCode\":[\"SB01\",\"KF03\",\"KF02\",\"VES1\",\"OI13\"],\"deptNo\":[\"60951\",\"87791\",\"88123\"]}";
+        String json2List = "[\"SB01\",\"KF03\",\"KF02\",\"VES1\",\"OI13\"]";
+
+        Map<String,List<String>> map = JSONObject.parseObject(json2Map, new TypeReference<Map<String,List<String>>>() {});
+        System.out.println(JSON.toJSONString(map));
+        List<String> list = JSONObject.parseObject(json2List, new TypeReference<List<String>>() {});
+        System.out.println(JSON.toJSONString(list));
+    }
 }
