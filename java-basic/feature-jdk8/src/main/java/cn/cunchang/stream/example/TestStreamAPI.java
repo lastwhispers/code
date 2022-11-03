@@ -4,6 +4,7 @@ import cn.cunchang.stream.Employee;
 import cn.cunchang.stream.Status;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -40,6 +41,17 @@ public class TestStreamAPI {
     public void test2() {
         Optional<Integer> reduce = emps.stream().map(e -> 1).reduce(Integer::sum);
         System.out.println(reduce.get());
+    }
+
+    /**
+     * BigDecimal相加
+     */
+    @Test
+    public void test3() {
+        BigDecimal reduce = emps.stream()
+                .map(employee -> BigDecimal.valueOf(employee.getSalary()))
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+        System.out.println(reduce);
     }
 
 }

@@ -114,4 +114,17 @@ public class TestOptional {
                 .getName();
     }
 
+    @Test
+    public void test7() {
+        Optional.ofNullable(null).map(o -> {
+            if (o == null) {
+                return null;
+            } else {
+                return o;
+            }
+        }).ifPresent(o -> {
+            System.out.println(o+"1");
+        });
+    }
+
 }
