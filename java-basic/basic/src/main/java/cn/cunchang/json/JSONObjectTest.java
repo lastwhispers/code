@@ -46,21 +46,5 @@ public class JSONObjectTest {
         System.out.println(JSON.toJSONString(map2));
     }
 
-    @Test
-    public void test3() {
-        String jsonStr = "{\"isDeleted\":\"n\",\"conditions\":[{\"order\":0,\"isDeleted\":\"n\",\"approveLevel\":\"老板DD\",\"ruleType\":\"overdue\",\"desc\":\"合同过期，财务经理逐级封顶到老板DD。\"},{\"ratioExpression\":\"ratio>1\",\"contractTypeSet\":[\"合同类型A\"],\"order\":1,\"isDeleted\":\"n\",\"approveLevel\":\"老板DD\",\"ruleType\":\"overratio\",\"desc\":\"单项目合同超框，财务经理逐级封顶到老板DD。\"},{\"ratioExpression\":\"ratio>1.2\",\"contractTypeSet\":[\"合同类型B\"],\"bizTypeNotContainSet\":[\"withdraw\"],\"order\":2,\"isDeleted\":\"n\",\"approveLevel\":\"老板DD\",\"ruleType\":\"overratio\",\"desc\":\"框架合同超框120%（大于）且非OXM类目，财务经理逐级封顶到老板DD。\"},{\"ratioExpression\":\"ratio>1.5\",\"contractTypeSet\":[\"合同类型B\"],\"bizTypeSet\":[\"withdraw\"],\"order\":3,\"isDeleted\":\"n\",\"approveLevel\":\"老板DD\",\"ruleType\":\"overratio\",\"desc\":\"框架合同超框150%（大于）且为OXM类目，采购经理逐级封顶到总裁DD。\"},{\"ratioExpression\":\"1<ratio && ratio<=1.2\",\"contractTypeSet\":[\"合同类型B\"],\"bizTypeNotContainSet\":[\"withdraw\"],\"order\":4,\"isDeleted\":\"n\",\"approveLevel\":\"老板DDD\",\"ruleType\":\"overratio\",\"desc\":\"框架合同超框100%＜x≤120%，财务经理逐级封顶到老板DDD。\"}]}";
-        ContractRiskApproveRuleDTO contractRiskApproveRuleDTO = JSONObject.parseObject(jsonStr, ContractRiskApproveRuleDTO.class);
-        System.out.println(contractRiskApproveRuleDTO.getIsDeleted());
-        for (ContractRiskApproveRuleDTO.Condition condition : contractRiskApproveRuleDTO.getConditions()) {
-            System.out.println(JSON.toJSONString(condition));
-        }
-    }
-
-    @Test
-    public void test4() {
-        String jsonStr = "{\"contractCode\":\"S54202200048\",\"contractType\":\"common_frame\",\"currentPoPurchaseCategory\":[\"PS13\"],\"overdue\":true,\"poNumber\":\"PO200129522\",\"ratio\":0.500000000000}";
-        ContractExceedDTO contractExceedDTO = JSONObject.parseObject(jsonStr, ContractExceedDTO.class);
-        System.out.println(contractExceedDTO);
-    }
 
 }
