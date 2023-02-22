@@ -1,7 +1,5 @@
 package cn.cunchang.json;
 
-import cn.cunchang.json.dto.ContractExceedDTO;
-import cn.cunchang.json.dto.ContractRiskApproveRuleDTO;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
