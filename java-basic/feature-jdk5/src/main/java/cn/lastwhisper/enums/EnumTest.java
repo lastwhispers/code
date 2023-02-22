@@ -72,7 +72,8 @@ public class EnumTest {
         System.out.println(monday);
         System.out.println(monday.name());
         System.out.println(monday.ordinal());// 下标
-        System.out.println(WeekDay2.valueOf("Thursday"));// 静态方法
+        // java.lang.Enum.valueOf 从map去拿性能不差的
+        System.out.println(WeekDay2.valueOf("Thursday1"));// 静态方法
         System.out.println(Arrays.toString(WeekDay2.values()));// 静态方法
 
     }
