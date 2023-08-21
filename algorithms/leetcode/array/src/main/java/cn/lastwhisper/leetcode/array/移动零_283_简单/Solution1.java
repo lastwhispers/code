@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Solution1 {
     /**
-     * 题目地址：https://leetcode-cn.com/problems/min-stack/
+     * 题目地址：https://leetcode.cn/problems/move-zeroes/
      * 编号：283
      * -------------------------------------------------------------------
      * 思考：
