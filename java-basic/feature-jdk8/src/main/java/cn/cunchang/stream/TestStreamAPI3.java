@@ -3,6 +3,7 @@ package cn.cunchang.stream;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /*
@@ -156,13 +157,25 @@ public class TestStreamAPI3 {
     public void test6() {
 
         // 根据状态分组
-        Map<Status, List<Employee>> map = employees.stream()
-                .collect(Collectors.groupingBy(Employee::getStatus));
-        for (Map.Entry<Status, List<Employee>> entry : map.entrySet()) {
-            System.out.println("----------------根据状态分组-----------------");
-            System.out.println(entry.getKey());
-            entry.getValue().forEach(System.out::println);
-        }
+//        Map<Status, List<Employee>> map = employees.stream()
+//                .collect(Collectors.groupingBy(Employee::getStatus));
+//        for (Map.Entry<Status, List<Employee>> entry : map.entrySet()) {
+//            System.out.println("----------------根据状态分组-----------------");
+//            System.out.println(entry.getKey());
+//            entry.getValue().forEach(System.out::println);
+//        }
+
+        // 根据非唯一键分组，将相同值分到一组
+//        Map<Status, List<Employee>> map = employees.stream()
+//                .collect(Collectors.groupingBy(Employee::getStatus));
+
+        Map<Status, Employee> map2 = employees.stream()
+                .collect(Collectors.toMap(Employee::getStatus, Function.identity(),(o1,o2)->{return o1;}));
+
+        // 根据唯一键分组，每一组只有一个数据
+        Map<Integer, Employee> map3 = employees.stream()
+                .collect(Collectors.toMap(Employee::getId,o->{return o;}));
+
     }
 
     // 根据状态进行分组求和

@@ -38,7 +38,6 @@ public class BigDecimalTest {
     }
 
     /**
-     *
      * BigDecimal.setScale()方法用于格式化小数点
      * setScale(1)表示保留一位小数，默认用四舍五入方式
      * setScale(1,BigDecimal.ROUND_DOWN)直接删除多余的小数位，如2.35会变成2.3
@@ -48,7 +47,6 @@ public class BigDecimalTest {
      * setScaler(1,BigDecimal.ROUND_CEILING)接近正无穷大的舍入
      * setScaler(1,BigDecimal.ROUND_FLOOR)接近负无穷大的舍入，数字>0和ROUND_UP作用一样，数字<0和ROUND_DOWN作用一样
      * setScaler(1,BigDecimal.ROUND_HALF_EVEN)向最接近的数字舍入，如果与两个相邻数字的距离相等，则向相邻的偶数舍入。
-     *
      */
     @Test
     public void test格式化小数点() {
@@ -72,5 +70,14 @@ public class BigDecimalTest {
         System.out.println(new BigDecimal("1").compareTo(new BigDecimal("0")) <= 0);
     }
 
+    @Test
+    public void test3() {
+        BigDecimal taxAmount = new BigDecimal("0.001");
+        BigDecimal originTaxAmount = new BigDecimal("0.001");
+        BigDecimal exchangeRate = new BigDecimal("1");
+        BigDecimal calOriginTaxAmount = taxAmount.divide(exchangeRate,
+                5, BigDecimal.ROUND_HALF_UP);
+        System.out.println(calOriginTaxAmount.compareTo(originTaxAmount) != 0);
+    }
 
 }

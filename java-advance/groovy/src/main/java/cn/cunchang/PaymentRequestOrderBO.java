@@ -2,10 +2,6 @@ package cn.cunchang;
 
 import lombok.Data;
 
-/**
- * @Author: chenan
- * @Date: 2021/1/29 18:38
- */
 @Data
 public class PaymentRequestOrderBO {
 
